@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "status": "adopted-documentation-baseline",
+  "generalRepository": "wanghinfelix1997715-arch/General",
+  "generalCommit": "521fdfc48f6d566d3db51ead1cfd062435617b72",
+  "generalVersion": "0.1.0",
+  "upstreamRepository": "https://github.com/addyosmani/agent-skills",
+  "upstreamCommit": "301b02b12bff98e4688e6984af6556802322bbde",
+  "projectRepository": "wanghinfelix1997715-arch/incident-website",
+  "siteProjectId": "appgprj_6ad7bdb6a78c8191a9a8cec2c462ce2d",
+  "reviewedBy": "Felix (conversation approval)",
+  "reviewedAt": "2026-11-11",
+  "commands": {
+    "test": "npm test",
+    "typecheck": "npm run typecheck",
+    "build": "supported Sites build helper"
+  },
+  "enforcement": {
+    "generalLoadedByHost": false,
+    "ciVerified": false,
+    "requiredChecksVerified": false
+  }
+}
