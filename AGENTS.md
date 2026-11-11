@@ -3,7 +3,7 @@ Approved documentation setup: 11 November 2026. Current hosted baseline: AfterFa
 This is one existing Site growing into an incident generator; no second Site or duplicate application is created by this documentation task.
 
 ## Read before any task
-1. Read engineering-adoption.json. Load [General AGENTS at the adopted commit](https://github.com/wanghinfelix1997715-arch/General/blob/521fdfc48f6d566d3db51ead1cfd062435617b72/AGENTS.md) and applicable skill workflows at that commit. If publication/adoption is pending or unavailable, report it; do not invent a commit or claim successful cross-repo loading.
+1. Read [current General AGENTS](https://github.com/wanghinfelix1997715-arch/General/blob/main/AGENTS.md), relevant General issues/comments and task-selected full upstream skills first. Then complete this project layer. Record the General revision actually read. engineering-adoption.json records historical integration; it is not a permission gate or a reason to ignore current General. If a required source is unavailable, report source, impact and next action.
 2. Read README, docs/requirements.md, docs/verification.md, docs/incident-roadmap.md and the relevant project issue body/comments, including open and closed history. Search labels AND keywords.
 3. Falls/shared-output/API changes must read docs/afterfall/AGENTS.md. Wound work must read docs/wound-questionnaire.md and relevant INC issues.
 4. Existing development principles remain preserved in docs/legacy-development-principles.md with their origin. Its ShiftBrief issue numbers and clinical modules are historical cross-project references, not this project's issue IDs or product scope.
@@ -27,9 +27,10 @@ Name pseudonymization is proposed for this project, not established as implement
 Use synthetic fixtures only. No resident records, original incident screenshots, name maps or credentials in code/issues/logs.
 
 ## Verification and delivery
-Discovered commands: node --test tests/regression.test.mjs; package script typecheck; build using supported Sites build helper. Discover installed tool paths/runtime again rather than copying old machine paths.
+Read [CONSTRAINTS.md](CONSTRAINTS.md), the [task checklist](docs/task-checklist.md) and [API evaluation contract](docs/api-evaluation.md). Entry point: [START-HERE.md](START-HERE.md).
+Authoritative commands: npm test (all top-level tests/*.test.mjs), npm run check:repo, npm run typecheck; build using the supported Sites build helper. Discover installed tool paths/runtime again rather than copying old machine paths.
 Use foundation / confirmed rules / issue reproductions. Shared changes must run ordinary success plus existing falls cases through the new path. Record any changed expected answer with source and reason.
 Mocks, browser UI, real OpenAI response, deployment and user feedback are separate evidence.
-This task changes instructions and tracking only; no clinical algorithm/UI/model/access changes. Publish application behavior only under the corresponding implementation task.
-Keep actual GitHub/source/hosting correspondence in docs/source-status.md. Pending remote setup must not be described as fully synchronized.
+Classify the current request before changing anything: a setup/documentation task does not authorize clinical behavior changes; an authorized feature/fix proceeds within its own scope and acceptance. Publish application behavior through the supported Sites workflow when required by that implementation task.
+Keep actual GitHub/source/hosting correspondence in docs/source-status.md. GitHub history and Sites source/deployment are separate; verify their actual content correspondence each time.
 

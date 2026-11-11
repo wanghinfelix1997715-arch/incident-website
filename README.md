@@ -4,7 +4,7 @@ Sites migration of the approved six-section post-fall questionnaire and four doc
 
 ## Source and development rules
 
-Start with [AGENTS.md](AGENTS.md), [engineering-adoption.json](engineering-adoption.json), the [issue index](docs/issue-index.md), and [source status](docs/source-status.md). The General repository supplies shared engineering methods at the adopted immutable commit. AfterFall remains the protected falls pathway; read [its instructions](docs/afterfall/AGENTS.md) before any falls or shared-layer change.
+Start with [START-HERE.md](START-HERE.md), [AGENTS.md](AGENTS.md), the [issue index](docs/issue-index.md), and [source status](docs/source-status.md). Read current General as layer 1 and this project as layer 2; record the General revision actually read. The optional manifest preserves historical integration evidence. AfterFall remains the protected falls pathway; read [its instructions](docs/afterfall/AGENTS.md) before any falls or shared-layer change.
 
 The original full 11-section development principles, originally reused from ShiftBrief, are preserved in [legacy-development-principles.md](docs/legacy-development-principles.md). ShiftBrief-specific modules and issue numbers are historical references, not Incident behavior or issue IDs. The detailed approved requirements and existing synthetic regressions remain authoritative for this app.
 
@@ -12,7 +12,7 @@ Incident expansion is tracked in INC-01–INC-13. Wound questionnaire details re
 
 ## Run and verify
 
-Node 24 and the Sites supported dependency installer are used. `npm test` executes 21 synthetic tests, including all eight recovered acceptance directions and the Sites identity/status regression. `npm run typecheck` checks TypeScript. Build with the Sites `build-site.mjs` helper. The retained `.github/workflows/afterfall.yml` runs synthetic regression on PR/push when installed in a repository; no claim is made about branch protection or automatic Sites deployment.
+Node 24 and the Sites supported dependency installer are used. `npm test` discovers all top-level test suites: the original 21 synthetic application checks (including A1–A8 and identity/status) plus three calibrated repository-gate checks. `npm run typecheck` checks TypeScript. Build with the Sites `build-site.mjs` helper. The `.github/workflows/afterfall.yml` runs synthetic regression and repository contract checks on PR/push; no claim is made about branch protection or automatic Sites deployment.
 
 ## API
 
@@ -27,3 +27,5 @@ Without a key, local drafting remains fully functional and the AI option is disa
 Assessment, drafts and manual edits live in React page memory. Refresh, Clear or closing the page loses them. Local drafting makes no assessment request. Opting into AI sends canonical text derived from the assessment through the Site to OpenAI. The app does not log or persist clinical payloads. Platform/provider handling is distinct from application persistence. Do not use identifiable clinical information without workplace approval.
 
 Default GP informed, NOK informed and FRAT completed are retained by explicit user instruction for their end-of-incident workflow. They must be verified before Copy. Pending/not-completed selections remain explicit. Warnings stay outside all copied text.
+
+Repository completion and verification: [setup delivery](docs/setup-delivery.md). Feature progression remains in [the issue index](docs/issue-index.md).

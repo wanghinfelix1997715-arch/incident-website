@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "adopted-documentation-baseline",
+  "status": "historical-integration-record",
   "generalRepository": "wanghinfelix1997715-arch/General",
   "generalCommit": "521fdfc48f6d566d3db51ead1cfd062435617b72",
   "generalVersion": "0.1.0",
@@ -17,7 +17,10 @@
   },
   "enforcement": {
     "generalLoadedByHost": false,
-    "ciVerified": false,
-    "requiredChecksVerified": false
-  }
+    "ciVerified": true,
+    "requiredChecksVerified": false,
+    "ciScope": "Existing 21 synthetic regressions: GitHub run 43002157717 succeeded on d8f77466a6037875a7998ab690f5c0455491af26. New checks require a new run."
+  },
+  "workflow": "Read current General first on every task; this recorded commit is not a gate.",
+  "generalCommitMeaning": "General revision integrated during initial repository setup; per-task revisions belong in task records."
 }

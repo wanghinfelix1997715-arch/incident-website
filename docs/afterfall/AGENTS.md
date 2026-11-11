@@ -1,5 +1,5 @@
 # AfterFall falls pathway — protected contract
-Read with root AGENTS.md, adopted general rules, docs/requirements.md and relevant issue comments.
+Read with root AGENTS.md, current General rules, docs/requirements.md and relevant issue comments.
 
 ## Scope
 AfterFall remains the existing falls pathway in the Incident project. The current UI component is components/AfterFall.tsx; questionnaire lib/assessment.ts; deterministic drafts lib/drafts.ts; AI handler lib/generate.ts. Check current files before editing.
@@ -30,5 +30,5 @@ Keep useful wording improvements and factual preservation separately evaluated. 
 
 ## Status and tracking
 Baseline v3 has previous 21 synthetic checks and internal browser evidence; this setup does not rerun or broaden old live API acceptance.
-INC-02 owns preservation; INC-06 API optimization; INC-07 pseudonymization; INC-08 executable regression. Actual issue URLs are populated after GitHub creation in docs/issue-index.md; stable INC identifiers are not GitHub numbers.
+INC-02 owns preservation; INC-06 API optimization; INC-07 pseudonymization; INC-08 executable regression. Actual issue URLs are listed in docs/issue-index.md; stable INC identifiers are not GitHub numbers.
 

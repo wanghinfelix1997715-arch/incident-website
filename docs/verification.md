@@ -19,3 +19,6 @@
 - Mobile viewport and deployed-production browser interactions not separately tested. Responsive breakpoints are retained from the original design; no claim of complete device coverage.
 - Original ZIP smoke tests were static string checks. Migration adds executable rule and API-path tests rather than claiming original smoke checks prove clinical correctness.
 - Source snapshots preserve the exact read MagicPath revision and original ZIP source; docs/requirements.md maps the merged fields and intentional fixes.
+
+## Repository workflow completion — 11 November 2026
+The setup task retained every original application test and expected answer. npm test now discovers all top-level *.test.mjs suites; local run passed 24 checks (21 original application regressions and 3 repository-gate controls). npm run typecheck and the supported Sites production build passed. General's independent runner passed 38 checks (35 task-history plus 3 repository controls). No new real-browser or live-provider acceptance was performed. Current commit/run/source correspondence is recorded in INC-01 and General #10; earlier results above remain historical.

@@ -11,4 +11,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: node --test tests/regression.test.mjs
+      - run: node scripts/check-repository.mjs
+      - run: node scripts/run-tests.mjs
