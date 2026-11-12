@@ -1,3 +1,4 @@
+import {draftWoundProse} from './wound-prose.ts';
 import { sections as fallSections, empty, example, type Data } from './assessment.ts';
 import { draft, getWarnings, validData, validateAI, type Docs } from './drafts.ts';
 export type Pathway = 'fall' | 'wound' | 'infection';
@@ -39,6 +40,9 @@ const join=(...v:string[])=>v.filter(Boolean).join(' ');
 const paragraphs=(...v:string[])=>v.filter(Boolean).join('\n\n');
 const sentence=(label:string,v:string)=>v?`${label}: ${v}${/[.!?]$/.test(v)?'':'.'}`:'';
 export function draftIncident(p:Pathway,d:Data):Docs{
+ return p==='wound'?draftWoundProse(d):draftStructuredIncident(p,d);
+}
+function draftStructuredIncident(p:Pathway,d:Data):Docs{
  if(p==='fall')return draft(d);
  const s=(k:string)=>value(d,k);
  const labelled=(k:string,label:string)=>sentence(label,s(k));
