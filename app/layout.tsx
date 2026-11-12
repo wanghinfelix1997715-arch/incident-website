@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AfterFall — RN Documentation Studio",
-  description: "Post-fall assessment and four independent RN documentation drafts.",
+  title: "CareNote — RN Documentation Studio",
+  description: "RN incident documentation and selected-target progress notes and correspondence.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

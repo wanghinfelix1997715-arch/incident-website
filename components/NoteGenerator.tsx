@@ -55,7 +55,7 @@ export function NoteGenerator(){
   invalidate();inflight.current?.abort();setSource('');setContext('');setBank({});setTarget('');setSourceType('Rough notes');setCommunicationStatus('Unknown');setMessage('Note Generator cleared. Incident work retained.');
  };
  return <div className="min-h-screen bg-[#f6f8f6] text-[#19352d]">
-  <header className="bg-[#143e35] px-5 py-5 text-white md:px-10"><div className="text-2xl font-semibold">✳ AfterFall<span className="text-[#9bc8ac]">.</span></div><p className="mt-1 text-xs text-[#c7dcd1]">RN DOCUMENTATION STUDIO · NOTE GENERATOR</p></header>
+  <header className="bg-[#143e35] px-5 py-5 text-white md:px-10"><div className="text-2xl font-semibold">✳ CareNote<span className="text-[#9bc8ac]">.</span></div><p className="mt-1 text-xs text-[#c7dcd1]">RN DOCUMENTATION STUDIO · NOTE GENERATOR</p></header>
   <main className="mx-auto max-w-7xl px-4 py-7 md:px-8">
    <div className="mb-6 flex flex-wrap items-start justify-between gap-3"><div><h1 className="text-2xl font-semibold md:text-3xl">Write for your recipient</h1><p className="mt-1 text-sm text-[#668076]">Paste once. Choose a target. Review and copy the adapted note.</p></div><button disabled={busy} onClick={clear} className="rounded-xl border bg-white px-4 py-2 text-sm">Clear note workspace</button></div>
    <div className="grid items-start gap-6 lg:grid-cols-2">

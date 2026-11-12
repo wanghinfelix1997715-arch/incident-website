@@ -1,4 +1,4 @@
-# AfterFall — RN Documentation Studio
+# CareNote — RN Documentation Studio
 
 Sites migration of the approved six-section post-fall questionnaire and four documentation outputs. The forest-green MagicPath layout is retained. No database, resident persistence, direct RiskMan/eCase submission or email sending is implemented.
 
