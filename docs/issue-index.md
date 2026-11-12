@@ -18,3 +18,6 @@ GitHub issues and comments are the current task record. This index maps stable p
 
 ## Selected-target Note Generator
 [INC-14 — selected-target Note Generator, including Pharmacy](https://github.com/wanghinfelix1997715-arch/incident-website/issues/14). Approved specification and boundaries: [note-generator.md](note-generator.md). Reuses INC-06/08/13 engineering lessons; INC-07 name protection remains outstanding.
+
+## Current review
+[Post-deployment issue review — 12 November 2026](issue-review-2026-11-12.md) distinguishes delivered features, ongoing safeguards and outstanding acceptance for all fourteen issues. Current abbreviation rules are in the [approved workflow](note-abbreviation-workflow.md); historical tx-transfer statements are superseded.
