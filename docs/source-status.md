@@ -11,3 +11,7 @@
 - Current task publishes repository documentation and issues only. The live application remains v3; no feature release, model/key/access change or live API call is implied.
 - Source correspondence is verified by comparing the exported file inventory and content. Source-only synchronization and actual check evidence are recorded in docs/setup-delivery.md and INC-01.
 - No automatic cross-repo reading, required branch checks or new application CI enforcement is claimed. Existing workflows remain subject to actual GitHub run evidence.
+
+## 12 November 2026 pathway release
+General AGENTS was read with blob 5c690d6992a2cc1aa4ff9944b93d1473071ab572, relevant General #5/#8/#9/#10 and their comments; full context/spec and implementation/testing/UI/review workflows at upstream 301b02b12bff98e4688e6984af6556802322bbde were consulted. Incident #2–#9/#13 and comments were read (including pending privacy and broader rewriting work).
+GitHub pre-change main is 1ff41958b0e892cd2bff63f05db63020fc8dca39. Supported Sites reopening returned e546c634aca7b7f9d690fd8387208411b926b79a; both baselines correspond to full tree d9772954cd96824bee96b1a4e61cd1c72c4847a1. Wound/infection implementation is now authorized; the documentation-only scope above is historical. Current pushed source trees, saved version and actual publication result are recorded in INC-03/04/05/09. No model/key/audience/persistence change or live provider claim.

@@ -11,12 +11,12 @@ This is one existing Site growing into an incident generator; no second Site or 
 
 ## Product boundaries
 - Keep the working forest-green AfterFall six-section questionnaire, all retained fields and four document groups. No redesign or conflation of pathways unless separately requested.
-- RiskMan retains Summary, Details, Immediate Action Taken and Investigation. eCase retains six existing headings; GP concise clinical request; NOK plain-language family update.
+- RiskMan retains Summary, Details, Immediate Action Taken and Investigation. Falls eCase retains six existing headings; wound/infection progress notes combine the four incident sections into paragraphs. GP is a concise clinical request; NOK a plain-language family update.
 - Incident type selects its own questions, data and drafting rules. Share review/edit/Copy only where behavior remains compatible. Never let a wound field or previous incident contaminate falls.
 - Existing defaults GP/NOK/FRAT Completed were explicitly approved for the falls workflow; retain its verification gate. Do not silently extend those defaults to new pathways.
 - Wound plan/notification status is explicit: completed/pending/not required as applicable. GP notified, awaiting response and reviewed are distinct.
-- Severity matrix supplied by Felix uses Minor/Moderate/Major/Extreme. Any alternative eCase scale and mapping remain to confirm; do not invent a conversion or derive escalation from size/classification alone.
-- Wound questionnaire is a design proposal pending detailed acceptance; infection and medication pathways are planning work. Documentation/issue creation does not implement them.
+- Severity matrix supplied by Felix uses Minor/Moderate/Major/Extreme. Severity is user-selected (unconfirmed allowed); no automatic alternative-scale conversion or escalation derived from size/classification alone.
+- Wound and infection questionnaire/output directions were approved for implementation on 12 November 2026; see docs/incident-pathways.md. Medication remains planning work. Verify current delivery evidence rather than inferring implementation from an issue.
 
 ## Facts, API and edits
 Preserve uncertainty, chronology, initial versus later assessment, baseline versus new, values/site/side and action status. Missing observation never becomes normal. Do not invent treatment, review, notification or drug detail.

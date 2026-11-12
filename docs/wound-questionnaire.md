@@ -1,5 +1,5 @@
 # Wound / skin injury questionnaire — proposed specification
-Status: draft question details for review. User requested wound pathway and severity; no wound UI/code is implemented by this documentation task.
+Status: questionnaire direction approved for implementation on 12 November 2026. The [pathway contract](incident-pathways.md) records the later paragraph-note and user-selected severity decisions; the proposal below is retained as its source.
 
 1. Incident: resident; date/time (unknown/approximate allowed); place; injury type; witnessed/unwitnessed/unknown; identified time if later; factual account; source of account; known/suspected/unknown mechanism.
 2. Wound assessment: site/side; separate entries for multiple wounds; length x width cm and depth if assessed; classification system+category/not assessed/uncertain; flap/skin loss; bleeding; appearance; surrounding skin; pain (denied/reported/observed/not assessed); other findings.

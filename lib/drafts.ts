@@ -80,8 +80,8 @@ export function validData(input: unknown): input is Data {
 function normalise(v:string) {
  return v.toLowerCase().replace(/range of motion/g,'rom').replace(/next of kin/g,'nok').replace(/general practitioner/g,'gp').replace(/neurological observations/g,'neuro obs').replace(/denied pain or discomfort/g,'reported no pain or discomfort').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 }
-export function validateAI(candidate: unknown, canonical: Docs): candidate is Docs {
+export function validateAI(candidate: unknown, canonical: Docs, requireEcaseHeadings = true): candidate is Docs {
   if(!candidate||typeof candidate!=='object'||Array.isArray(candidate))return false;
   const c=candidate as Record<string,unknown>;
-  return Object.keys(c).length===keys.length && keys.every(k=>typeof c[k]==='string' && (c[k] as string).length<100000 && normalise(c[k] as string)===normalise(canonical[k]) && JSON.stringify((c[k] as string).match(/\d+(?:[.:/%-]\d+)*[%°]?/g))===JSON.stringify(canonical[k].match(/\d+(?:[.:/%-]\d+)*[%°]?/g))) && headings.every((h,i)=>typeof c.ecase==='string' && (i===0||c.ecase.indexOf(headings[i-1]+':')<c.ecase.indexOf(h+':')) && c.ecase.includes(h+':'));
+  return Object.keys(c).length===keys.length && keys.every(k=>typeof c[k]==='string' && (c[k] as string).length<100000 && normalise(c[k] as string)===normalise(canonical[k]) && JSON.stringify((c[k] as string).match(/\d+(?:[.:/%-]\d+)*[%°]?/g))===JSON.stringify(canonical[k].match(/\d+(?:[.:/%-]\d+)*[%°]?/g))) && (!requireEcaseHeadings || headings.every((h,i)=>typeof c.ecase==='string' && (i===0||c.ecase.indexOf(headings[i-1]+':')<c.ecase.indexOf(h+':')) && c.ecase.includes(h+':')));
 }
