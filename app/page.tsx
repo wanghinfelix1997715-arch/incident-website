@@ -1,2 +1,2 @@
-import { FallIncidentWriter2026 } from "../components/AfterFall";
-export default function Home() { return <FallIncidentWriter2026 />; }
+import {Studio} from '../components/Studio';
+export default function Home(){return <Studio/>;}

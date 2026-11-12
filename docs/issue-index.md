@@ -15,3 +15,6 @@ GitHub issues and comments are the current task record. This index maps stable p
 - [INC-11: Plan synthetic colleague trial and supported access](https://github.com/wanghinfelix1997715-arch/incident-website/issues/11)
 - [INC-12: Implement project quality constraints and meaningful review](https://github.com/wanghinfelix1997715-arch/incident-website/issues/12)
 - [INC-13: Clarify API diagnostics, failure protection and measured performance](https://github.com/wanghinfelix1997715-arch/incident-website/issues/13)
+
+## Selected-target Note Generator
+[INC-14 — selected-target Note Generator, including Pharmacy](https://github.com/wanghinfelix1997715-arch/incident-website/issues/14). Approved specification and boundaries: [note-generator.md](note-generator.md). Reuses INC-06/08/13 engineering lessons; INC-07 name protection remains outstanding.

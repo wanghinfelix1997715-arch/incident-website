@@ -29,3 +29,7 @@ Assessment, drafts and manual edits live in React page memory. Refresh or closin
 For falls only, default GP informed, NOK informed and FRAT completed are retained by explicit user instruction for their end-of-incident workflow. They must be verified before Copy. Pending/not-completed selections remain explicit. Warnings stay outside all copied text.
 
 Repository completion and verification: [setup delivery](docs/setup-delivery.md). Feature progression remains in [the issue index](docs/issue-index.md).
+
+## Note Generator
+
+The [selected-target Note Generator](docs/note-generator.md) adapts pasted source text for eCase, GP, NOK, Manager or Pharmacy, one target per request. It keeps separate target drafts and incident work in page memory. AI rewriting needs the configured server connection and a successful second source review; failures preserve existing work. It does not submit or send notes. Automatic name protection is not implemented.

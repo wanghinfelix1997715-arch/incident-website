@@ -1,5 +1,5 @@
 # Incident Studio / AfterFall — project instructions
-Approved documentation setup: 11 November 2026. Current hosted baseline: AfterFall v3, source e84576504f243222f3744afc17ff97f43572b0de.
+Approved documentation setup: 11 November 2026. Historical falls baseline: v3. Wound/infection released in v4; read current Sites metadata and issue evidence for the active release.
 This is one existing Site growing into an incident generator; no second Site or duplicate application is created by this documentation task.
 
 ## Read before any task
@@ -20,7 +20,7 @@ This is one existing Site growing into an incident generator; no second Site or 
 
 ## Facts, API and edits
 Preserve uncertainty, chronology, initial versus later assessment, baseline versus new, values/site/side and action status. Missing observation never becomes normal. Do not invent treatment, review, notification or drug detail.
-Current AI validator intentionally allows narrow wording changes; broader language optimization requires a separately tested contract. No silent relaxing of fact checks.
+The incident AI validator intentionally allows narrow wording changes and stays unchanged. The separate selected-target Note Generator uses docs/note-generator.md and its own tested source/status/number checks plus model review. Neither contract proves semantic accuracy; user review remains required.
 Protect independent manual edits on regeneration; replacement requires existing explicit confirmation. Changed input resets Copy verification; stale async output must not overwrite newer work.
 App currently keeps assessments/drafts in page memory. API is optional, server-key only. No new cloud clinical storage or browser persistence in this setup.
 Name pseudonymization is proposed for this project, not established as implemented. Refer to ShiftBrief #7 as an engineering source; verify actual local-before-transmission behavior before claiming privacy.
