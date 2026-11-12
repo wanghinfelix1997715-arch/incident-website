@@ -1,0 +1,3584 @@
+{
+  "source": {
+    "title": "Approved Abbreviation List for use in Medical Records",
+    "owner": "Sydney Children’s Hospitals Network (SCHN)",
+    "policy": "2016-9005 v3.2",
+    "published": "2025-09-05",
+    "effective": "2024-05-01",
+    "url": "https://resources.schn.health.nsw.gov.au/policies/policies/pdf/2016-9005.pdf",
+    "scope": "SCHN reference; not universal approval for other workplaces. Source document is property of SCHN; use acknowledged under its page 22 notice.",
+    "extraction": "All table rows from sections 6.1–6.3, pages 7–21; source wording, alternatives, duplicate keys and page provenance retained. Interpretive cautions supplied separately."
+  },
+  "entries": [
+    {
+      "abbreviation": "AHNM",
+      "meaning": "After Hours Nurse Manager",
+      "page": 7
+    },
+    {
+      "abbreviation": "AMO",
+      "meaning": "Admitting Medical Officer",
+      "page": 7
+    },
+    {
+      "abbreviation": "CLT",
+      "meaning": "Child Life Therapist",
+      "page": 7
+    },
+    {
+      "abbreviation": "CNC",
+      "meaning": "Clinical Nurse Consultant",
+      "page": 7
+    },
+    {
+      "abbreviation": "CNE",
+      "meaning": "Clinical Nurse Educator",
+      "page": 7
+    },
+    {
+      "abbreviation": "CNS",
+      "meaning": "Clinical Nurse Specialist",
+      "page": 7
+    },
+    {
+      "abbreviation": "DON",
+      "meaning": "Director of Nursing Services",
+      "page": 7
+    },
+    {
+      "abbreviation": "Dr",
+      "meaning": "Doctor",
+      "page": 7
+    },
+    {
+      "abbreviation": "EEN",
+      "meaning": "Endorsed Enrolled Nurse",
+      "page": 7
+    },
+    {
+      "abbreviation": "EN",
+      "meaning": "Enrolled Nurse",
+      "page": 7
+    },
+    {
+      "abbreviation": "JMO",
+      "meaning": "Junior Medical Officer",
+      "page": 7
+    },
+    {
+      "abbreviation": "MO",
+      "meaning": "Medical Officer",
+      "page": 7
+    },
+    {
+      "abbreviation": "MT",
+      "meaning": "Music Therapist",
+      "page": 7
+    },
+    {
+      "abbreviation": "NE",
+      "meaning": "Nurse Educator",
+      "page": 7
+    },
+    {
+      "abbreviation": "NP",
+      "meaning": "Nurse Practitioner",
+      "page": 7
+    },
+    {
+      "abbreviation": "NUM",
+      "meaning": "Nurse Unit Manager",
+      "page": 7
+    },
+    {
+      "abbreviation": "OT",
+      "meaning": "Occupational Therapist",
+      "page": 7
+    },
+    {
+      "abbreviation": "Physio / PT",
+      "meaning": "Physiotherapist",
+      "page": 7
+    },
+    {
+      "abbreviation": "Reg",
+      "meaning": "Registrar (Medical Officer)",
+      "page": 7
+    },
+    {
+      "abbreviation": "RN",
+      "meaning": "Registered Nurse",
+      "page": 7
+    },
+    {
+      "abbreviation": "RM",
+      "meaning": "Registered Midwife",
+      "page": 7
+    },
+    {
+      "abbreviation": "RMO",
+      "meaning": "Resident Medical Officer",
+      "page": 7
+    },
+    {
+      "abbreviation": "SMO",
+      "meaning": "Senior Medical Officer",
+      "page": 7
+    },
+    {
+      "abbreviation": "SRMO",
+      "meaning": "Senior Resident Medical Officer",
+      "page": 7
+    },
+    {
+      "abbreviation": "SW",
+      "meaning": "Social Worker",
+      "page": 7
+    },
+    {
+      "abbreviation": "SP",
+      "meaning": "Speech Pathologist",
+      "page": 7
+    },
+    {
+      "abbreviation": "VMO",
+      "meaning": "Visiting Medical Officer",
+      "page": 7
+    },
+    {
+      "abbreviation": "g",
+      "meaning": "gram(s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "kg",
+      "meaning": "kilogram(s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "L",
+      "meaning": "litre(s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "mg",
+      "meaning": "milligram(s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "mL",
+      "meaning": "millilitre(s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "microg",
+      "meaning": "microgram(s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "%",
+      "meaning": "percentage",
+      "page": 7
+    },
+    {
+      "abbreviation": "mmol",
+      "meaning": "millimole (s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "mm",
+      "meaning": "millimetre (s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "cm",
+      "meaning": "centimetre (s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "dm",
+      "meaning": "decimetre (s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "m",
+      "meaning": "metre (s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "km",
+      "meaning": "kilometre (s)",
+      "page": 7
+    },
+    {
+      "abbreviation": "cap",
+      "meaning": "capsule(s)",
+      "page": 8
+    },
+    {
+      "abbreviation": "Inj",
+      "meaning": "injection",
+      "page": 8
+    },
+    {
+      "abbreviation": "MDI or Inhaler",
+      "meaning": "metered dose inhaler, inhaler",
+      "page": 8
+    },
+    {
+      "abbreviation": "ointment or oint",
+      "meaning": "ointment",
+      "page": 8
+    },
+    {
+      "abbreviation": "PCA",
+      "meaning": "patient controlled analgesia",
+      "page": 8
+    },
+    {
+      "abbreviation": "NCA",
+      "meaning": "nurse controlled analgesia",
+      "page": 8
+    },
+    {
+      "abbreviation": "pess",
+      "meaning": "pessary",
+      "page": 8
+    },
+    {
+      "abbreviation": "Supp",
+      "meaning": "Suppository",
+      "page": 8
+    },
+    {
+      "abbreviation": "Tab",
+      "meaning": "Tablet",
+      "page": 8
+    },
+    {
+      "abbreviation": "Top",
+      "meaning": "Topical",
+      "page": 8
+    },
+    {
+      "abbreviation": "IM",
+      "meaning": "intramuscular",
+      "page": 8
+    },
+    {
+      "abbreviation": "IO",
+      "meaning": "Intraosseous",
+      "page": 8
+    },
+    {
+      "abbreviation": "IT",
+      "meaning": "intrathecal",
+      "page": 8
+    },
+    {
+      "abbreviation": "IV",
+      "meaning": "intravenous",
+      "page": 8
+    },
+    {
+      "abbreviation": "NEB",
+      "meaning": "nebulised",
+      "page": 8
+    },
+    {
+      "abbreviation": "NG",
+      "meaning": "Naso-gastric",
+      "page": 8
+    },
+    {
+      "abbreviation": "PO",
+      "meaning": "oral",
+      "page": 8
+    },
+    {
+      "abbreviation": "PEG",
+      "meaning": "percutaneous enteral gastrostomy",
+      "page": 8
+    },
+    {
+      "abbreviation": "PEJ",
+      "meaning": "percutaneous endoscopic jejunostomy",
+      "page": 8
+    },
+    {
+      "abbreviation": "PR",
+      "meaning": "per rectum",
+      "page": 8
+    },
+    {
+      "abbreviation": "PV",
+      "meaning": "per vagina",
+      "page": 8
+    },
+    {
+      "abbreviation": "PICC",
+      "meaning": "peripherally inserted central catheter",
+      "page": 8
+    },
+    {
+      "abbreviation": "Subcut or S/C",
+      "meaning": "subcutaneous",
+      "page": 8
+    },
+    {
+      "abbreviation": "Subling or S/L",
+      "meaning": "sublingual",
+      "page": 8
+    },
+    {
+      "abbreviation": "4 hrly or 4 hourly or q4h",
+      "meaning": "Every 4 hours",
+      "page": 8
+    },
+    {
+      "abbreviation": "6 hrly or 6 hourly or q6h",
+      "meaning": "Every 6 hours",
+      "page": 8
+    },
+    {
+      "abbreviation": "8 hrly or 8 hourly or q8h",
+      "meaning": "Every 8 hours",
+      "page": 8
+    },
+    {
+      "abbreviation": "a.m",
+      "meaning": "Before midday",
+      "page": 8
+    },
+    {
+      "abbreviation": "b.d",
+      "meaning": "Twice daily – Twice a Day",
+      "page": 8
+    },
+    {
+      "abbreviation": "hrs",
+      "meaning": "Hours",
+      "page": 8
+    },
+    {
+      "abbreviation": "morning or mane",
+      "meaning": "(in the) Morning",
+      "page": 8
+    },
+    {
+      "abbreviation": "midday",
+      "meaning": "(at) midday",
+      "page": 8
+    },
+    {
+      "abbreviation": "Night or nocte",
+      "meaning": "(at) night",
+      "page": 8
+    },
+    {
+      "abbreviation": "pc",
+      "meaning": "After meals",
+      "page": 8
+    },
+    {
+      "abbreviation": "p.m",
+      "meaning": "After mid-day",
+      "page": 8
+    },
+    {
+      "abbreviation": "prn",
+      "meaning": "When required",
+      "page": 8
+    },
+    {
+      "abbreviation": "qid.",
+      "meaning": "Four times daily",
+      "page": 8
+    },
+    {
+      "abbreviation": "Stat",
+      "meaning": "Immediately and once only",
+      "page": 8
+    },
+    {
+      "abbreviation": "tds.",
+      "meaning": "Three times daily",
+      "page": 8
+    },
+    {
+      "abbreviation": "↓",
+      "meaning": "Decreased",
+      "page": 9
+    },
+    {
+      "abbreviation": "↑",
+      "meaning": "Increased",
+      "page": 9
+    },
+    {
+      "abbreviation": "Δ",
+      "meaning": "Disease",
+      "page": 9
+    },
+    {
+      "abbreviation": "♂",
+      "meaning": "Male",
+      "page": 9
+    },
+    {
+      "abbreviation": "♀",
+      "meaning": "Female",
+      "page": 9
+    },
+    {
+      "abbreviation": "#",
+      "meaning": "Fracture",
+      "page": 9
+    },
+    {
+      "abbreviation": "/60",
+      "meaning": "Minutes",
+      "page": 9
+    },
+    {
+      "abbreviation": "/7",
+      "meaning": "Days",
+      "page": 9
+    },
+    {
+      "abbreviation": "/12",
+      "meaning": "Months",
+      "page": 9
+    },
+    {
+      "abbreviation": "/52",
+      "meaning": "Weeks",
+      "page": 9
+    },
+    {
+      "abbreviation": "/24",
+      "meaning": "Hours",
+      "page": 9
+    },
+    {
+      "abbreviation": "/40",
+      "meaning": "Weeks of pregnancy",
+      "page": 9
+    },
+    {
+      "abbreviation": "1º",
+      "meaning": "Primary, first degree",
+      "page": 9
+    },
+    {
+      "abbreviation": "2º",
+      "meaning": "Secondary, second degree",
+      "page": 9
+    },
+    {
+      "abbreviation": "3º",
+      "meaning": "Third degree",
+      "page": 9
+    },
+    {
+      "abbreviation": "+",
+      "meaning": "Slight trace",
+      "page": 9
+    },
+    {
+      "abbreviation": "++",
+      "meaning": "Trace",
+      "page": 9
+    },
+    {
+      "abbreviation": "+++",
+      "meaning": "Moderate trace",
+      "page": 9
+    },
+    {
+      "abbreviation": "++++",
+      "meaning": "Large trace",
+      "page": 9
+    },
+    {
+      "abbreviation": "-",
+      "meaning": "Absent",
+      "page": 9
+    },
+    {
+      "abbreviation": "(R)",
+      "meaning": "Right",
+      "page": 9
+    },
+    {
+      "abbreviation": "(L)",
+      "meaning": "Left",
+      "page": 9
+    },
+    {
+      "abbreviation": "<",
+      "meaning": "Less than",
+      "page": 9
+    },
+    {
+      "abbreviation": ">",
+      "meaning": "Greater than",
+      "page": 9
+    },
+    {
+      "abbreviation": "/C",
+      "meaning": "With",
+      "page": 9
+    },
+    {
+      "abbreviation": "/S",
+      "meaning": "Without",
+      "page": 9
+    },
+    {
+      "abbreviation": "∴",
+      "meaning": "Therefore",
+      "page": 9
+    },
+    {
+      "abbreviation": "/",
+      "meaning": "per",
+      "page": 9
+    },
+    {
+      "abbreviation": "=",
+      "meaning": "Equal to",
+      "page": 9
+    },
+    {
+      "abbreviation": "º or Ø",
+      "meaning": "No; no history of",
+      "page": 9
+    },
+    {
+      "abbreviation": "%",
+      "meaning": "Percent",
+      "page": 9
+    },
+    {
+      "abbreviation": "?",
+      "meaning": "Doubtful; questionable; query",
+      "page": 9
+    },
+    {
+      "abbreviation": "ºF",
+      "meaning": "Degrees Fahrenheit",
+      "page": 9
+    },
+    {
+      "abbreviation": "°C",
+      "meaning": "Degrees Celsius",
+      "page": 9
+    },
+    {
+      "abbreviation": "ψ",
+      "meaning": "Psychiatry",
+      "page": 9
+    },
+    {
+      "abbreviation": "←",
+      "meaning": "Transverse left (physio)",
+      "page": 9
+    },
+    {
+      "abbreviation": "→",
+      "meaning": "Transverse right (physio)",
+      "page": 9
+    },
+    {
+      "abbreviation": "↔",
+      "meaning": "Longitudinal movement (physio)",
+      "page": 9
+    },
+    {
+      "abbreviation": "A&E",
+      "meaning": "Accident and Emergency",
+      "page": 9
+    },
+    {
+      "abbreviation": "AAA",
+      "meaning": "Abdominal Aortic Aneurysm",
+      "page": 9
+    },
+    {
+      "abbreviation": "ABD",
+      "meaning": "Abduction",
+      "page": 9
+    },
+    {
+      "abbreviation": "ABG",
+      "meaning": "Arterial Blood Gas",
+      "page": 9
+    },
+    {
+      "abbreviation": "Abx",
+      "meaning": "Antibiotics",
+      "page": 9
+    },
+    {
+      "abbreviation": "ACBT",
+      "meaning": "Active Cycle of Breathing Technique",
+      "page": 9
+    },
+    {
+      "abbreviation": "ACS",
+      "meaning": "Acute Coronary Syndrome",
+      "page": 9
+    },
+    {
+      "abbreviation": "ACT",
+      "meaning": "Acceptance and Commitment Therapy",
+      "page": 10
+    },
+    {
+      "abbreviation": "ADD",
+      "meaning": "Attention Deficit Disorder",
+      "page": 10
+    },
+    {
+      "abbreviation": "Addit",
+      "meaning": "Addendum",
+      "page": 10
+    },
+    {
+      "abbreviation": "ADDUCT",
+      "meaning": "Adduction",
+      "page": 10
+    },
+    {
+      "abbreviation": "ADH",
+      "meaning": "Antidiuretic Hormone",
+      "page": 10
+    },
+    {
+      "abbreviation": "ADHD",
+      "meaning": "Attention Deficient Hyperactivity Disorder",
+      "page": 10
+    },
+    {
+      "abbreviation": "ADL",
+      "meaning": "Activities of Daily Living",
+      "page": 10
+    },
+    {
+      "abbreviation": "ADC",
+      "meaning": "Adenocarcinoma",
+      "page": 10
+    },
+    {
+      "abbreviation": "ADR",
+      "meaning": "Adverse Drug Reaction",
+      "page": 10
+    },
+    {
+      "abbreviation": "AEB",
+      "meaning": "Atrial Ectopic beats",
+      "page": 10
+    },
+    {
+      "abbreviation": "AEDs",
+      "meaning": "Antiepileptic Drugs",
+      "page": 10
+    },
+    {
+      "abbreviation": "AEEG",
+      "meaning": "Ambulatory Electro-Encephalogram",
+      "page": 10
+    },
+    {
+      "abbreviation": "AF",
+      "meaning": "Atrial Fibrillation",
+      "page": 10
+    },
+    {
+      "abbreviation": "A.Flutter",
+      "meaning": "Atrial Flutter",
+      "page": 10
+    },
+    {
+      "abbreviation": "AFO",
+      "meaning": "Ankle Foot Orthosis",
+      "page": 10
+    },
+    {
+      "abbreviation": "aGVHD",
+      "meaning": "Acute Graft versus Host Disease",
+      "page": 10
+    },
+    {
+      "abbreviation": "AICD",
+      "meaning": "Automatic implantable cardioverter/defibrillator",
+      "page": 10
+    },
+    {
+      "abbreviation": "AIDS",
+      "meaning": "Acquired immune deficiency syndrome",
+      "page": 10
+    },
+    {
+      "abbreviation": "AICD",
+      "meaning": "Automatic implantation cardioverter defibrillator",
+      "page": 10
+    },
+    {
+      "abbreviation": "ALL",
+      "meaning": "Acute lymphoblastic leukaemia",
+      "page": 10
+    },
+    {
+      "abbreviation": "A/O",
+      "meaning": "Application of",
+      "page": 10
+    },
+    {
+      "abbreviation": "AM",
+      "meaning": "Morning",
+      "page": 10
+    },
+    {
+      "abbreviation": "AML",
+      "meaning": "Acute myeloid leukaemia",
+      "page": 10
+    },
+    {
+      "abbreviation": "AND",
+      "meaning": "Allow Natural Death",
+      "page": 10
+    },
+    {
+      "abbreviation": "Appt.",
+      "meaning": "Appointment",
+      "page": 10
+    },
+    {
+      "abbreviation": "ARDS",
+      "meaning": "Acute Respiratory distress Syndrome",
+      "page": 10
+    },
+    {
+      "abbreviation": "ARF",
+      "meaning": "Acute Renal Failure",
+      "page": 10
+    },
+    {
+      "abbreviation": "AROM",
+      "meaning": "Active Range of Motion",
+      "page": 10
+    },
+    {
+      "abbreviation": "ASD",
+      "meaning": "Atrial Septal Defect",
+      "page": 10
+    },
+    {
+      "abbreviation": "ASIS",
+      "meaning": "Anterior Superior Iliac Spine",
+      "page": 10
+    },
+    {
+      "abbreviation": "ATN",
+      "meaning": "Acute tubular necrosis",
+      "page": 10
+    },
+    {
+      "abbreviation": "ATOR",
+      "meaning": "At Time Of Report",
+      "page": 10
+    },
+    {
+      "abbreviation": "ATSP",
+      "meaning": "Asked To See Patient",
+      "page": 10
+    },
+    {
+      "abbreviation": "Ausc.",
+      "meaning": "Auscultation",
+      "page": 10
+    },
+    {
+      "abbreviation": "AV",
+      "meaning": "Aortic Valve or Arterio venous or Atrioventricular",
+      "page": 10
+    },
+    {
+      "abbreviation": "AVPU",
+      "meaning": "Alert, responds to voice, responds to pain, unresponsive",
+      "page": 10
+    },
+    {
+      "abbreviation": "AVSD",
+      "meaning": "Atrioventricular Septal Defect",
+      "page": 10
+    },
+    {
+      "abbreviation": "Ax",
+      "meaning": "Assessment",
+      "page": 10
+    },
+    {
+      "abbreviation": "AXR",
+      "meaning": "Abdominal X-Ray",
+      "page": 10
+    },
+    {
+      "abbreviation": "Ba",
+      "meaning": "Barium",
+      "page": 10
+    },
+    {
+      "abbreviation": "bd",
+      "meaning": "Twice daily – Twice a Day",
+      "page": 10
+    },
+    {
+      "abbreviation": "BBB",
+      "meaning": "Bundle Branch Block",
+      "page": 10
+    },
+    {
+      "abbreviation": "BBS",
+      "meaning": "Bronchial breath sounds",
+      "page": 10
+    },
+    {
+      "abbreviation": "BCC",
+      "meaning": "Basal Cell Carcinoma",
+      "page": 10
+    },
+    {
+      "abbreviation": "BC",
+      "meaning": "Blood Cultures",
+      "page": 10
+    },
+    {
+      "abbreviation": "BCPC",
+      "meaning": "Bidirectional Cavopulmonary Connection",
+      "page": 10
+    },
+    {
+      "abbreviation": "BCPS",
+      "meaning": "Bidirectional Cavopulmonary Shunt",
+      "page": 10
+    },
+    {
+      "abbreviation": "BCG",
+      "meaning": "Baccili Calmette-Guerin Injection (TB Vaccine)",
+      "page": 10
+    },
+    {
+      "abbreviation": "B/F",
+      "meaning": "Breast Feeding",
+      "page": 10
+    },
+    {
+      "abbreviation": "BG",
+      "meaning": "Background",
+      "page": 11
+    },
+    {
+      "abbreviation": "BGL",
+      "meaning": "Blood Glucose Level",
+      "page": 11
+    },
+    {
+      "abbreviation": "BIBA",
+      "meaning": "Brought in by Ambulance",
+      "page": 11
+    },
+    {
+      "abbreviation": "BIB",
+      "meaning": "Brought in by",
+      "page": 11
+    },
+    {
+      "abbreviation": "BIH",
+      "meaning": "Benign Intracranial Hypertension",
+      "page": 11
+    },
+    {
+      "abbreviation": "Bilat or B/L",
+      "meaning": "Bilateral",
+      "page": 11
+    },
+    {
+      "abbreviation": "BiPAP",
+      "meaning": "Bi-level positive airway pressure",
+      "page": 11
+    },
+    {
+      "abbreviation": "BMA",
+      "meaning": "Bone Marrow Aspirate",
+      "page": 11
+    },
+    {
+      "abbreviation": "BMAT",
+      "meaning": "Bone Marrow Aspiration and trephine",
+      "page": 11
+    },
+    {
+      "abbreviation": "BMI",
+      "meaning": "Body Mass Index",
+      "page": 11
+    },
+    {
+      "abbreviation": "BMIz",
+      "meaning": "Body Mass index for age",
+      "page": 11
+    },
+    {
+      "abbreviation": "BMT",
+      "meaning": "Bone Marrow Transplant",
+      "page": 11
+    },
+    {
+      "abbreviation": "BNO",
+      "meaning": "Bowels Not Open",
+      "page": 11
+    },
+    {
+      "abbreviation": "BO",
+      "meaning": "Bowels Open",
+      "page": 11
+    },
+    {
+      "abbreviation": "Botox",
+      "meaning": "Botulinum toxin A",
+      "page": 11
+    },
+    {
+      "abbreviation": "BP",
+      "meaning": "Blood Pressure",
+      "page": 11
+    },
+    {
+      "abbreviation": "BPH",
+      "meaning": "Benign Prostatic Hyperplasia",
+      "page": 11
+    },
+    {
+      "abbreviation": "Bpm",
+      "meaning": "Beats per minute",
+      "page": 11
+    },
+    {
+      "abbreviation": "BS",
+      "meaning": "Breath Sounds",
+      "page": 11
+    },
+    {
+      "abbreviation": "BSA",
+      "meaning": "Body Surface Area",
+      "page": 11
+    },
+    {
+      "abbreviation": "BTF",
+      "meaning": "Between The Flags",
+      "page": 11
+    },
+    {
+      "abbreviation": "BW",
+      "meaning": "Birth Weight",
+      "page": 11
+    },
+    {
+      "abbreviation": "Bx",
+      "meaning": "Biopsy",
+      "page": 11
+    },
+    {
+      "abbreviation": "C (1-7)",
+      "meaning": "Cervical (1 – 7) e.g. C5 quadriplegic",
+      "page": 11
+    },
+    {
+      "abbreviation": "C&S",
+      "meaning": "Culture and Sensitivity",
+      "page": 11
+    },
+    {
+      "abbreviation": "CABG",
+      "meaning": "Coronary Artery Bypass Graft",
+      "page": 11
+    },
+    {
+      "abbreviation": "CAD",
+      "meaning": "Coronary Artery Disease",
+      "page": 11
+    },
+    {
+      "abbreviation": "CADD",
+      "meaning": "Continuous Ambulatory Delivery Device",
+      "page": 11
+    },
+    {
+      "abbreviation": "CAMHS",
+      "meaning": "Child and Adolescent Mental Health Services",
+      "page": 11
+    },
+    {
+      "abbreviation": "Cals",
+      "meaning": "Calories",
+      "page": 11
+    },
+    {
+      "abbreviation": "Cap or Caps",
+      "meaning": "Capsule or Capsules",
+      "page": 11
+    },
+    {
+      "abbreviation": "CAP",
+      "meaning": "Community Acquired Pneumonia",
+      "page": 11
+    },
+    {
+      "abbreviation": "CAPD",
+      "meaning": "Continuous Ambulatory Peritoneal Dialysis",
+      "page": 11
+    },
+    {
+      "abbreviation": "CAVH",
+      "meaning": "Continuous Arteriovenous Hemofiltration",
+      "page": 11
+    },
+    {
+      "abbreviation": "CAVHD",
+      "meaning": "Continuous Arteriovenous Haemodialysis",
+      "page": 11
+    },
+    {
+      "abbreviation": "CBT",
+      "meaning": "Cognitive Behaviour Therapy",
+      "page": 11
+    },
+    {
+      "abbreviation": "CCF",
+      "meaning": "Congestive Cardiac Failure",
+      "page": 11
+    },
+    {
+      "abbreviation": "CERS",
+      "meaning": "Clinical Emergency Response System",
+      "page": 11
+    },
+    {
+      "abbreviation": "CF",
+      "meaning": "Cystic Fibrosis",
+      "page": 11
+    },
+    {
+      "abbreviation": "CFRD",
+      "meaning": "Cystic Fibrosis Related diabetes",
+      "page": 11
+    },
+    {
+      "abbreviation": "CGH array",
+      "meaning": "Comparative Genomic Hybridization array",
+      "page": 11
+    },
+    {
+      "abbreviation": "CHD",
+      "meaning": "Congenital Heart Disease",
+      "page": 11
+    },
+    {
+      "abbreviation": "CHI",
+      "meaning": "Closed Head Injury",
+      "page": 11
+    },
+    {
+      "abbreviation": "CHW",
+      "meaning": "Children’s Hospital at Westmead",
+      "page": 11
+    },
+    {
+      "abbreviation": "CKD",
+      "meaning": "Chronic Kidney Disease",
+      "page": 11
+    },
+    {
+      "abbreviation": "CLL",
+      "meaning": "Chronic Lymphocytic Leukaemia; Chronic Lymphoid Leukaemia",
+      "page": 11
+    },
+    {
+      "abbreviation": "CNS",
+      "meaning": "Central Nervous System",
+      "page": 11
+    },
+    {
+      "abbreviation": "c/o",
+      "meaning": "Complained of",
+      "page": 11
+    },
+    {
+      "abbreviation": "COP",
+      "meaning": "Change of Plaster",
+      "page": 11
+    },
+    {
+      "abbreviation": "CML",
+      "meaning": "Chronic Myelocytic Leukaemia; Chronic Myeloid Leukaemia",
+      "page": 12
+    },
+    {
+      "abbreviation": "CMV",
+      "meaning": "Cytomegalovirus",
+      "page": 12
+    },
+    {
+      "abbreviation": "CN (1-12)",
+      "meaning": "Cranial Nerve",
+      "page": 12
+    },
+    {
+      "abbreviation": "COAD",
+      "meaning": "Chronic Obstructive Airway Disease",
+      "page": 12
+    },
+    {
+      "abbreviation": "COPD",
+      "meaning": "Chronic Obstructive Pulmonary Disease",
+      "page": 12
+    },
+    {
+      "abbreviation": "COU",
+      "meaning": "Close Observation Unit",
+      "page": 12
+    },
+    {
+      "abbreviation": "Covid-19",
+      "meaning": "Coronavirus",
+      "page": 12
+    },
+    {
+      "abbreviation": "CP",
+      "meaning": "Cerebral Palsy",
+      "page": 12
+    },
+    {
+      "abbreviation": "CPAP",
+      "meaning": "Continuous Positive Airways Pressure",
+      "page": 12
+    },
+    {
+      "abbreviation": "CPM",
+      "meaning": "Continuous Passive Movement",
+      "page": 12
+    },
+    {
+      "abbreviation": "CPP",
+      "meaning": "Cerebral Perfusion Pressure",
+      "page": 12
+    },
+    {
+      "abbreviation": "CRE",
+      "meaning": "Carbapenum Resistant Enterobacter",
+      "page": 12
+    },
+    {
+      "abbreviation": "CPE",
+      "meaning": "Carbapenemase-producing Enterobacterales",
+      "page": 12
+    },
+    {
+      "abbreviation": "CPR",
+      "meaning": "Cardiopulmonary Resuscitation",
+      "page": 12
+    },
+    {
+      "abbreviation": "CPU",
+      "meaning": "Child Protection Unit",
+      "page": 12
+    },
+    {
+      "abbreviation": "CrCl",
+      "meaning": "Creatine Clearance",
+      "page": 12
+    },
+    {
+      "abbreviation": "CRF",
+      "meaning": "Chronic Renal Failure",
+      "page": 12
+    },
+    {
+      "abbreviation": "CRP",
+      "meaning": "C-Reactive Protein",
+      "page": 12
+    },
+    {
+      "abbreviation": "CREST",
+      "meaning": "Raynaud’s Phenomenon",
+      "page": 12
+    },
+    {
+      "abbreviation": "CSA",
+      "meaning": "Child Sexual Assault",
+      "page": 12
+    },
+    {
+      "abbreviation": "CSF",
+      "meaning": "Cerebrospinal Fluid",
+      "page": 12
+    },
+    {
+      "abbreviation": "CSU",
+      "meaning": "Catheter Specimen Of Urine",
+      "page": 12
+    },
+    {
+      "abbreviation": "CT(Scan)",
+      "meaning": "Computerised Axial Tomography (Scan)",
+      "page": 12
+    },
+    {
+      "abbreviation": "CTLSO",
+      "meaning": "Cervical Thoraco Lumar Sacral Orthosis",
+      "page": 12
+    },
+    {
+      "abbreviation": "CVAD",
+      "meaning": "Central Venous Access Device",
+      "page": 12
+    },
+    {
+      "abbreviation": "CVC",
+      "meaning": "Central Venous Catheter",
+      "page": 12
+    },
+    {
+      "abbreviation": "CVVH",
+      "meaning": "Continuous Veno-Veno Haemofiltration",
+      "page": 12
+    },
+    {
+      "abbreviation": "CVVHD",
+      "meaning": "Continuous Veno-Veno Haemodialysis",
+      "page": 12
+    },
+    {
+      "abbreviation": "CVVHDF",
+      "meaning": "Continuous Veno-Veno Haemodiafiltration",
+      "page": 12
+    },
+    {
+      "abbreviation": "CVP",
+      "meaning": "Central Venous Pressure",
+      "page": 12
+    },
+    {
+      "abbreviation": "CXR",
+      "meaning": "Chest X-Ray",
+      "page": 12
+    },
+    {
+      "abbreviation": "DAFO",
+      "meaning": "Dynamic Ankle Foot Orthosis",
+      "page": 12
+    },
+    {
+      "abbreviation": "DB & C",
+      "meaning": "Deep Breathing and coughing",
+      "page": 12
+    },
+    {
+      "abbreviation": "DBD",
+      "meaning": "Donation after brain death",
+      "page": 12
+    },
+    {
+      "abbreviation": "DCD",
+      "meaning": "Donation after cardiac death",
+      "page": 12
+    },
+    {
+      "abbreviation": "DCJ",
+      "meaning": "Department of Communities and Justice",
+      "page": 12
+    },
+    {
+      "abbreviation": "DDH",
+      "meaning": "Developmental Dysplasia of the Hip",
+      "page": 12
+    },
+    {
+      "abbreviation": "D/C",
+      "meaning": "Discharge",
+      "page": 12
+    },
+    {
+      "abbreviation": "Dept.",
+      "meaning": "Department",
+      "page": 12
+    },
+    {
+      "abbreviation": "DF",
+      "meaning": "Dorsiflexion",
+      "page": 12
+    },
+    {
+      "abbreviation": "DOB",
+      "meaning": "Date of Birth",
+      "page": 12
+    },
+    {
+      "abbreviation": "D&V",
+      "meaning": "Diarrhoea and Vomiting",
+      "page": 12
+    },
+    {
+      "abbreviation": "DI",
+      "meaning": "Diabetes Insipidus",
+      "page": 12
+    },
+    {
+      "abbreviation": "DIC",
+      "meaning": "Disseminated Intravascular Coagulopathy",
+      "page": 12
+    },
+    {
+      "abbreviation": "DISIDA",
+      "meaning": "Diisopropyl Iminodiacetic Acid Scan",
+      "page": 12
+    },
+    {
+      "abbreviation": "DKA",
+      "meaning": "Diabetic Ketoacidosis",
+      "page": 12
+    },
+    {
+      "abbreviation": "DMSA",
+      "meaning": "Dimercaptosuccinic Acid (Scan)",
+      "page": 12
+    },
+    {
+      "abbreviation": "DNA",
+      "meaning": "Deoxyribonucleic Acid",
+      "page": 12
+    },
+    {
+      "abbreviation": "DNR",
+      "meaning": "Do Not Resuscitate",
+      "page": 13
+    },
+    {
+      "abbreviation": "DF",
+      "meaning": "Dorsiflexion",
+      "page": 13
+    },
+    {
+      "abbreviation": "DOA",
+      "meaning": "Dead On Arrival",
+      "page": 13
+    },
+    {
+      "abbreviation": "DSA",
+      "meaning": "Digital Subtraction Angiography",
+      "page": 13
+    },
+    {
+      "abbreviation": "DTPA",
+      "meaning": "Diethylene-Triamine-Penta-Acetic Acid Scan",
+      "page": 13
+    },
+    {
+      "abbreviation": "DTP/ DTaP",
+      "meaning": "Diphtheria, tetanus, pertussis vaccine",
+      "page": 13
+    },
+    {
+      "abbreviation": "Dx",
+      "meaning": "Diagnosis",
+      "page": 13
+    },
+    {
+      "abbreviation": "DXRT",
+      "meaning": "Deep X-Ray Therapy",
+      "page": 13
+    },
+    {
+      "abbreviation": "DV",
+      "meaning": "Domestic Violence",
+      "page": 13
+    },
+    {
+      "abbreviation": "DVT",
+      "meaning": "Deep Vein Thrombosis",
+      "page": 13
+    },
+    {
+      "abbreviation": "D/W",
+      "meaning": "Discussed with",
+      "page": 13
+    },
+    {
+      "abbreviation": "EBM",
+      "meaning": "Expressed Breast Milk",
+      "page": 13
+    },
+    {
+      "abbreviation": "EBV",
+      "meaning": "Epstein-Barr Virus",
+      "page": 13
+    },
+    {
+      "abbreviation": "ECG",
+      "meaning": "Electrocardiogram",
+      "page": 13
+    },
+    {
+      "abbreviation": "Echo",
+      "meaning": "Echocardiogram",
+      "page": 13
+    },
+    {
+      "abbreviation": "ECMO",
+      "meaning": "Extracorporeal Membrane Oxygenation",
+      "page": 13
+    },
+    {
+      "abbreviation": "ECOG",
+      "meaning": "Patient level functioning score (eMR)",
+      "page": 13
+    },
+    {
+      "abbreviation": "ECT",
+      "meaning": "Electroconvulsive Therapy",
+      "page": 13
+    },
+    {
+      "abbreviation": "ED",
+      "meaning": "Emergency Department",
+      "page": 13
+    },
+    {
+      "abbreviation": "EEG",
+      "meaning": "Electro-Encephalogram",
+      "page": 13
+    },
+    {
+      "abbreviation": "EER",
+      "meaning": "Estimated Energy Requirement",
+      "page": 13
+    },
+    {
+      "abbreviation": "E/o",
+      "meaning": "Excision of ……….",
+      "page": 13
+    },
+    {
+      "abbreviation": "EFR",
+      "meaning": "Estimate Fluid Replacement",
+      "page": 13
+    },
+    {
+      "abbreviation": "eGFR",
+      "meaning": "Estimated Glomerular Filtration Rate",
+      "page": 13
+    },
+    {
+      "abbreviation": "EHM",
+      "meaning": "Expressed Human Milk",
+      "page": 13
+    },
+    {
+      "abbreviation": "ELBW",
+      "meaning": "Extremely low birth weight",
+      "page": 13
+    },
+    {
+      "abbreviation": "EMG",
+      "meaning": "Electromyogram",
+      "page": 13
+    },
+    {
+      "abbreviation": "eMM",
+      "meaning": "Electronic Medication Management",
+      "page": 13
+    },
+    {
+      "abbreviation": "eMR",
+      "meaning": "Electronic Medical Record",
+      "page": 13
+    },
+    {
+      "abbreviation": "ENT",
+      "meaning": "Ear Nose and Throat",
+      "page": 13
+    },
+    {
+      "abbreviation": "EOM",
+      "meaning": "External Ocular Muscles",
+      "page": 13
+    },
+    {
+      "abbreviation": "EOR",
+      "meaning": "End of Range",
+      "page": 13
+    },
+    {
+      "abbreviation": "EPAP",
+      "meaning": "Expiratory positive airway pressure",
+      "page": 13
+    },
+    {
+      "abbreviation": "EPR",
+      "meaning": "Estimated Protein Replacement",
+      "page": 13
+    },
+    {
+      "abbreviation": "EPS",
+      "meaning": "Electrophysiological Studies",
+      "page": 13
+    },
+    {
+      "abbreviation": "ERCP",
+      "meaning": "Endoscopic Retrograde Cholangio-Pancreatogram",
+      "page": 13
+    },
+    {
+      "abbreviation": "ESBL",
+      "meaning": "Extended Spectrum Beta Lactamase",
+      "page": 13
+    },
+    {
+      "abbreviation": "ESR",
+      "meaning": "Erythrocyte Sedimentation Rate",
+      "page": 13
+    },
+    {
+      "abbreviation": "ESRD",
+      "meaning": "End-Stage Renal Disease",
+      "page": 13
+    },
+    {
+      "abbreviation": "ESRF",
+      "meaning": "End-Stage Renal Failure",
+      "page": 13
+    },
+    {
+      "abbreviation": "ETT",
+      "meaning": "Endotracheal Tube",
+      "page": 13
+    },
+    {
+      "abbreviation": "ESRF",
+      "meaning": "End Stage Renal Failure",
+      "page": 13
+    },
+    {
+      "abbreviation": "EUA",
+      "meaning": "Examination Under Anaesthetic",
+      "page": 13
+    },
+    {
+      "abbreviation": "EUC",
+      "meaning": "Electrolytes, Urea, Creatinine",
+      "page": 13
+    },
+    {
+      "abbreviation": "EVD",
+      "meaning": "External Ventricular Drain",
+      "page": 13
+    },
+    {
+      "abbreviation": "EXT",
+      "meaning": "Extension",
+      "page": 13
+    },
+    {
+      "abbreviation": "EXT ROT",
+      "meaning": "External Rotation",
+      "page": 13
+    },
+    {
+      "abbreviation": "FASF",
+      "meaning": "Forearm Support Frame",
+      "page": 13
+    },
+    {
+      "abbreviation": "FBC",
+      "meaning": "Full Blood Count",
+      "page": 13
+    },
+    {
+      "abbreviation": "F I O2",
+      "meaning": "Fraction Inspired Oxygen",
+      "page": 14
+    },
+    {
+      "abbreviation": "FNAB",
+      "meaning": "Fine Needle Aspiration Biopsy",
+      "page": 14
+    },
+    {
+      "abbreviation": "FEV1",
+      "meaning": "Forced Expiratory Volume Over One Second",
+      "page": 14
+    },
+    {
+      "abbreviation": "FESS",
+      "meaning": "Functional Endoscopic Sinus Surgery",
+      "page": 14
+    },
+    {
+      "abbreviation": "FFP",
+      "meaning": "Fresh Frozen Plasma",
+      "page": 14
+    },
+    {
+      "abbreviation": "FH or FHx",
+      "meaning": "Family History",
+      "page": 14
+    },
+    {
+      "abbreviation": "FIVD",
+      "meaning": "Fixed Interval Variable Dose",
+      "page": 14
+    },
+    {
+      "abbreviation": "Flex",
+      "meaning": "Flexion",
+      "page": 14
+    },
+    {
+      "abbreviation": "Fo",
+      "meaning": "Father",
+      "page": 14
+    },
+    {
+      "abbreviation": "FROM",
+      "meaning": "Full Range Of Movement",
+      "page": 14
+    },
+    {
+      "abbreviation": "FTT",
+      "meaning": "Failure To Thrive",
+      "page": 14
+    },
+    {
+      "abbreviation": "F/U",
+      "meaning": "Follow Up",
+      "page": 14
+    },
+    {
+      "abbreviation": "FVC",
+      "meaning": "Forced Vital Capacity",
+      "page": 14
+    },
+    {
+      "abbreviation": "FWB",
+      "meaning": "Full Weight Bearing",
+      "page": 14
+    },
+    {
+      "abbreviation": "#",
+      "meaning": "Fracture",
+      "page": 14
+    },
+    {
+      "abbreviation": "FOOSH",
+      "meaning": "Fall On Outstretched Hands",
+      "page": 14
+    },
+    {
+      "abbreviation": "G (number)",
+      "meaning": "Gravida",
+      "page": 14
+    },
+    {
+      "abbreviation": "GA",
+      "meaning": "General Anaesthetic",
+      "page": 14
+    },
+    {
+      "abbreviation": "GBS",
+      "meaning": "Group B Streptococcus",
+      "page": 14
+    },
+    {
+      "abbreviation": "GCS",
+      "meaning": "Glasgow Coma Scale",
+      "page": 14
+    },
+    {
+      "abbreviation": "GMFCS",
+      "meaning": "Gross Motor Function Classification System",
+      "page": 14
+    },
+    {
+      "abbreviation": "GFR",
+      "meaning": "Glomerular Filtration Rate",
+      "page": 14
+    },
+    {
+      "abbreviation": "G&H",
+      "meaning": "Blood Group and Hold Serum",
+      "page": 14
+    },
+    {
+      "abbreviation": "GI",
+      "meaning": "Gastrointestinal",
+      "page": 14
+    },
+    {
+      "abbreviation": "GIT",
+      "meaning": "Gastrointestinal Tract",
+      "page": 14
+    },
+    {
+      "abbreviation": "GM Stain",
+      "meaning": "Gram Stain",
+      "page": 14
+    },
+    {
+      "abbreviation": "gFo",
+      "meaning": "Grandfather",
+      "page": 14
+    },
+    {
+      "abbreviation": "gMo",
+      "meaning": "Grandmother",
+      "page": 14
+    },
+    {
+      "abbreviation": "GORD",
+      "meaning": "Gastro-oesophageal Reflux Disease",
+      "page": 14
+    },
+    {
+      "abbreviation": "GP",
+      "meaning": "General Practitioner",
+      "page": 14
+    },
+    {
+      "abbreviation": "GT",
+      "meaning": "Greater Trochaneter",
+      "page": 14
+    },
+    {
+      "abbreviation": "GVHD",
+      "meaning": "Graft versus Host Disease",
+      "page": 14
+    },
+    {
+      "abbreviation": "HAP",
+      "meaning": "Hospital-Acquired Pneumonia",
+      "page": 14
+    },
+    {
+      "abbreviation": "Hb",
+      "meaning": "Haemoglobin",
+      "page": 14
+    },
+    {
+      "abbreviation": "HbA1c",
+      "meaning": "Glycated Haemoglobin Concentration",
+      "page": 14
+    },
+    {
+      "abbreviation": "HBV",
+      "meaning": "Hepatitis B Virus",
+      "page": 14
+    },
+    {
+      "abbreviation": "HC",
+      "meaning": "Head Circumference",
+      "page": 14
+    },
+    {
+      "abbreviation": "HCCC",
+      "meaning": "Health Care Complaints Commission",
+      "page": 14
+    },
+    {
+      "abbreviation": "HDL",
+      "meaning": "High Density Lipoprotein Cholesterol",
+      "page": 14
+    },
+    {
+      "abbreviation": "HFNP",
+      "meaning": "High Flow Nasal Prongs",
+      "page": 14
+    },
+    {
+      "abbreviation": "HH",
+      "meaning": "Hiatus Hernia",
+      "page": 14
+    },
+    {
+      "abbreviation": "HIV",
+      "meaning": "Human Immune Deficiency Virus",
+      "page": 14
+    },
+    {
+      "abbreviation": "HIT",
+      "meaning": "Heparin Induced Thrombocytopenia",
+      "page": 14
+    },
+    {
+      "abbreviation": "HL",
+      "meaning": "Hodgkin Lymphoma",
+      "page": 14
+    },
+    {
+      "abbreviation": "HMD",
+      "meaning": "Hyaline Membrane Disease",
+      "page": 14
+    },
+    {
+      "abbreviation": "HOPC",
+      "meaning": "History of Presenting Complaint",
+      "page": 14
+    },
+    {
+      "abbreviation": "HPV",
+      "meaning": "Human Papilloma Virus",
+      "page": 14
+    },
+    {
+      "abbreviation": "HR",
+      "meaning": "Heart Rate",
+      "page": 14
+    },
+    {
+      "abbreviation": "HSDNM",
+      "meaning": "Heart Sounds Dual and No Murmur",
+      "page": 14
+    },
+    {
+      "abbreviation": "HSV",
+      "meaning": "Herpes Simplex Virus",
+      "page": 14
+    },
+    {
+      "abbreviation": "Ht.",
+      "meaning": "Height",
+      "page": 14
+    },
+    {
+      "abbreviation": "HTS",
+      "meaning": "Hypertonic Saline",
+      "page": 14
+    },
+    {
+      "abbreviation": "Hx",
+      "meaning": "History",
+      "page": 15
+    },
+    {
+      "abbreviation": "HITH",
+      "meaning": "Hospital In The Home",
+      "page": 15
+    },
+    {
+      "abbreviation": "IBD",
+      "meaning": "Inflammatory Bowel Disease",
+      "page": 15
+    },
+    {
+      "abbreviation": "ICC",
+      "meaning": "Intercostal Catheter",
+      "page": 15
+    },
+    {
+      "abbreviation": "ICD",
+      "meaning": "Intercostal Drain",
+      "page": 15
+    },
+    {
+      "abbreviation": "ICH",
+      "meaning": "Intracranial Haemorrhage",
+      "page": 15
+    },
+    {
+      "abbreviation": "ICP",
+      "meaning": "Intracranial Pressure",
+      "page": 15
+    },
+    {
+      "abbreviation": "ID",
+      "meaning": "Identification",
+      "page": 15
+    },
+    {
+      "abbreviation": "IDC",
+      "meaning": "Indwelling Catheter",
+      "page": 15
+    },
+    {
+      "abbreviation": "IDDM",
+      "meaning": "Insulin Dependent Diabetes Mellitus",
+      "page": 15
+    },
+    {
+      "abbreviation": "IG",
+      "meaning": "Intragastric",
+      "page": 15
+    },
+    {
+      "abbreviation": "IIMS",
+      "meaning": "Incident Information Management System",
+      "page": 15
+    },
+    {
+      "abbreviation": "IM",
+      "meaning": "Intramuscular",
+      "page": 15
+    },
+    {
+      "abbreviation": "IMI",
+      "meaning": "Intramuscular Injection",
+      "page": 15
+    },
+    {
+      "abbreviation": "Indep",
+      "meaning": "Independent(ly)",
+      "page": 15
+    },
+    {
+      "abbreviation": "Inhaler or MDI",
+      "meaning": "Metered Dose Inhaler, MDI",
+      "page": 15
+    },
+    {
+      "abbreviation": "Inj",
+      "meaning": "Injection",
+      "page": 15
+    },
+    {
+      "abbreviation": "INR",
+      "meaning": "International Normalised Ratio",
+      "page": 15
+    },
+    {
+      "abbreviation": "Int Rot",
+      "meaning": "Internal Rotation",
+      "page": 15
+    },
+    {
+      "abbreviation": "I/O",
+      "meaning": "Insertion Of",
+      "page": 15
+    },
+    {
+      "abbreviation": "IO",
+      "meaning": "Intraosseous",
+      "page": 15
+    },
+    {
+      "abbreviation": "IOL",
+      "meaning": "Intraocular Lens",
+      "page": 15
+    },
+    {
+      "abbreviation": "IOP",
+      "meaning": "Intraocular Pressure",
+      "page": 15
+    },
+    {
+      "abbreviation": "IPAP",
+      "meaning": "Inspiratory Positive Airway Pressure",
+      "page": 15
+    },
+    {
+      "abbreviation": "IPPV",
+      "meaning": "Intermittent Positive-Pressure Ventilation",
+      "page": 15
+    },
+    {
+      "abbreviation": "IUTD",
+      "meaning": "Immunisations up to date",
+      "page": 15
+    },
+    {
+      "abbreviation": "IV",
+      "meaning": "Intravenous",
+      "page": 15
+    },
+    {
+      "abbreviation": "I+V",
+      "meaning": "Intubated and ventilated",
+      "page": 15
+    },
+    {
+      "abbreviation": "IVAD",
+      "meaning": "Implantable Venous Access Device",
+      "page": 15
+    },
+    {
+      "abbreviation": "IVF",
+      "meaning": "Intravenous Fluids",
+      "page": 15
+    },
+    {
+      "abbreviation": "IVI",
+      "meaning": "Intravenous Injection",
+      "page": 15
+    },
+    {
+      "abbreviation": "IVC",
+      "meaning": "Intravenous Cannula",
+      "page": 15
+    },
+    {
+      "abbreviation": "IVP",
+      "meaning": "Intravenous Pyelogram",
+      "page": 15
+    },
+    {
+      "abbreviation": "JIA",
+      "meaning": "Juvenile Idiopathic Arthritis",
+      "page": 15
+    },
+    {
+      "abbreviation": "JVP",
+      "meaning": "Jugular Venous Pressure",
+      "page": 15
+    },
+    {
+      "abbreviation": "KAFO",
+      "meaning": "Knee Ankle Foot Orthosis",
+      "page": 15
+    },
+    {
+      "abbreviation": "kCal",
+      "meaning": "Kilocalories",
+      "page": 15
+    },
+    {
+      "abbreviation": "kJ",
+      "meaning": "Kilojoules",
+      "page": 15
+    },
+    {
+      "abbreviation": "KUB",
+      "meaning": "Kidney Urinary Bladder",
+      "page": 15
+    },
+    {
+      "abbreviation": "k-wire",
+      "meaning": "Kirshiner wire",
+      "page": 15
+    },
+    {
+      "abbreviation": "(L) or Ⓛ",
+      "meaning": "Left",
+      "page": 15
+    },
+    {
+      "abbreviation": "L (1 to 5)",
+      "meaning": "Lumbar e.g. L2 fracture",
+      "page": 15
+    },
+    {
+      "abbreviation": "LA",
+      "meaning": "Local Anaesthetic",
+      "page": 15
+    },
+    {
+      "abbreviation": "Lat.",
+      "meaning": "Lateral",
+      "page": 15
+    },
+    {
+      "abbreviation": "LAT FLEX",
+      "meaning": "Lateral Flexion",
+      "page": 15
+    },
+    {
+      "abbreviation": "LBO",
+      "meaning": "Laryngo Broncho-Oesphagoscopy",
+      "page": 15
+    },
+    {
+      "abbreviation": "LBW",
+      "meaning": "Low Birth Weight",
+      "page": 15
+    },
+    {
+      "abbreviation": "LCT",
+      "meaning": "Long Chain Triglycerides",
+      "page": 15
+    },
+    {
+      "abbreviation": "LDL",
+      "meaning": "Low density Lipoprotein Cholesterol",
+      "page": 16
+    },
+    {
+      "abbreviation": "LFT’s",
+      "meaning": "Liver Function Tests",
+      "page": 16
+    },
+    {
+      "abbreviation": "LIF",
+      "meaning": "Left Iliac Fossa",
+      "page": 16
+    },
+    {
+      "abbreviation": "LIH",
+      "meaning": "Left Inguinal Hernia",
+      "page": 16
+    },
+    {
+      "abbreviation": "LLD",
+      "meaning": "Leg Length Discrepancy",
+      "page": 16
+    },
+    {
+      "abbreviation": "LLL",
+      "meaning": "Left Lower Lobe",
+      "page": 16
+    },
+    {
+      "abbreviation": "LLQ",
+      "meaning": "Left Lower Quadrant",
+      "page": 16
+    },
+    {
+      "abbreviation": "L/N",
+      "meaning": "Lymph Node",
+      "page": 16
+    },
+    {
+      "abbreviation": "LOC",
+      "meaning": "Loss Of Consciousness",
+      "page": 16
+    },
+    {
+      "abbreviation": "LOS",
+      "meaning": "Length Of Stay",
+      "page": 16
+    },
+    {
+      "abbreviation": "LP",
+      "meaning": "Lumbar Puncture",
+      "page": 16
+    },
+    {
+      "abbreviation": "LRD",
+      "meaning": "Living Related Donor",
+      "page": 16
+    },
+    {
+      "abbreviation": "LRTI",
+      "meaning": "Left Respiratory Tract Infection",
+      "page": 16
+    },
+    {
+      "abbreviation": "LSCS",
+      "meaning": "Lower Segment Caesarean Section",
+      "page": 16
+    },
+    {
+      "abbreviation": "LSO",
+      "meaning": "Lumbar Sacral Orthosis",
+      "page": 16
+    },
+    {
+      "abbreviation": "LUL",
+      "meaning": "Left Upper Lobe",
+      "page": 16
+    },
+    {
+      "abbreviation": "LUQ",
+      "meaning": "Left Upper Quadrant",
+      "page": 16
+    },
+    {
+      "abbreviation": "MAC",
+      "meaning": "Mycobacterium Avium Complex",
+      "page": 16
+    },
+    {
+      "abbreviation": "MAP",
+      "meaning": "Mean Arterial Pressure",
+      "page": 16
+    },
+    {
+      "abbreviation": "MAG3",
+      "meaning": "As per DTPA scan",
+      "page": 16
+    },
+    {
+      "abbreviation": "mane",
+      "meaning": "Morning",
+      "page": 16
+    },
+    {
+      "abbreviation": "MAR",
+      "meaning": "Medication Administration Record",
+      "page": 16
+    },
+    {
+      "abbreviation": "MAU",
+      "meaning": "Medical Assessment Unit",
+      "page": 16
+    },
+    {
+      "abbreviation": "Max.",
+      "meaning": "Maximum",
+      "page": 16
+    },
+    {
+      "abbreviation": "MBS",
+      "meaning": "Modified Barium Swallow",
+      "page": 16
+    },
+    {
+      "abbreviation": "MC&S",
+      "meaning": "Microscopy, Culture & Sensitivities",
+      "page": 16
+    },
+    {
+      "abbreviation": "MCT",
+      "meaning": "Medium Chain Triglycerides",
+      "page": 16
+    },
+    {
+      "abbreviation": "MCUG",
+      "meaning": "Micturating Cystourethrogram",
+      "page": 16
+    },
+    {
+      "abbreviation": "MDI",
+      "meaning": "Metered Dose Inhaler",
+      "page": 16
+    },
+    {
+      "abbreviation": "Mec.",
+      "meaning": "Meconium",
+      "page": 16
+    },
+    {
+      "abbreviation": "Med",
+      "meaning": "Medial",
+      "page": 16
+    },
+    {
+      "abbreviation": "METS or Mets",
+      "meaning": "Metastatic",
+      "page": 16
+    },
+    {
+      "abbreviation": "MI",
+      "meaning": "Myocardial Infarction",
+      "page": 16
+    },
+    {
+      "abbreviation": "MIBG",
+      "meaning": "Meta-Iodobenzylguanidine",
+      "page": 16
+    },
+    {
+      "abbreviation": "Min.",
+      "meaning": "Minimum",
+      "page": 16
+    },
+    {
+      "abbreviation": "MM",
+      "meaning": "Multiple Myeloma",
+      "page": 16
+    },
+    {
+      "abbreviation": "MMSE",
+      "meaning": "Mini Mental State Exam",
+      "page": 16
+    },
+    {
+      "abbreviation": "MMT",
+      "meaning": "Manual Muscle Test",
+      "page": 16
+    },
+    {
+      "abbreviation": "Mo",
+      "meaning": "Mother",
+      "page": 16
+    },
+    {
+      "abbreviation": "Mob.",
+      "meaning": "Mobility/Mobilisation",
+      "page": 16
+    },
+    {
+      "abbreviation": "MOD",
+      "meaning": "Moderate",
+      "page": 16
+    },
+    {
+      "abbreviation": "MODY",
+      "meaning": "Maturity Onset Diabetes Mellitus In The Young",
+      "page": 16
+    },
+    {
+      "abbreviation": "MRAB",
+      "meaning": "Multiple Resistant Acinetobacter baumanii",
+      "page": 16
+    },
+    {
+      "abbreviation": "MRE",
+      "meaning": "Multiple-Resistant Enterobacter",
+      "page": 16
+    },
+    {
+      "abbreviation": "MRI",
+      "meaning": "Magnetic Resonance Imaging",
+      "page": 16
+    },
+    {
+      "abbreviation": "MRO",
+      "meaning": "Multi Resistant Organism",
+      "page": 16
+    },
+    {
+      "abbreviation": "MRSA",
+      "meaning": "Multiple Resistant Staphylococcus Aureus; Methicillin Resistant Staphylococcus Aureus",
+      "page": 16
+    },
+    {
+      "abbreviation": "MS",
+      "meaning": "Multiple Sclerosis",
+      "page": 16
+    },
+    {
+      "abbreviation": "MSSA",
+      "meaning": "Methicillin-Susceptible Staphylococcus Aureus",
+      "page": 16
+    },
+    {
+      "abbreviation": "MSU",
+      "meaning": "Mid-Stream Specimen Of Urine",
+      "page": 16
+    },
+    {
+      "abbreviation": "MVA",
+      "meaning": "Motor Vehicle Accident",
+      "page": 16
+    },
+    {
+      "abbreviation": "NAI",
+      "meaning": "Non-Accidental Injury",
+      "page": 17
+    },
+    {
+      "abbreviation": "NAD",
+      "meaning": "No Abnormality Detected, E.G. Ward Test – N.A.D.",
+      "page": 17
+    },
+    {
+      "abbreviation": "NBM",
+      "meaning": "Nil By Mouth",
+      "page": 17
+    },
+    {
+      "abbreviation": "NCA",
+      "meaning": "Nurse Controlled Analgesia",
+      "page": 17
+    },
+    {
+      "abbreviation": "NCI",
+      "meaning": "National Cancer Institute",
+      "page": 17
+    },
+    {
+      "abbreviation": "NCS",
+      "meaning": "Nerve conduction study",
+      "page": 17
+    },
+    {
+      "abbreviation": "NEB",
+      "meaning": "Nebulised",
+      "page": 17
+    },
+    {
+      "abbreviation": "NESB",
+      "meaning": "Non-English Speaking Background",
+      "page": 17
+    },
+    {
+      "abbreviation": "NETS",
+      "meaning": "Neonatal Emergency Transport Service",
+      "page": 17
+    },
+    {
+      "abbreviation": "NG or N/G",
+      "meaning": "Nasogastric",
+      "page": 17
+    },
+    {
+      "abbreviation": "NHL",
+      "meaning": "Non-Hodgkin’s Lymphoma",
+      "page": 17
+    },
+    {
+      "abbreviation": "NIDDM",
+      "meaning": "Non-Insulin Dependent Diabetes Mellitus",
+      "page": 17
+    },
+    {
+      "abbreviation": "NIM",
+      "meaning": "Nurse Initiated Medication",
+      "page": 17
+    },
+    {
+      "abbreviation": "NIV",
+      "meaning": "Non-Invasive Ventilation",
+      "page": 17
+    },
+    {
+      "abbreviation": "NOAD",
+      "meaning": "No Other Abnormality Detected",
+      "page": 17
+    },
+    {
+      "abbreviation": "Nocte",
+      "meaning": "At night",
+      "page": 17
+    },
+    {
+      "abbreviation": "NOF",
+      "meaning": "Neck of Femur",
+      "page": 17
+    },
+    {
+      "abbreviation": "NPA",
+      "meaning": "Nasopharyngeal Aspirate",
+      "page": 17
+    },
+    {
+      "abbreviation": "NR",
+      "meaning": "Nodal Rhythm",
+      "page": 17
+    },
+    {
+      "abbreviation": "No.",
+      "meaning": "Number",
+      "page": 17
+    },
+    {
+      "abbreviation": "NSTEACS",
+      "meaning": "Non-ST-Segment Elevation Acute Coronary Syndrome",
+      "page": 17
+    },
+    {
+      "abbreviation": "NSTEMI",
+      "meaning": "Non-ST-Segment Elevation Myocardial Infarction",
+      "page": 17
+    },
+    {
+      "abbreviation": "NWB",
+      "meaning": "Non Weight Bearing",
+      "page": 17
+    },
+    {
+      "abbreviation": "O2 Sat.",
+      "meaning": "Oxygen Saturation",
+      "page": 17
+    },
+    {
+      "abbreviation": "Obs.",
+      "meaning": "Observation",
+      "page": 17
+    },
+    {
+      "abbreviation": "OCD",
+      "meaning": "Obsessional Compulsive Disorder",
+      "page": 17
+    },
+    {
+      "abbreviation": "O/A",
+      "meaning": "On Admission Or On Arrival",
+      "page": 17
+    },
+    {
+      "abbreviation": "O/E",
+      "meaning": "On Examination",
+      "page": 17
+    },
+    {
+      "abbreviation": "OD",
+      "meaning": "Overdose",
+      "page": 17
+    },
+    {
+      "abbreviation": "ODD",
+      "meaning": "Oppositional Defiant Disorder",
+      "page": 17
+    },
+    {
+      "abbreviation": "OG",
+      "meaning": "Orogastric",
+      "page": 17
+    },
+    {
+      "abbreviation": "Oint.",
+      "meaning": "Ointment",
+      "page": 17
+    },
+    {
+      "abbreviation": "O/P",
+      "meaning": "Oropharynx",
+      "page": 17
+    },
+    {
+      "abbreviation": "OPD",
+      "meaning": "Outpatients Department",
+      "page": 17
+    },
+    {
+      "abbreviation": "ORIF",
+      "meaning": "Open Reduction Internal Fixation",
+      "page": 17
+    },
+    {
+      "abbreviation": "OR",
+      "meaning": "Operating Rooms",
+      "page": 17
+    },
+    {
+      "abbreviation": "OT",
+      "meaning": "Operating Theatre or Occupational Therapy",
+      "page": 17
+    },
+    {
+      "abbreviation": "PEDOC",
+      "meaning": "Paediatric Emergency Department Observation Chart",
+      "page": 17
+    },
+    {
+      "abbreviation": "P (number)",
+      "meaning": "Parity",
+      "page": 17
+    },
+    {
+      "abbreviation": "PAC",
+      "meaning": "Pressure Area Care",
+      "page": 17
+    },
+    {
+      "abbreviation": "PAH",
+      "meaning": "Pulmonary Arterial Hypertension",
+      "page": 17
+    },
+    {
+      "abbreviation": "PBS",
+      "meaning": "Pharmaceutical Benefits Scheme",
+      "page": 17
+    },
+    {
+      "abbreviation": "PBSCT",
+      "meaning": "Peripheral Blood Stem Cell Transplantation",
+      "page": 17
+    },
+    {
+      "abbreviation": "PC",
+      "meaning": "Packed Cells",
+      "page": 17
+    },
+    {
+      "abbreviation": "PCA",
+      "meaning": "Patient Controlled Analgesia",
+      "page": 17
+    },
+    {
+      "abbreviation": "PCI",
+      "meaning": "Percutaneous Coronary Intervention",
+      "page": 17
+    },
+    {
+      "abbreviation": "Pct",
+      "meaning": "Procalcitonin",
+      "page": 17
+    },
+    {
+      "abbreviation": "PCP",
+      "meaning": "Pneumocystis Pneumonia",
+      "page": 17
+    },
+    {
+      "abbreviation": "Plt",
+      "meaning": "Platelet",
+      "page": 17
+    },
+    {
+      "abbreviation": "pCO2",
+      "meaning": "Partial Pressure Of Carbon Dioxide",
+      "page": 17
+    },
+    {
+      "abbreviation": "PICU",
+      "meaning": "Paediatric Intensive Care Unit",
+      "page": 18
+    },
+    {
+      "abbreviation": "PE",
+      "meaning": "Pulmonary Embolism",
+      "page": 18
+    },
+    {
+      "abbreviation": "PEARL",
+      "meaning": "Pupils Equal and Reactive to Light",
+      "page": 18
+    },
+    {
+      "abbreviation": "PEEP",
+      "meaning": "Positive End-Expiratory Pressure",
+      "page": 18
+    },
+    {
+      "abbreviation": "PEP",
+      "meaning": "Positive Expiratory Pressure",
+      "page": 18
+    },
+    {
+      "abbreviation": "PEP",
+      "meaning": "Post-Exposure Prophylaxis",
+      "page": 18
+    },
+    {
+      "abbreviation": "PEG",
+      "meaning": "Percutaneous Endoscopic Gastrostomy",
+      "page": 18
+    },
+    {
+      "abbreviation": "PET",
+      "meaning": "Positron emission tomography",
+      "page": 18
+    },
+    {
+      "abbreviation": "PEJ",
+      "meaning": "Percutaneous Endoscopic Jejunostomy",
+      "page": 18
+    },
+    {
+      "abbreviation": "Pess",
+      "meaning": "Pessary",
+      "page": 18
+    },
+    {
+      "abbreviation": "PF",
+      "meaning": "Plantarflexion",
+      "page": 18
+    },
+    {
+      "abbreviation": "PFT",
+      "meaning": "Pulmonary Function Test",
+      "page": 18
+    },
+    {
+      "abbreviation": "pH",
+      "meaning": "Power of Hydrogen",
+      "page": 18
+    },
+    {
+      "abbreviation": "PHx",
+      "meaning": "Past History",
+      "page": 18
+    },
+    {
+      "abbreviation": "PICC",
+      "meaning": "Peripherally Inserted Central Catheter",
+      "page": 18
+    },
+    {
+      "abbreviation": "PIP",
+      "meaning": "Peak Inspiratory Pressure",
+      "page": 18
+    },
+    {
+      "abbreviation": "PID",
+      "meaning": "Pelvic Inflammatory Disease",
+      "page": 18
+    },
+    {
+      "abbreviation": "PJ",
+      "meaning": "Polyjoule",
+      "page": 18
+    },
+    {
+      "abbreviation": "PJP",
+      "meaning": "Pneumocystis Jirovecii pneumonia",
+      "page": 18
+    },
+    {
+      "abbreviation": "PKU",
+      "meaning": "Phenylketonuria",
+      "page": 18
+    },
+    {
+      "abbreviation": "PM",
+      "meaning": "After Midday",
+      "page": 18
+    },
+    {
+      "abbreviation": "PO",
+      "meaning": "Oral, By Mouth, Orally",
+      "page": 18
+    },
+    {
+      "abbreviation": "POB",
+      "meaning": "Post-Operative Bath",
+      "page": 18
+    },
+    {
+      "abbreviation": "POP",
+      "meaning": "Plaster Of Paris",
+      "page": 18
+    },
+    {
+      "abbreviation": "Post-op",
+      "meaning": "Post-Operative",
+      "page": 18
+    },
+    {
+      "abbreviation": "PPH",
+      "meaning": "Postpartum Haemorrhage",
+      "page": 18
+    },
+    {
+      "abbreviation": "PR",
+      "meaning": "Per Rectum",
+      "page": 18
+    },
+    {
+      "abbreviation": "PRAT",
+      "meaning": "Paediatric Risk Assessment Tool",
+      "page": 18
+    },
+    {
+      "abbreviation": "Prem.",
+      "meaning": "Prematurity",
+      "page": 18
+    },
+    {
+      "abbreviation": "Pre-med.",
+      "meaning": "Pre-Operative Medication",
+      "page": 18
+    },
+    {
+      "abbreviation": "Pre-op",
+      "meaning": "Pre-operative",
+      "page": 18
+    },
+    {
+      "abbreviation": "PrEP",
+      "meaning": "Pre-exposure Prophylaxis",
+      "page": 18
+    },
+    {
+      "abbreviation": "PRN",
+      "meaning": "When necessary",
+      "page": 18
+    },
+    {
+      "abbreviation": "PPROM",
+      "meaning": "Preterm Prelabour Rupture of Membranes",
+      "page": 18
+    },
+    {
+      "abbreviation": "PROM",
+      "meaning": "Passive Range of Motion",
+      "page": 18
+    },
+    {
+      "abbreviation": "PSG",
+      "meaning": "Polysomnography",
+      "page": 18
+    },
+    {
+      "abbreviation": "Pt.",
+      "meaning": "Patient",
+      "page": 18
+    },
+    {
+      "abbreviation": "PPE",
+      "meaning": "Personal Protective Equipment",
+      "page": 18
+    },
+    {
+      "abbreviation": "PU/ PUIT",
+      "meaning": "Passed Urine/ Passed urine in toilet",
+      "page": 18
+    },
+    {
+      "abbreviation": "PUD",
+      "meaning": "Peptic Ulcer Disease",
+      "page": 18
+    },
+    {
+      "abbreviation": "PUF",
+      "meaning": "Pick up frame",
+      "page": 18
+    },
+    {
+      "abbreviation": "PUJ",
+      "meaning": "Pelvi-ureteric Junction",
+      "page": 18
+    },
+    {
+      "abbreviation": "PUJO",
+      "meaning": "Pelvi-ureteric Junction Obstruction",
+      "page": 18
+    },
+    {
+      "abbreviation": "PUO",
+      "meaning": "Pyrexia of unknown origin",
+      "page": 18
+    },
+    {
+      "abbreviation": "PUV",
+      "meaning": "Posterior Urethral Valve",
+      "page": 18
+    },
+    {
+      "abbreviation": "PV",
+      "meaning": "Per Vagina",
+      "page": 18
+    },
+    {
+      "abbreviation": "PVD",
+      "meaning": "Peripheral Vascular Disease",
+      "page": 18
+    },
+    {
+      "abbreviation": "P&V",
+      "meaning": "Percussion and vibrations",
+      "page": 18
+    },
+    {
+      "abbreviation": "PWB",
+      "meaning": "Partial weight bearing",
+      "page": 18
+    },
+    {
+      "abbreviation": "qid",
+      "meaning": "Four times daily",
+      "page": 18
+    },
+    {
+      "abbreviation": "® or ®",
+      "meaning": "Right",
+      "page": 18
+    },
+    {
+      "abbreviation": "RBC",
+      "meaning": "Red Blood Cells",
+      "page": 18
+    },
+    {
+      "abbreviation": "Resp.",
+      "meaning": "Respiratory",
+      "page": 19
+    },
+    {
+      "abbreviation": "Rh",
+      "meaning": "Rhesus Factor (Rh –ve or Rh +ve)",
+      "page": 19
+    },
+    {
+      "abbreviation": "RIF",
+      "meaning": "Right Iliac Fossa",
+      "page": 19
+    },
+    {
+      "abbreviation": "RIH",
+      "meaning": "Right Inguinal Hernia",
+      "page": 19
+    },
+    {
+      "abbreviation": "RLL",
+      "meaning": "Right Lower Lobe (Lung)",
+      "page": 19
+    },
+    {
+      "abbreviation": "RLQ",
+      "meaning": "Right Lower Quadrant",
+      "page": 19
+    },
+    {
+      "abbreviation": "RML",
+      "meaning": "Right Middle Lobe (Lung)",
+      "page": 19
+    },
+    {
+      "abbreviation": "RNA",
+      "meaning": "Ribonucleic Acid",
+      "page": 19
+    },
+    {
+      "abbreviation": "ROM",
+      "meaning": "Range Of Movement",
+      "page": 19
+    },
+    {
+      "abbreviation": "R/O",
+      "meaning": "Removal Of",
+      "page": 19
+    },
+    {
+      "abbreviation": "RR",
+      "meaning": "Respiratory Rate",
+      "page": 19
+    },
+    {
+      "abbreviation": "RSV",
+      "meaning": "Respiratory Syncytial Virus",
+      "page": 19
+    },
+    {
+      "abbreviation": "RTL",
+      "meaning": "Reacts To Light",
+      "page": 19
+    },
+    {
+      "abbreviation": "RTW",
+      "meaning": "Returned To Ward",
+      "page": 19
+    },
+    {
+      "abbreviation": "RUL",
+      "meaning": "Right Upper Lobe (Lung)",
+      "page": 19
+    },
+    {
+      "abbreviation": "RUQ",
+      "meaning": "Right Upper Quadrant",
+      "page": 19
+    },
+    {
+      "abbreviation": "Rx",
+      "meaning": "Treatment",
+      "page": 19
+    },
+    {
+      "abbreviation": "R/V",
+      "meaning": "Review",
+      "page": 19
+    },
+    {
+      "abbreviation": "RVOT",
+      "meaning": "Right Ventricular Outflow Tract",
+      "page": 19
+    },
+    {
+      "abbreviation": "RUL",
+      "meaning": "Right Upper Lobe",
+      "page": 19
+    },
+    {
+      "abbreviation": "S (1-5)",
+      "meaning": "Sacral Vertebrae",
+      "page": 19
+    },
+    {
+      "abbreviation": "S19A",
+      "meaning": "Section 19A",
+      "page": 19
+    },
+    {
+      "abbreviation": "S100",
+      "meaning": "Section 100 Drug Programs",
+      "page": 19
+    },
+    {
+      "abbreviation": "SA",
+      "meaning": "Sexual Assault",
+      "page": 19
+    },
+    {
+      "abbreviation": "SAS",
+      "meaning": "Special Access Scheme",
+      "page": 19
+    },
+    {
+      "abbreviation": "SAH",
+      "meaning": "Subarachnoid Haemorrhage",
+      "page": 19
+    },
+    {
+      "abbreviation": "SaO2",
+      "meaning": "Arterial Oxygen Saturation / direct measurement of arterial blood",
+      "page": 19
+    },
+    {
+      "abbreviation": "S/B",
+      "meaning": "Seen By",
+      "page": 19
+    },
+    {
+      "abbreviation": "SBR",
+      "meaning": "Serum Bilirubin",
+      "page": 19
+    },
+    {
+      "abbreviation": "SC",
+      "meaning": "Subcutaneous",
+      "page": 19
+    },
+    {
+      "abbreviation": "SCH",
+      "meaning": "Sydney Children’s Hospital",
+      "page": 19
+    },
+    {
+      "abbreviation": "SCHN",
+      "meaning": "Sydney Children’s Hopistal Network",
+      "page": 19
+    },
+    {
+      "abbreviation": "SCUF",
+      "meaning": "Slow Continuous Ultrafiltration",
+      "page": 19
+    },
+    {
+      "abbreviation": "SCI",
+      "meaning": "Subcutaneous Injection",
+      "page": 19
+    },
+    {
+      "abbreviation": "SDH",
+      "meaning": "Subdural Haematoma",
+      "page": 19
+    },
+    {
+      "abbreviation": "SEEG",
+      "meaning": "Stereotactic Electro-Encephalogram",
+      "page": 19
+    },
+    {
+      "abbreviation": "SG",
+      "meaning": "Specific Gravity",
+      "page": 19
+    },
+    {
+      "abbreviation": "SJS",
+      "meaning": "Steven-Johnson Syndrome",
+      "page": 19
+    },
+    {
+      "abbreviation": "SLE",
+      "meaning": "System Lupus Erythematosus",
+      "page": 19
+    },
+    {
+      "abbreviation": "SLR",
+      "meaning": "Straight Leg Raise",
+      "page": 19
+    },
+    {
+      "abbreviation": "SLS",
+      "meaning": "Single Leg Stand",
+      "page": 19
+    },
+    {
+      "abbreviation": "SIADH",
+      "meaning": "Secretion Of Inappropriate Antidiuretic Hormone",
+      "page": 19
+    },
+    {
+      "abbreviation": "SMA",
+      "meaning": "Spinal Muscular Atrophy",
+      "page": 19
+    },
+    {
+      "abbreviation": "SIDS",
+      "meaning": "Sudden Infant Death Syndrome",
+      "page": 19
+    },
+    {
+      "abbreviation": "SIMV",
+      "meaning": "Synchronised Intermittent Mandatory Ventilation",
+      "page": 19
+    },
+    {
+      "abbreviation": "SOAP",
+      "meaning": "Subjective Objective Action Plan",
+      "page": 19
+    },
+    {
+      "abbreviation": "SOB",
+      "meaning": "Short Of Breath",
+      "page": 19
+    },
+    {
+      "abbreviation": "SOBOE",
+      "meaning": "Shortness of Breath on Exertion",
+      "page": 19
+    },
+    {
+      "abbreviation": "SOEOB",
+      "meaning": "Sit on Edge of Bed",
+      "page": 19
+    },
+    {
+      "abbreviation": "SOOB",
+      "meaning": "Sit Out Of Bed",
+      "page": 19
+    },
+    {
+      "abbreviation": "SPA",
+      "meaning": "Suprapubic Aspiration",
+      "page": 19
+    },
+    {
+      "abbreviation": "SpO2",
+      "meaning": "Saturation of peripheral Oxygen",
+      "page": 19
+    },
+    {
+      "abbreviation": "SNOC",
+      "meaning": "Standard Newborn Observation Chart",
+      "page": 19
+    },
+    {
+      "abbreviation": "SPOC",
+      "meaning": "Standard Paediatric Observation Chart",
+      "page": 19
+    },
+    {
+      "abbreviation": "SPECT",
+      "meaning": "Single Photon Emission Computer Tomography",
+      "page": 20
+    },
+    {
+      "abbreviation": "SPONT",
+      "meaning": "Spontaneous",
+      "page": 20
+    },
+    {
+      "abbreviation": "SR",
+      "meaning": "Sinus rhythm",
+      "page": 20
+    },
+    {
+      "abbreviation": "SSG",
+      "meaning": "Split Skin Graft",
+      "page": 20
+    },
+    {
+      "abbreviation": "SSS",
+      "meaning": "Sick Sinus Syndrome",
+      "page": 20
+    },
+    {
+      "abbreviation": "Stat",
+      "meaning": "Immediately And Once Only (Statim)",
+      "page": 20
+    },
+    {
+      "abbreviation": "STEMI",
+      "meaning": "ST-Segment Elevation Myocardial Infarction",
+      "page": 20
+    },
+    {
+      "abbreviation": "STI",
+      "meaning": "Sexually Transmissible Infection",
+      "page": 20
+    },
+    {
+      "abbreviation": "STS",
+      "meaning": "Sit to Stand",
+      "page": 20
+    },
+    {
+      "abbreviation": "Subcut",
+      "meaning": "Subcutaneous",
+      "page": 20
+    },
+    {
+      "abbreviation": "Subling",
+      "meaning": "Sublingual",
+      "page": 20
+    },
+    {
+      "abbreviation": "Supp",
+      "meaning": "Suppository",
+      "page": 20
+    },
+    {
+      "abbreviation": "SUDI",
+      "meaning": "Sudden Unexpected Death In Infancy",
+      "page": 20
+    },
+    {
+      "abbreviation": "SVC",
+      "meaning": "Superior Vena Cava",
+      "page": 20
+    },
+    {
+      "abbreviation": "SVT",
+      "meaning": "Supraventricular Tachycardia",
+      "page": 20
+    },
+    {
+      "abbreviation": "S/O",
+      "meaning": "Suction Out",
+      "page": 20
+    },
+    {
+      "abbreviation": "S/V",
+      "meaning": "Supervision",
+      "page": 20
+    },
+    {
+      "abbreviation": "T (1-12)",
+      "meaning": "Thoracic e.g. T2 fracture",
+      "page": 20
+    },
+    {
+      "abbreviation": "tab",
+      "meaning": "Tablet",
+      "page": 20
+    },
+    {
+      "abbreviation": "T&As",
+      "meaning": "Tonsillectomy and adenoidectomy",
+      "page": 20
+    },
+    {
+      "abbreviation": "TB",
+      "meaning": "Tuberculosis",
+      "page": 20
+    },
+    {
+      "abbreviation": "T1D",
+      "meaning": "Type 1 Diabetes Mellitus",
+      "page": 20
+    },
+    {
+      "abbreviation": "T2D",
+      "meaning": "Type 2 Diabetes Mellitus",
+      "page": 20
+    },
+    {
+      "abbreviation": "Tx",
+      "meaning": "Treatment",
+      "page": 20
+    },
+    {
+      "abbreviation": "TSH",
+      "meaning": "Thyroid-Stimulating Hormone",
+      "page": 20
+    },
+    {
+      "abbreviation": "TFT",
+      "meaning": "Thyroid-Function Test",
+      "page": 20
+    },
+    {
+      "abbreviation": "TOF",
+      "meaning": "AVOID: Trial of Fluids/ Tracheoesophageal fistula/ Tetralogy of Fallot",
+      "page": 20
+    },
+    {
+      "abbreviation": "TGA",
+      "meaning": "Transposition of the Great Arteries",
+      "page": 20
+    },
+    {
+      "abbreviation": "TBA",
+      "meaning": "To be arranged",
+      "page": 20
+    },
+    {
+      "abbreviation": "TBI",
+      "meaning": "Traumatic Brain Injury",
+      "page": 20
+    },
+    {
+      "abbreviation": "Temp",
+      "meaning": "Temperature",
+      "page": 20
+    },
+    {
+      "abbreviation": "TENS",
+      "meaning": "Transcutaneous Electrical Nerve Stimulation",
+      "page": 20
+    },
+    {
+      "abbreviation": "TFT",
+      "meaning": "Thyroid Function Test",
+      "page": 20
+    },
+    {
+      "abbreviation": "t/f or T/F",
+      "meaning": "Transfer",
+      "page": 20
+    },
+    {
+      "abbreviation": "THR",
+      "meaning": "Total Hip Replacement",
+      "page": 20
+    },
+    {
+      "abbreviation": "TIA",
+      "meaning": "Transient Ischaemic Attack",
+      "page": 20
+    },
+    {
+      "abbreviation": "TKR",
+      "meaning": "Total Knee Replacement",
+      "page": 20
+    },
+    {
+      "abbreviation": "TKVO",
+      "meaning": "To Keep Vein Open",
+      "page": 20
+    },
+    {
+      "abbreviation": "TLSO",
+      "meaning": "Thoraco Lumbar Sacral Orthosis",
+      "page": 20
+    },
+    {
+      "abbreviation": "TPN",
+      "meaning": "Total Parenteral Nutrition",
+      "page": 20
+    },
+    {
+      "abbreviation": "TPR",
+      "meaning": "Temperature, Pulse, Respiration",
+      "page": 20
+    },
+    {
+      "abbreviation": "TPT",
+      "meaning": "Trans Pyloric Tube",
+      "page": 20
+    },
+    {
+      "abbreviation": "TM",
+      "meaning": "Tympanic Membrane",
+      "page": 20
+    },
+    {
+      "abbreviation": "TRAM",
+      "meaning": "Transvenous Rectus Abdominis Myocutaneous Flap",
+      "page": 20
+    },
+    {
+      "abbreviation": "TWB",
+      "meaning": "Touch Weight-Bearing",
+      "page": 20
+    },
+    {
+      "abbreviation": "T1DM",
+      "meaning": "Type 1 Diabetes Mellitus",
+      "page": 20
+    },
+    {
+      "abbreviation": "T2DM",
+      "meaning": "Type 2 Diabetes Mellitus",
+      "page": 20
+    },
+    {
+      "abbreviation": "U/A",
+      "meaning": "Urinalysis",
+      "page": 20
+    },
+    {
+      "abbreviation": "UGI",
+      "meaning": "Upper Gastrointestinal",
+      "page": 20
+    },
+    {
+      "abbreviation": "UCBL",
+      "meaning": "University of California Biomechanics Lab Orthosis",
+      "page": 20
+    },
+    {
+      "abbreviation": "UEC",
+      "meaning": "Urea, Electrolytes, Creatinine",
+      "page": 20
+    },
+    {
+      "abbreviation": "Ur",
+      "meaning": "Urea",
+      "page": 21
+    },
+    {
+      "abbreviation": "U/O",
+      "meaning": "Urine Output",
+      "page": 21
+    },
+    {
+      "abbreviation": "Ung.",
+      "meaning": "Ointment",
+      "page": 21
+    },
+    {
+      "abbreviation": "URTI",
+      "meaning": "Upper Respiratory Tract Infection",
+      "page": 21
+    },
+    {
+      "abbreviation": "U/S",
+      "meaning": "Ultrasound",
+      "page": 21
+    },
+    {
+      "abbreviation": "UTI",
+      "meaning": "Urinary Tract Infection",
+      "page": 21
+    },
+    {
+      "abbreviation": "UWSD",
+      "meaning": "Under Water Seal Drain",
+      "page": 21
+    },
+    {
+      "abbreviation": "VAP",
+      "meaning": "Ventilator-Associated Pneumonia",
+      "page": 21
+    },
+    {
+      "abbreviation": "VBG",
+      "meaning": "Venous Blood Gas",
+      "page": 21
+    },
+    {
+      "abbreviation": "VEB",
+      "meaning": "Ventricular Ectopic Beats",
+      "page": 21
+    },
+    {
+      "abbreviation": "VEEG",
+      "meaning": "Video Electro-Encephalogram",
+      "page": 21
+    },
+    {
+      "abbreviation": "VA",
+      "meaning": "Visual Acuity",
+      "page": 21
+    },
+    {
+      "abbreviation": "VC",
+      "meaning": "Vital Capacity",
+      "page": 21
+    },
+    {
+      "abbreviation": "VF",
+      "meaning": "Ventricular Fibrillation",
+      "page": 21
+    },
+    {
+      "abbreviation": "VFSS",
+      "meaning": "Video Fluoroscopic Swallow Study",
+      "page": 21
+    },
+    {
+      "abbreviation": "VIW",
+      "meaning": "Viral Induced Wheeze",
+      "page": 21
+    },
+    {
+      "abbreviation": "VLBW",
+      "meaning": "Very low birth weight",
+      "page": 21
+    },
+    {
+      "abbreviation": "V/Q scan",
+      "meaning": "Ventilation Perfusion Scan",
+      "page": 21
+    },
+    {
+      "abbreviation": "VRE",
+      "meaning": "Vancomycin-resistant Enterococci",
+      "page": 21
+    },
+    {
+      "abbreviation": "VSD",
+      "meaning": "Ventricular Septal Defect",
+      "page": 21
+    },
+    {
+      "abbreviation": "VTE",
+      "meaning": "Venous Thromboembolism",
+      "page": 21
+    },
+    {
+      "abbreviation": "VUJ",
+      "meaning": "Vesico Ureteric Junction",
+      "page": 21
+    },
+    {
+      "abbreviation": "VUR",
+      "meaning": "Vesico Ureteric Reflux",
+      "page": 21
+    },
+    {
+      "abbreviation": "VUTD",
+      "meaning": "Vaccinations Up To Date",
+      "page": 21
+    },
+    {
+      "abbreviation": "VV",
+      "meaning": "Varicose Vein",
+      "page": 21
+    },
+    {
+      "abbreviation": "VZV",
+      "meaning": "Varicella Zoster Virus",
+      "page": 21
+    },
+    {
+      "abbreviation": "WBAT",
+      "meaning": "Weight Bearing As Tolerated",
+      "page": 21
+    },
+    {
+      "abbreviation": "WBC",
+      "meaning": "White Blood Cells",
+      "page": 21
+    },
+    {
+      "abbreviation": "WCC",
+      "meaning": "White Cell Count",
+      "page": 21
+    },
+    {
+      "abbreviation": "WO",
+      "meaning": "Wrist Orthosis",
+      "page": 21
+    },
+    {
+      "abbreviation": "WHO",
+      "meaning": "Wrist Hand Orthosis",
+      "page": 21
+    },
+    {
+      "abbreviation": "Wt",
+      "meaning": "Weight",
+      "page": 21
+    },
+    {
+      "abbreviation": "Wk",
+      "meaning": "Week",
+      "page": 21
+    },
+    {
+      "abbreviation": "WNL",
+      "meaning": "Within Normal Limits",
+      "page": 21
+    },
+    {
+      "abbreviation": "WOB",
+      "meaning": "Work Of Breathing",
+      "page": 21
+    },
+    {
+      "abbreviation": "WPW",
+      "meaning": "Wolf Parkinson White syndrome",
+      "page": 21
+    },
+    {
+      "abbreviation": "W/U",
+      "meaning": "Work-up",
+      "page": 21
+    }
+  ]
+}
