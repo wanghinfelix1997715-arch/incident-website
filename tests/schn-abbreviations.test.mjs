@@ -16,9 +16,11 @@ test('every SCHN table row and provenance reaches the shared prompt, including a
 test('reference conflicts and unsafe entries require context, not dictionary substitution',()=>{
  assert.match(noteLanguageRules,/Tx = Treatment/);
  assert.match(noteLanguageRules,/t\/f or T\/F = Transfer/);
- assert.match(noteLanguageRules,/local.*transfer/i);
+ assert.match(noteLanguageRules,/tx = treatment/);
+ assert.match(noteLanguageRules,/t\/f = transfer/);
  assert.match(noteLanguageRules,/TOF.*do not.*expand/i);
- assert.match(noteLanguageRules,/CNS.*staff.*nervous/is);
+ assert.match(noteLanguageRules,/CNS = central nervous system/);
+ assert.match(noteLanguageRules,/OT = occupational therapist/);
  assert.match(noteLanguageRules,/LRTI.*source.*error/is);
  assert.ok(noteLanguageWarnings({source:'TOF noted.',context:''}).some(w=>/TOF/.test(w)));
 });

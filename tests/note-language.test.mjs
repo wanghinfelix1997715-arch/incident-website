@@ -4,9 +4,9 @@ import {validateNoteDraft,handleNote} from '../lib/note-generator.ts';
 import {noteLanguageWarnings} from '../lib/note-language.ts';
 const input=source=>({source,context:'',sourceType:'Rough notes',communicationStatus:'Unknown',target:'ecase'});
 const candidate=(source,text)=>({text,warnings:[],references:[{source,draft:text}]});
-test('known food/fluid abbreviation must be expanded instead of merely copying it',()=>{
+test('familiar food/fluid shorthand may be retained or expanded under the confirmed workflow',()=>{
  const s='Tolerating f&f well.';
- assert.equal(validateNoteDraft(candidate(s,s),input(s)),false);
+ assert.equal(validateNoteDraft(candidate(s,s),input(s)),true);
  assert.equal(validateNoteDraft(candidate(s,'Food and fluid intake was well tolerated.'),input(s)),true);
 });
 test('explicit recurring month interval can be written naturally without weakening number checks',()=>{
@@ -31,7 +31,7 @@ test('contextual conversions do not split BP, medication dose or unknown fractio
  for(const text of ['BP 120. Medication X 2.5 mg.','Medication X 5 mg.','Review in 9 months.'])assert.equal(validateNoteDraft(candidate(s,text),input(s)),false);
 });
 test('writer and reviewer receive local meanings, sentence-context rules and natural-prose guidance',async()=>{
- const source='Post fall day 3 Resident S pain free settled. No pain during care and tx. Tolerates f&f. Obs within range. Obs within range.';
+ const source='Post fall day 3 Resident S pain free settled. No pain during care and t/f. Tolerates f&f. Obs within range. Obs within range.';
  const text='On post-fall day 3, Resident S was settled and pain-free during care and transfers. Food and fluid intake was well tolerated. Observations were within range.';
  const result=candidate(source,text);const prompts=[];
  const send=async(url,opts)=>{const b=JSON.parse(opts.body);prompts.push(b.instructions);return Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(prompts.length===1?result:{approved:true,issues:[]})}]}]});};

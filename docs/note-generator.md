@@ -1,5 +1,7 @@
 # Selected-target Note Generator
 
+Current abbreviation rules: [approved workflow](note-abbreviation-workflow.md). The historical v7/v8 notes below retain their original evidence; tx-transfer and mandatory f&f/ax expansion are superseded. Tx means treatment, t/f transfer, CNS central nervous system and OT occupational therapist. Familiar abbreviations and units may remain; clear numeric shorthand does not itself require an alert.
+
 ## Approved scope — 12 November 2026
 Felix approved the draft, changed it to one selected target per generation and added Pharmacy. Targets: eCase, GP, NOK, Manager, Pharmacy. Source text may be rough notes, an outgoing draft/sent email, received reply or thread. No new incident questionnaire, email sending or eCase submission is introduced. Existing Fall/Wound/Infection output and API validation stay unchanged.
 

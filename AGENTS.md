@@ -20,6 +20,7 @@ This is one existing Site growing into an incident generator; no second Site or 
 
 ## Facts, API and edits
 Preserve uncertainty, chronology, initial versus later assessment, baseline versus new, values/site/side and action status. Missing observation never becomes normal. Do not invent treatment, review, notification or drug detail.
+For Note Generator abbreviation changes, follow [the current approved workflow](docs/note-abbreviation-workflow.md): Tx treatment, t/f transfer, CNS central nervous system, OT occupational therapist; retain familiar clinical abbreviations and units where appropriate, preserve clear numeric notation, and alert only for unresolved meaning. This supersedes historical tx-transfer instructions.
 The incident AI validator intentionally allows narrow wording changes and stays unchanged. The separate selected-target Note Generator uses docs/note-generator.md and its own tested source/status/number checks plus model review. Neither contract proves semantic accuracy; user review remains required.
 Protect independent manual edits on regeneration; replacement requires existing explicit confirmation. Changed input resets Copy verification; stale async output must not overwrite newer work.
 App currently keeps assessments/drafts in page memory. API is optional, server-key only. No new cloud clinical storage or browser persistence in this setup.

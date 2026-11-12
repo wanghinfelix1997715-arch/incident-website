@@ -1,4 +1,4 @@
-import {noteLanguageRules,noteOutputNumericTokens,noteLanguageWarnings,hasUnexpandedLocalShorthand} from './note-language.ts';
+import {noteLanguageRules,noteOutputNumericTokens,noteLanguageWarnings} from './note-language.ts';
 export const targets = {
  ecase:{label:'eCase',button:'Generate eCase note',instruction:'Write a concise factual progress note in flowing paragraphs. No salutation, signature or compulsory incident headings. Record only actual actions and responses. For an outgoing email marked Sent, document that contact and its request. A draft or unknown sending status is not completed contact.'},
  gp:{label:'GP',button:'Generate GP email',instruction:'Write a concise professional GP email: relevant clinical context, significant findings, actual actions and a specific request or update supported by the source. Do not invent a medical request, assessment, prescription or advice.'},
@@ -24,7 +24,6 @@ export function validateNoteDraft(value:unknown,input:NoteInput):value is NoteDr
  if(Object.keys(d).sort().join(',')!=='references,text,warnings'||typeof d.text!=='string'||!d.text.trim()||d.text.length>16000||!Array.isArray(d.warnings)||d.warnings.length>12||!d.warnings.every(w=>typeof w==='string'&&w.length<=600)||!Array.isArray(d.references)||!d.references.length||d.references.length>50)return false;
  const original=input.source+'\n'+input.context;
  if(!noteOutputNumericTokens(d.text,input).every(n=>numbers(original).includes(n)))return false;
- if(hasUnexpandedLocalShorthand(d.text,input))return false;
  if(!d.references.every(r=>r&&typeof r==='object'&&Object.keys(r).sort().join(',')==='draft,source'&&typeof r.source==='string'&&r.source.trim().length>0&&r.source.length<=2000&&original.includes(r.source)&&typeof r.draft==='string'&&r.draft.trim().length>0&&r.draft.length<=2000&&d.text.includes(r.draft)))return false;
  // Conservative deterministic guard for the pasted outgoing email's own contact status.
  if(input.target==='ecase'&&input.sourceType==='Outgoing email'&&['Unknown','Draft — not sent'].includes(input.communicationStatus)&&/\b(?:emailed|contacted|notified|informed|email (?:was )?sent)\b/i.test(d.text))return false;

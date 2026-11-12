@@ -33,3 +33,5 @@ Repository completion and verification: [setup delivery](docs/setup-delivery.md)
 ## Note Generator
 
 The [selected-target Note Generator](docs/note-generator.md) adapts pasted source text for eCase, GP, NOK, Manager or Pharmacy, one target per request. It keeps separate target drafts and incident work in page memory. AI rewriting needs the configured server connection and a successful second source review; failures preserve existing work. It does not submit or send notes. Automatic name protection is not implemented.
+
+Current [abbreviation workflow](docs/note-abbreviation-workflow.md) defines confirmed meanings, familiar abbreviation/unit retention, clear numeric notation and recipient-specific wording.
