@@ -24,6 +24,8 @@ A7 missing observations never become normal or fabricated.
 A8 all four output groups update consistently with independent manual edits protected.
 Use newly authored synthetic fixtures, not real residents, including any examples from conversation.
 
+Current AI rewrite authority: [shared language workflow](../shared-language-workflow.md), approved 13 November 2026. Preserve the contracts below while allowing tested source-reviewed language improvements; no legacy near-identical-wording requirement blocks the approved replacement contract.
+
 ## Shared-layer regressions
 When routing, name protection, API schema/prompt/validator or output UI changes, execute existing cases through that layer and test ordinary successful input, safe failure, Copy and stale-response protection. Wound classification/severity rules must not alter falls answers.
 Keep useful wording improvements and factual preservation separately evaluated. Do not add new semantic claims merely to make prose smoother.

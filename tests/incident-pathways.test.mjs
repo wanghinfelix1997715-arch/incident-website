@@ -1,3 +1,4 @@
+import {incidentProviderResult} from './helpers/incident-provider.mjs';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { draftIncident, incidentSections, initialIncident, incidentExample, incidentWarnings, validIncident, validateIncidentAI } from '../lib/incident.ts';
@@ -59,7 +60,7 @@ test('pathway validators reject foreign fields, wrong values and hidden wound en
 test('new pathway API constructs correct canonical documents and rejects altered facts',async()=>{
  const input=incidentExample('infection'), canonical=draftIncident('infection',input);
  let sent;
- const send=async(url,opts)=>{sent=JSON.parse(opts.body);return Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(canonical)}]}]});};
+ const send=async(url,opts)=>{sent=JSON.parse(opts.body);return Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(incidentProviderResult(canonical,opts))}]}]});};
  const body=await(await handleGenerate(req('infection',input),{key:'synthetic'},true,send)).json();
  assert.equal(body.mode,'ai');assert.deepEqual(body.documents,canonical);assert.equal(sent.store,false);
  assert.equal(validateIncidentAI('infection',{...canonical,gp:canonical.gp+' Infection confirmed.'},canonical),false);

@@ -1,3 +1,4 @@
+import {incidentProviderResult} from './helpers/incident-provider.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {draftIncident,validateIncidentAI} from '../lib/incident.ts';
@@ -28,7 +29,7 @@ test('material hospital escalation and supplied next steps remain visible to fam
 test('actual API and fallback retain recipient-specific emails and strict validation',async()=>{
  const canonical=draftIncident('wound',seed);
  const req=()=>new Request('https://afterfall.test/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pathway:'wound',incident:seed})});
- const send=async()=>Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(canonical)}]}]});
+ const send=async(url,opts)=>Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(incidentProviderResult(canonical,opts))}]}]});
  const a=await(await handleGenerate(req(),{key:'synthetic'},true,send)).json();assert.equal(a.mode,'ai');assert.deepEqual(a.documents,canonical);
  const b=await(await handleGenerate(req(),{},true)).json();assert.equal(b.mode,'template');assert.deepEqual(b.documents,canonical);
  assert.equal(validateIncidentAI('wound',{...canonical,nok:canonical.nok+' GP reviewed.'},canonical),false);

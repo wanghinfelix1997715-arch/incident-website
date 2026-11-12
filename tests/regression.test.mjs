@@ -1,3 +1,4 @@
+import {incidentProviderResult} from './helpers/incident-provider.mjs';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -117,7 +118,7 @@ test('API: absent key uses deterministic fallback without upstream request',asyn
 });
 test('API: mocked valid response accepted; sensitive requests not stored',async()=>{
  const d=draft(example);let requestBody;
- const send=async(url,options)=>{assert.equal(url,'https://api.openai.com/v1/responses');requestBody=JSON.parse(options.body);return Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(d)}]}]});};
+ const send=async(url,options)=>{assert.equal(url,'https://api.openai.com/v1/responses');requestBody=JSON.parse(options.body);return Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(incidentProviderResult(d,options))}]}]});};
  const body=await (await handleGenerate(req(example),{key:'synthetic-test-secret'},true,send)).json();
  assert.equal(body.mode,'ai');assert.equal(requestBody.store,false);assert.ok(requestBody.text.format.strict);
  assert.doesNotMatch(JSON.stringify(body),/synthetic-test-secret/);

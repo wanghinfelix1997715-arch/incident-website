@@ -1,5 +1,7 @@
 # Selected-target Note Generator
 
+Current AI rewriting authority: [shared language and independent source-review workflow](shared-language-workflow.md), approved 13 November 2026. Historical narrow-validator statements below describe prior releases and are superseded for production reviewed rewriting.
+
 Current abbreviation rules: [approved workflow](note-abbreviation-workflow.md). The historical v7/v8 notes below retain their original evidence; tx-transfer and mandatory f&f/ax expansion are superseded. Tx means treatment, t/f transfer, CNS central nervous system and OT occupational therapist. Familiar abbreviations and units may remain; clear numeric shorthand does not itself require an alert.
 
 ## Approved scope — 12 November 2026

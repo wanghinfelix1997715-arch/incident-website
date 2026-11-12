@@ -1,5 +1,7 @@
 # Wound and infection pathways
 
+Current AI rewriting authority: [shared language and independent source-review workflow](shared-language-workflow.md), approved 13 November 2026. Historical narrow-validator statements below describe prior releases and are superseded for production reviewed rewriting.
+
 ## Authority and scope
 Felix approved the six-section wound/infection questionnaire draft on 12 November 2026 with clarifications: severity is selected by the user (unknown allowed; no automatic cross-scale mapping); generate RiskMan, GP, NOK and paragraph progress notes; General then project checks at each phase. The subsequent “action now” authorizes implementation and publication. Existing falls six-heading eCase output remains unchanged.
 

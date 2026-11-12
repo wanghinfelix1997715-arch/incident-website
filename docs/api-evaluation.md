@@ -1,5 +1,7 @@
 # Incident API evaluation contract
 
+Current AI rewriting authority: [shared language and independent source-review workflow](shared-language-workflow.md), approved 13 November 2026. Historical narrow-validator statements below describe prior releases and are superseded for production reviewed rewriting.
+
 Use [General's standard](https://github.com/wanghinfelix1997715-arch/General/blob/main/docs/api-evaluations.md) and the actual project source. INC-06 owns wording improvements; INC-07 owns name protection; INC-13 owns diagnosis. This document defines acceptance, not a claim those features are delivered.
 
 ## Existing baseline

@@ -1,3 +1,4 @@
+import {incidentProviderResult} from './helpers/incident-provider.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {draftIncident,incidentExample,validateIncidentAI,incidentSections} from '../lib/incident.ts';
@@ -24,7 +25,7 @@ test('pending, declined and later findings remain distinct; missing findings are
 });
 test('wound API and fallback use the same prose while altered facts still fail validation',async()=>{
  const canonical=draftIncident('wound',seed);let instructions='';
- const send=async(url,opts)=>{instructions=JSON.parse(opts.body).instructions;return Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(canonical)}]}]});};
+ const send=async(url,opts)=>{instructions=JSON.parse(opts.body).instructions;return Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(incidentProviderResult(canonical,opts))}]}]});};
  const success=await(await handleGenerate(req(seed),{key:'synthetic'},true,send)).json();
  assert.equal(success.mode,'ai');assert.deepEqual(success.documents,canonical);assert.match(instructions,/narrative|prose/i);
  assert.equal(validateIncidentAI('wound',{...canonical,actions:canonical.actions.replace('response is awaited','review was completed')},canonical),false);
