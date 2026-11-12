@@ -7,6 +7,7 @@ const end=(v:string)=>v?`${v}${/[.!?]$/.test(v)?'':'.'}`:'';
 const clause=(v:string)=>/^[A-Z][a-z]/.test(v)?v[0].toLowerCase()+v.slice(1):v;
 const join=(...v:string[])=>v.filter(Boolean).join(' ');
 const paragraphs=(...v:string[])=>v.filter(Boolean).join('\n\n');
+const injuryDescriptions:Record<string,string>={'Skin tear':'a skin tear',Abrasion:'an abrasion',Laceration:'a laceration',Bruise:'a bruise','Pressure injury':'a pressure injury',Other:'another injury',Uncertain:'an injury of uncertain type'};
 export function draftWoundProse(d:Data):Docs{
  const s=(k:string)=>{const v=(d[k]||'').trim();return present(v)?v:'';};
  const raw=(k:string)=>end(s(k));
@@ -17,8 +18,7 @@ export function draftWoundProse(d:Data):Docs{
  const wounds=Array.from({length:count},(_,i)=>{
   const w=(k:string)=>s(`wound_${i}_${k}`);
   if(!['type','site','size','classification','loss','appearance','skin','pain','painDetail','other'].some(k=>w(k)))return '';
-  const injury:Record<string,string>={'Skin tear':'a skin tear',Abrasion:'an abrasion',Laceration:'a laceration',Bruise:'a bruise','Pressure injury':'a pressure injury',Other:'another injury',Uncertain:'an injury of uncertain type'};
-  const identity=end(`Wound ${i+1} was documented${w('type')?' as '+injury[w('type')]:''}${w('site')?' on the '+w('site'):''}`);
+  const identity=end(`Wound ${i+1} was documented${w('type')?' as '+injuryDescriptions[w('type')]:''}${w('site')?' on the '+w('site'):''}`);
   const size=w('size')?end('It measured '+w('size')):'';
   const classification=w('classification')?end('The recorded classification was '+w('classification')):'';
   const loss=w('loss')?end(w('loss')==='Uncertain'?'The extent of flap / skin loss was uncertain':w('loss')+' was documented'):'';
@@ -47,11 +47,24 @@ export function draftWoundProse(d:Data):Docs{
  const later=contextual('later','On subsequent reassessment, ');
  const follow=join(contextual('contributors','Established contributing factors were '),contextual('suspected','Possible contributors remained unconfirmed: '),contextual('prevention','Prevention measures implemented were '),contextual('planned','Actions planned but not yet completed were '),contextual('followup','Follow-up was documented as '));
  const investigation=paragraphs(summary,details,actions,later,follow);
- const gp=paragraphs('Dear Doctor,',summary,details,actions,later,follow,'Please review the documented concerns and advise as appropriate.','Kind regards,\nRN');
+ // Recipient drafts are summaries, not copies of the incident report or notification checklist.
+ const careSource=join(s('care'),s('dressing'));
+ const uncertainCare=/\b(?:not|no|pending|planned|awaiting|declined|refused|unable|yet|will|to be)\b/i.test(careSource);
+ const cleaned=!uncertainCare&&/\b(?:cleaned|cleansed|used.{0,25}\bclean(?:se)?|cleansing (?:performed|completed))\b/i.test(careSource);
+ const dressed=!uncertainCare&&(!!s('dressing')||/\bdressing (?:was )?applied\b/i.test(s('care')));
+ const simpleCare=cleaned&&dressed?'The area was cleaned and dressed.':cleaned?'The area was cleaned.':dressed?'A dressing was applied.':'';
+ const significantTransfer=['Pending','Arranged','Transferred'].includes(s('hospital'))?hospital[s('hospital')]:'';
+ const reviewRequest=s('gpRequired')==='Yes'?join(raw('reviewReason'),/\b(?:please|request|advise)\b/i.test(s('reviewReason'))?'':'Please review the documented wound concerns and advise as appropriate.'):'';
+ const gpCare=join(raw('care'),raw('dressing'),raw('medication'),contextual('response','The response to care was recorded as '),['Created','Updated','Pending'].includes(s('planStatus'))?plan[s('planStatus')]:'',contextual('plan','The wound care plan specified '));
+ const gp=paragraphs('Dear Doctor,',summary,join(raw('account'),contextual('source','The account was provided by ')),wounds,join(assessment,contextual('baseline','Relevant background included ')),gpCare,raw('gpAdvice'),join(significantTransfer,raw('escalation')),later,join(raw('planned'),raw('followup')),reviewRequest,'Kind regards,\nRN');
  const familyFindings=Array.from({length:count},(_,i)=>{
-  const type=s(`wound_${i}_type`),site=s(`wound_${i}_site`),pain=s(`wound_${i}_pain`),detail=s(`wound_${i}_painDetail`);
-  return type||site||pain||detail?join(end('Injury '+(i+1)+': '+join(type,site?'at '+site:'')),pain==='Denied'?'No pain was reported.':pain==='Reported'?'Pain was reported.':pain==='Observed'?'Signs of pain were observed.':pain==='Unable to assess'?'The resident was unable to be assessed for pain.':'',end(detail)):'';
+  const type=s(`wound_${i}_type`),site=s(`wound_${i}_site`),pain=s(`wound_${i}_pain`);
+  const description=join(injuryDescriptions[type]||'a wound',site?'at '+site:'');
+  const injury=type||site?end(count>1?'Injury '+(i+1)+': '+description:'The injury was '+description):'';
+  return join(injury,pain==='Denied'?'No pain was reported.':pain==='Reported'?'Pain was reported.':pain==='Observed'?'Signs of pain were observed.':pain==='Unable to assess'?'It was not possible to assess pain.':'');
  }).filter(Boolean).join(' ');
- const nok=paragraphs('Dear Family,','I am writing to update you about '+name+'. '+summary,familyFindings,join(raw('care'),raw('dressing'),contextual('response','The response to care was recorded as '),gpStatus[s('gp')]||'',raw('gpAdvice'),hospital[s('hospital')]||'',raw('escalation')),later,join(raw('planned'),raw('followup')),'Kind regards,\nRegistered Nurse');
+ const familyPlan=['Created','Updated'].includes(s('planStatus'))?'A wound care plan is in place.':'';
+ const nok=paragraphs('Dear Family,','I am writing to update you about '+name+'.',join(raw('account'),familyFindings),join(simpleCare,familyPlan),join(['Advice received','Reviewed'].includes(s('gp'))?raw('gpAdvice'):'',significantTransfer,raw('escalation')),later,join(raw('planned'),raw('followup')),'Kind regards,\nRegistered Nurse');
+
  return {summary,details,actions,investigation,ecase:investigation,gp,nok};
 }
