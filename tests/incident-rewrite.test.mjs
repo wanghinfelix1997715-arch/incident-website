@@ -26,7 +26,7 @@ test('all incident pathways permit real spelling/site-shorthand correction and r
 test('new or reassigned values, changed status/site, omissions and chronology fail before display',async()=>{
  const data={...example,found:'Pain in left shin.',reassessment:'18:00 — pain increased.',gp:'Pending'},canonical=draftIncident('fall',data);
  for(const [name,change,approved] of [
-  ['value',d=>({...d,gp:d.gp+' BP 999/999.'}),true],
+  ['value',d=>({...d,gp:d.gp+' BP 999/999.'}),false],
   ['status',d=>({...d,actions:d.actions.replace('GP notification pending','GP informed')}),false],
   ['side',d=>({...d,details:d.details.replace('left shin','right shin')}),false],
   ['omission',d=>({...d,gp:'Dear Doctor, please review.'}),false],

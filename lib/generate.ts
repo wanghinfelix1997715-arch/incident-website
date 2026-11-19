@@ -1,6 +1,6 @@
 import {targets} from './note-generator.ts';
 import {keys} from './drafts.ts';
-import {noteLanguageRules,incidentLanguageWarnings} from './note-language.ts';
+import {noteLanguageRules,incidentLanguageWarnings,sourceAssessmentRules} from './note-language.ts';
 import {validIncidentCandidate,warningList} from './incident-rewrite.ts';
 import { draftIncident, validIncident, type Pathway } from './incident.ts';
 class IncidentProviderFailure extends Error {}
@@ -44,9 +44,9 @@ export async function handleGenerate(request: Request, config: Config, authentic
     return JSON.parse((body.output||[]).flatMap(o=>o.content||[]).filter(c=>c.type==='output_text').map(c=>c.text||'').join(''));
   }
   try{
-    const candidate=await modelJSON(policy+infectionPolicy+'\nReturn documents, external warnings and exact source/draft references for EVERY field. References quote original incident values or that field’s canonical text and a supporting exact substring in its rewritten document. Cover all factual claims.',{pathway:p,incident,canonical},schema,'incident_rewrite');
-    if(!validIncidentCandidate(p,candidate,canonical,incident,false))return fallback('The generated rewrite contains an unsupported value or an invalid document format.');
-    const review=await modelJSON(policy+infectionPolicy+'\nIndependently review ALL rewritten fields against the ORIGINAL incident and canonical scope. Do not rewrite. Reject changed or reassigned numbers/units, omitted clinical facts needed by the field, wrong side/site, changed chronology, unsupported diagnosis/product/treatment/normality, status upgrades or lost uncertainty/source attribution. Source quotes are evidence anchors, not proof; check every assertion and clinically relevant omission. Recipient summaries may omit irrelevant technical/checklist detail. Conflicting source facts may be retained with warnings, never silently resolved. Approve only a faithful rewrite. Return approved, issues and external warnings.',{pathway:p,incident,canonical,candidate:candidate.documents},reviewSchema,'incident_review') as {approved?:unknown;issues?:unknown;warnings?:unknown};
+    const candidate=await modelJSON(policy+infectionPolicy+sourceAssessmentRules+'\nReturn documents, external warnings and exact source/draft references for EVERY field. References quote original incident values or that field’s canonical text and a supporting exact substring in its rewritten document. Cover all factual claims.',{pathway:p,incident,canonical},schema,'incident_rewrite');
+    if(!validIncidentCandidate(p,candidate,canonical,incident,false,false))return fallback('The generated rewrite contains an unreadable document format.');
+    const review=await modelJSON(policy+infectionPolicy+sourceAssessmentRules+'\nIndependently review ALL rewritten fields against the ORIGINAL incident and canonical scope. Do not rewrite. Reject changed or reassigned numbers/units, omitted clinical facts needed by the field, wrong side/site, changed chronology, unsupported diagnosis/product/treatment/normality, status upgrades or lost uncertainty/source attribution. Source quotes are evidence anchors, not proof; check every assertion and clinically relevant omission. Recipient summaries may omit irrelevant technical/checklist detail. Conflicting source facts may be retained with warnings, never silently resolved. Approve only a faithful rewrite. Return approved, issues and external warnings.',{pathway:p,incident,canonical,candidate:candidate.documents},reviewSchema,'incident_review') as {approved?:unknown;issues?:unknown;warnings?:unknown};
     if(!review||Object.keys(review).sort().join(',')!=='approved,issues,warnings'||typeof review.approved!=='boolean'||!warningList(review.issues)||!warningList(review.warnings))return fallback('AI returned an invalid source-review response.');
     if(!review.approved||review.issues.length!==0)return fallback('AI source review found facts needing correction.',review.issues);
     const warnings=[...new Set([...incidentLanguageWarnings(incident),...candidate.warnings,...review.warnings])];

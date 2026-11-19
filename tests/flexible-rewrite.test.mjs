@@ -65,9 +65,9 @@ test('review failures expose bounded reasons outside documents, never a false su
  assert.equal(result.rewriteFailed,true);assert.ok(result.warnings.includes('A planned action was described as completed.'));
  assert.ok(!Object.values(result.documents).some(text=>text.includes('A planned action was described as completed.')));
 });
-test('invalid numeric and reference structures still fail before independent review',async()=>{
+test('malformed reference structures still fail before independent review',async()=>{
  const source='Resident A takes Medication X 400 mg.',draft=writer(source,source);
- for(const bad of [{...draft,text:source+' 800 mg.'},{...draft,references:[]},{...draft,references:[{source:42,draft:source}]}]){
+ for(const bad of [{...draft,references:[]},{...draft,references:[{source:42,draft:source}]}]){
   let calls=0;const r=await handleNote(request('notes',input(source)),{key:'synthetic'},true,async()=>{calls++;return output(bad);});
   assert.equal(r.status,422);assert.equal(calls,1);assert.equal((await r.json()).document,undefined);
  }

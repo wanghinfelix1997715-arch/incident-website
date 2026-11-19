@@ -1,3 +1,7 @@
+# Meaning-based review update — 20 November 2026
+
+Felix approved input assessment and independent output review in place of rigid numeric-format rejection. Production first asks the writer to assess original facts, context, status and unresolved ambiguity, then draft with external input alerts. The second call independently checks the draft against the complete original source. Production structural checks bound readable output and required document fields/headings; numeric-token membership and blanket contact-word matching no longer veto a candidate before semantic review or in the browser. Strict numeric helper defaults remain for legacy comparisons and targeted tests. Actual changed facts still require correction; review rejection returns specific reasons. This supersedes numeric-veto requirements below. There are still two provider calls. Source ambiguity may be preserved with warnings. Model review is fallible and does not establish live usability.
+
 # Current natural-rewriting contract
 
 See [the 20 November repair contract](docs/natural-rewrite-repair.md): equivalent numeric notation is accepted; production quotation matching is a review aid, not a hard veto. Independent original-source review, fact/status protections and manual-edit retention remain required. This supersedes older production exact-quotation statements below.

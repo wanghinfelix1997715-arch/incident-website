@@ -44,3 +44,12 @@ test('allowing a month expansion does not authorise a new medication dose',()=>{
  assert.equal(validateNoteDraft(candidate(s,'Review every 3 months. Medication X 2.5 mg.'),input(s)),true);
  assert.equal(validateNoteDraft(candidate(s,'Review every 3 months. Medication X 3 mg.'),input(s)),false);
 });
+
+test('Australian short-year dates accept equivalent formats and reject changed dates',()=>{
+ const source='Reviewed on 19/11/26.';
+ for(const date of ['19/11/26','19/11/2026','19 November 2026','2026-11-19'])
+  assert.equal(validateNoteDraft(candidate(source,'Reviewed on '+date+'.'),input(source)),true,date);
+ for(const date of ['19/11/27','19 November 1926','19 November 2027','2026-11-20'])
+  assert.equal(validateNoteDraft(candidate(source,'Reviewed on '+date+'.'),input(source)),false,date);
+ assert.deepEqual(noteLanguageWarnings(input(source)),[]);
+});

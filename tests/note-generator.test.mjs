@@ -32,7 +32,7 @@ test('new numbers, fabricated source anchors and altered anchor text fail closed
 });
 test('draft or unknown outgoing email cannot become completed contact in eCase',async()=>{
  for(const communicationStatus of ['Draft — not sent','Unknown']){
-  const r=await handleNote(request({...input,communicationStatus}),{key:'synthetic'},true,mock([draft,okReview]));
+  const r=await handleNote(request({...input,communicationStatus}),{key:'synthetic'},true,mock([draft,{approved:false,issues:['The draft email was incorrectly documented as sent.']}]));
   assert.equal(r.status,422);assert.ok(!(await r.json()).document);
  }
 });

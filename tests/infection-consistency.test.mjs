@@ -40,8 +40,8 @@ test('infection accepts faithful reorganisation in server and UI gates, and reje
     if (changedDose) documents.actions += ' Medication X 800 mg.';
     const references = Object.entries(documents).filter(([,text])=>text.trim()).map(([field,text])=>({field,source:canonical[field],draft:text}));
     let calls = 0;
-    const result = await (await handleGenerate(request(),{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:true,issues:[],warnings:[]}))).json();
-    assert.equal(calls,changedDose?1:2);
+    const result = await (await handleGenerate(request(),{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:!changedDose,issues:changedDose?['Dose changed from 400 mg to 800 mg.']:[],warnings:[]}))).json();
+    assert.equal(calls,2);
     assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,incident),changedDose?null:documents);
     assert.equal(result.rewriteFailed===true,changedDose);
   }
@@ -55,8 +55,22 @@ test('built-in Infection example accepts reworded observation timestamp but reje
     const references = Object.entries(documents).filter(([,text])=>text.trim()).map(([field,text])=>({field,source:canonical[field],draft:text}));
     const req = new Request('https://example.test/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pathway:'infection',incident:source})});
     let calls = 0;
-    const result = await (await handleGenerate(req,{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:true,issues:[],warnings:[]}))).json();
-    assert.equal(calls,time==='10:10'?2:1);
+    const result = await (await handleGenerate(req,{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:time==='10:10',issues:time==='10:10'?[]:['Observation time changed.'],warnings:[]}))).json();
+    assert.equal(calls,2);
     assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,source),time==='10:10'?documents:null);
+  }
+});
+
+test('Infection server and browser accept 19/11/26 rewritten across all seven outputs', async () => {
+  const source = {...incidentExample('infection'),date:'19/11/26'};
+  const canonical = draftIncident('infection',source);
+  for (const year of [2026,2027]) {
+    const documents = Object.fromEntries(Object.entries(canonical).map(([field,text])=>[field,text.replaceAll('19/11/26',`19 November ${year}`)]));
+    const references = Object.entries(documents).filter(([,text])=>text.trim()).map(([field,text])=>({field,source:canonical[field],draft:text}));
+    const req = new Request('https://example.test/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pathway:'infection',incident:source})});
+    let calls = 0;
+    const result = await (await handleGenerate(req,{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:year===2026,issues:year===2026?[]:['Year changed.'],warnings:[]}))).json();
+    assert.equal(calls,2);
+    assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,source),year===2026?documents:null);
   }
 });
