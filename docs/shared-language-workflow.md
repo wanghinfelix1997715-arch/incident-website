@@ -1,3 +1,7 @@
+# Current natural-rewriting contract
+
+See [the 20 November repair contract](natural-rewrite-repair.md): equivalent numeric notation is accepted; production quotation matching is a review aid, not a hard veto. Independent original-source review, fact/status protections and manual-edit retention remain required. This supersedes older production exact-quotation statements below.
+
 # Shared CareNote language and source-review workflow
 
 Approved by Felix on 13 November 2026 (Brisbane) after the falls typo/abbreviation discussion. This supersedes the historical instruction that production incident AI may only make near-identical wording changes. The legacy exact comparator remains available for its original contract/tests, but is not the acceptance gate for a reviewed incident rewrite.

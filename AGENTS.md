@@ -1,3 +1,7 @@
+# Current natural-rewriting contract
+
+See [the 20 November repair contract](docs/natural-rewrite-repair.md): equivalent numeric notation is accepted; production quotation matching is a review aid, not a hard veto. Independent original-source review, fact/status protections and manual-edit retention remain required. This supersedes older production exact-quotation statements below.
+
 # Incident Studio / AfterFall — project instructions
 Approved documentation setup: 11 November 2026. Historical falls baseline: v3. Wound/infection released in v4; read current Sites metadata and issue evidence for the active release.
 This is one existing Site growing into an incident generator; no second Site or duplicate application is created by this documentation task.

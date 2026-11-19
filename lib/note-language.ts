@@ -16,17 +16,18 @@ Numeric shorthand is allowed in the output: preserve clear notation such as in 3
 
 Write natural, concise Australian clinical prose, not a rigid word-by-word transcription. Correct spelling, expand shorthand when it helps the recipient, combine related facts and remove repetition without losing distinct findings, source attribution, timing, uncertainty or status. Deduplication of observations within range is permitted when it describes the same assessment; separate timed assessments must stay separate. Avoid robotic labels and repeated sentence fragments in paragraph notes. Preserve distinctions such as no pain reported versus no pain observed. Do not add remained, continued monitoring, stable, normal or other facts unless supported.
 Synthetic style example: Source: Post fall day 3 Resident S pain free settled. Obs within range. No pain observed or reported during care and t/f. Tolerates f&f well. Obs within range as recorded. Desired wording: On post-fall day 3, Resident S was settled and pain-free, with no pain observed or reported during care or transfers. Food and fluid intake was well tolerated. Observations were within range as recorded. This is a style example, not facts to copy into other notes.
-The independent reviewer must permit both clear familiar-abbreviation retention and faithful expansion, grammatical restructuring and deduplication; these are not omissions when the same meaning is retained. Reject wrong expansion, ambiguous shorthand silently resolved, date/duration swaps, changed frequency, invented findings and loss of distinct assessments.`;
+The independent reviewer must permit both clear familiar-abbreviation retention and faithful expansion, grammatical restructuring and deduplication; these are not omissions when the same meaning is retained. Reject wrong expansion, ambiguous shorthand silently resolved, date/duration swaps, changed frequency, invented findings and loss of distinct assessments.
+Write as an experienced RN editing rough notes: organise related findings, improve sentence flow, correct established typos and remove redundant form labels. Equivalent clock notation (at 1655 / at 16:55), quantities (ONE tablet / 1 tablet) and clear intervals (within 2/7 / within 2 days) preserve meaning. A date in an explicitly labelled date field is a date. Missing optional form fields do not prevent drafting from supplied facts; leave those facts unknown and warn only when clinically relevant. Preserve an unresolved acronym as supplied rather than guessing its expansion. Source quotation references are fallible navigation hints, not patient facts or proof: review the complete ORIGINAL source independently, even when a quoted anchor fails exact matching. Approve supported prose despite an imperfect anchor; reject unsupported meaning, not harmless spelling, formatting or incomplete metadata.`;
 type NoteSource={source:string;context:string};
 type Notation={token:string;start:number;end:number;numeric:string;kind:'duration'|'date';month?:number;year?:string};
 function clearNotation(text:string):Notation[]{
  const out:Notation[]=[];
- const duration=/\b(?:every|in|for|after|within|over|duration of|interval of)\s+(\d{1,2})\/12\b/gi;
+ const duration=/\b(?:every|in|for|after|within|over|duration of|interval of)\s+(\d{1,2})\/(12|7|52)\b/gi;
  for(const m of text.matchAll(duration)){
   if(Number(m[1])<1)continue;
-  const start=m.index!+m[0].lastIndexOf(m[1]+'/12');out.push({token:m[1]+'/12',start,end:start+m[1].length+3,numeric:m[1],kind:'duration'});
+  const token=m[1]+'/'+m[2],start=m.index!+m[0].lastIndexOf(token);out.push({token,start,end:start+token.length,numeric:m[1],kind:'duration'});
  }
- const date=/\b(?:on|dated|date of|since|until)\s+([0-3]?\d)\/(0?[1-9]|1[0-2])(?:\/(\d{4}))?\b/gi;
+ const date=/\b(?:on|dated|date of|date\s*:|since|until)\s+([0-3]?\d)\/(0?[1-9]|1[0-2])(?:\/(\d{4}))?\b/gi;
  for(const m of text.matchAll(date)){
   const day=Number(m[1]),month=Number(m[2]);
   const limit=[31,29,31,30,31,30,31,31,30,31,30,31][month-1];
@@ -41,7 +42,8 @@ export function noteOutputNumericTokens(output:string,input:NoteSource):string[]
  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
  for(const n of clearNotation(input.source+'\n'+input.context)){
   if(n.kind==='duration'){
-   const pattern=new RegExp('\\b'+Number(n.numeric)+'[ \\-]+(?:months?|monthly)\\b','gi');
+   const unit=n.token.endsWith('/12')?'months?|monthly':n.token.endsWith('/52')?'weeks?|weekly':'days?|daily';
+   const pattern=new RegExp('\\b'+Number(n.numeric)+'[ \\-]+(?:'+unit+')\\b','gi');
    text=text.replace(pattern,n.token);
   }else{
    const month=months[n.month!-1];
@@ -49,7 +51,23 @@ export function noteOutputNumericTokens(output:string,input:NoteSource):string[]
    text=text.replace(pattern,n.token);
   }
  }
+ return numericTokens(text);
+}
+// Compare equivalent notation, not its typography. No dose/unit conversion or arithmetic.
+export function numericTokens(text:string):string[]{
+ const words:Record<string,string>={one:'1',two:'2',three:'3',four:'4',five:'5',six:'6',seven:'7',eight:'8',nine:'9',ten:'10',eleven:'11',twelve:'12'};
+ text=text.replace(/\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)(?=\s+(?:tablets?|capsules?|doses?|times?|minutes?|hours?|days?|weeks?|months?|years?|mg|mL|cm|mm)\b)/gi,w=>words[w.toLowerCase()]);
+ text=text.replace(/\btwice\b/gi,'2 times');
+ const clock=(all:string,h:string,m:string)=>Number(h)<=23&&Number(m)<=59?h.padStart(2,'0')+m:all;
+ text=text.replace(/\b(?:at|time\s*:)\s+(\d{1,2}):(\d{2})\b/gi,clock);
+ text=text.replace(/\b(?:at|time\s*:)\s+(\d{2})(\d{2})\b/gi,clock);
+ text=text.replace(/\b(\d{1,2}):?(\d{2})\s*(?:hours|hrs)\b/gi,clock);
  return text.match(/\d+(?:[.:/%-]\d+)*[%°]?/g)||[];
+}
+export function incidentLanguageWarnings(incident:Record<string,string>):string[]{
+ // Preserve the form's date/time context instead of flattening unlabelled values or JSON.
+ const source=Object.entries(incident).map(([key,value])=>key==='date'?'Event / onset date: '+value:key==='time'?'Time: '+value:value).join('\n');
+ return noteLanguageWarnings({source,context:''});
 }
 export function noteLanguageWarnings(input:NoteSource):string[]{
  const text=input.source+'\n'+input.context,clear=clearNotation(text),warnings:string[]=[];

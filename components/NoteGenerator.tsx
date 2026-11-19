@@ -34,9 +34,9 @@ export function NoteGenerator(){
   const timer=setTimeout(()=>controller.abort(),65000);
   try{
    const r=await fetch('/api/notes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({source,context,sourceType,communicationStatus,target:selected}),signal:controller.signal});
-   const b=await r.json() as {target?:string;document?:unknown;warnings?:unknown;error?:string};
+   const b=await r.json() as {target?:string;document?:unknown;warnings?:unknown;error?:string;issues?:unknown};
    if(revision.current!==snapshot){setMessage('Source or target changed while generating. Late result discarded; existing drafts retained.');return;}
-   if(!r.ok){if(r.status===401||r.status===403)setConnection(connectionState(r.status,{}));setMessage(b.error||'Could not generate. Your source and existing drafts are unchanged.');return;}
+   if(!r.ok){if(r.status===401||r.status===403)setConnection(connectionState(r.status,{}));const details=Array.isArray(b.issues)?b.issues.filter((i):i is string=>typeof i==='string'&&i.length<=600).slice(0,6).join(' '):'';setMessage((b.error||'Could not generate. Your source and existing drafts are unchanged.')+(details?' '+details:''));return;}
    if(b.target!==selected||typeof b.document!=='string'||!b.document.trim()||!Array.isArray(b.warnings)||!b.warnings.every(w=>typeof w==='string'))throw Error('Invalid result');
    setBank(p=>({...p,[selected]:{text:b.document as string,warnings:b.warnings as string[],sourceKey:key,edited:false}}));
    setMessage(targets[selected].label+' draft ready. Automated checks assist review; compare with the source before copying.');

@@ -1,3 +1,7 @@
+# Current natural-rewriting contract
+
+See [the 20 November repair contract](docs/natural-rewrite-repair.md): equivalent numeric notation is accepted; production quotation matching is a review aid, not a hard veto. Independent original-source review, fact/status protections and manual-edit retention remain required. This supersedes older production exact-quotation statements below.
+
 # CareNote — RN Documentation Studio
 
 Sites migration of the approved six-section post-fall questionnaire and four documentation outputs. The forest-green MagicPath layout is retained. No database, resident persistence, direct RiskMan/eCase submission or email sending is implemented.

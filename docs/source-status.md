@@ -37,3 +37,7 @@ General AGENTS blob 5c690d6992a2cc1aa4ff9944b93d1473071ab572 and General #5/comm
 
 ## Shared rewriting baseline — 13 November 2026 (Brisbane)
 General/project phase-gate evidence is recorded in docs/shared-language-workflow.md. Sites reopened at d1baaa5ed2bade64f0689f760b85a25f9dc1e968 / GitHub main 3b296084feb5cb1a20b1c1e026e109ca823f3a3f, matching full tree d7cd8b22e4b8d2108de366722f61cbfd6c71bfe5. Live baseline v11. Approved scope replaces the incident near-identical-wording API contract with bounded rewriting and independent source review across all three pathways; Note Generator shares the language policy. Exact release/source/check correspondence is recorded in INC-06/08/13/14. Browser/live-provider acceptance remains separate.
+
+## Natural rewriting repair baseline - 20 November 2026 (Brisbane)
+
+Current General/project evidence, focused acceptance and remaining live/browser limits are recorded in [the repair contract](natural-rewrite-repair.md). Reopened source c5e5c14b4a5fc5b6efb5c36dbb9e4f6e76bd30ed is live v12; existing audience remains owner-private and runtime configuration is retained. Final GitHub/Sites tree and deployment correspondence is recorded in INC-06/08/09/13/14 after publication.
