@@ -38,40 +38,82 @@ export function initialIncident(p:Pathway):Data{return p==='fall'?{...empty}:p==
 const value=(d:Data,k:string)=>{const v=(d[k]||'').trim();return ['Not recorded','Not assessed','Unconfirmed'].includes(v)?'':v;};
 const join=(...v:string[])=>v.filter(Boolean).join(' ');
 const paragraphs=(...v:string[])=>v.filter(Boolean).join('\n\n');
-const sentence=(label:string,v:string)=>v?`${label}: ${v}${/[.!?]$/.test(v)?'':'.'}`:'';
+const sentence=(text:string)=>text&&!/[.!?]$/.test(text)?text+'.':text;
 export function draftIncident(p:Pathway,d:Data):Docs{
- return p==='wound'?draftWoundProse(d):draftStructuredIncident(p,d);
-}
-function draftStructuredIncident(p:Pathway,d:Data):Docs{
  if(p==='fall')return draft(d);
- const s=(k:string)=>value(d,k);
- const labelled=(k:string,label:string)=>sentence(label,s(k));
+ if(p==='wound')return draftWoundProse(d);
+ return draftInfection(d);
+}
+
+const infectionStatusText:Record<string,string>={
+ Suspected:'A possible infection was documented',
+ 'Clinician-diagnosed':'An infection was diagnosed by a clinician',
+ 'Laboratory-confirmed':'An infection was laboratory-confirmed',
+ Uncertain:'The infection status was uncertain',
+};
+const specimenStatusText:Record<string,string>={
+ 'Awaiting request / order':'A test request or order is awaited.',
+ Ordered:'Testing was ordered.',
+ 'Collection pending':'Specimen collection is pending.',
+ Collected:'A specimen was collected.',
+ 'Result pending':'Result pending.',
+ Resulted:'A test result was received.',
+ 'Not required':'Testing was recorded as not required.',
+};
+const contactStatusText:Record<string,string>={
+ Pending:'GP or clinician contact is pending.',
+ 'Notified — awaiting response':'The GP or clinician was notified. Staff are awaiting response.',
+ 'Advice received':'Advice was received from the GP or clinician.',
+ Reviewed:'A GP or clinician review was documented.',
+ 'Not required':'GP or clinician contact was recorded as not required.',
+};
+
+function draftInfection(d:Data):Docs{
+ const s=(key:string)=>value(d,key);
+ const raw=(key:string)=>sentence(s(key));
+ const when=join(s('date')&&'on '+s('date'),s('time')&&'at '+s('time'),s('place')&&'in '+s('place'));
+ const site=s('infectionType');
+ const status=s('infectionStatus');
+ const knownSite=['Urinary','Respiratory','Gastrointestinal'].includes(site);
+ const concern=status==='Suspected'&&knownSite
+  ?'Suspected '+site.toLowerCase()+' infection was documented'
+  :infectionStatusText[status]||'An infection concern was documented';
+ const summary=join(sentence(join(concern,when)),site==='Source unknown'?'The source was recorded as unknown.':
+  site&&!(status==='Suspected'&&knownSite)?sentence('The recorded site category was '+site.toLowerCase()):'');
+ const pain={Denied:'The resident denied pain or discomfort.',Reported:'Pain or discomfort was reported.',Observed:'Pain or discomfort was observed.','Unable to assess':'Pain or discomfort could not be assessed.'}[s('pain')]||'';
+ const findings=join(raw('symptoms'),s('baselineChange')&&sentence('A change from baseline was recorded: '+s('baselineChange')),raw('observations'),pain,raw('painDetail'),raw('assessment'));
+ const diagnosis=join(raw('account'),raw('diagnosisSource'));
+ const background=join(raw('baseline'),s('exposureStatus')&&sentence('The exposure or outbreak link was recorded as '+s('exposureStatus').toLowerCase()),raw('exposure'),raw('preferences'));
+ const reviewNeed={Yes:'Medical review was considered necessary.','No at present':'Medical review was not considered necessary at present.',Unsure:'The need for medical review was uncertain.'}[s('gpRequired')]||'';
+ const details=paragraphs(join(s('identified')&&sentence('Identification or reporting was recorded at '+s('identified')),diagnosis,s('source')&&sentence('The information was sourced from '+s('source'))),findings,background,join(s('severity')&&sentence('Severity was recorded as '+s('severity').toLowerCase()),raw('severityReason'),reviewNeed,raw('reviewReason')));
+ const clinicalCare=(forRecipient=false)=>{
+  const status=(key:string)=>forRecipient&&s(key)==='Not required'?'':s(key);
+  return join(raw('care'),
+   status('precautionStatus')&&sentence('Additional precautions were recorded as '+status('precautionStatus').toLowerCase()),raw('precautions'),
+   specimenStatusText[status('specimenStatus')],raw('specimen'),raw('results'),
+   status('treatmentStatus')&&sentence('Treatment was recorded as '+status('treatmentStatus').toLowerCase()),raw('medication'),raw('response'));
+ };
+ const transfer={Pending:'Hospital transfer is pending.',Arranged:'A hospital transfer was arranged.',Transferred:'The resident was transferred to hospital.','Not required':'Hospital transfer was recorded as not required.'}[s('hospital')]||'';
+ const communications=join(contactStatusText[s('gp')],raw('gpContact'),raw('gpAdvice'),
+  s('nok')&&sentence('Family notification was recorded as '+s('nok').toLowerCase()),raw('nokContact'),
+  s('management')&&sentence('Management or infection-control notification was recorded as '+s('management').toLowerCase()),
+  raw('managementContact'),transfer,raw('escalation'));
+ const actions=paragraphs(clinicalCare(),communications);
+ const later=raw('later');
+ const planned=s('planned')&&sentence('The following actions are planned: '+s('planned'));
+ const investigation=paragraphs(summary,details,actions,later,join(raw('resultReview'),raw('contributors'),
+  s('suspected')&&sentence('A possible contributor or source was recorded: '+s('suspected')),raw('prevention'),planned,raw('followup')));
+
  const name=s('resident')||'Resident';
- const summary=join(p==='wound'?'Wound / skin injury identified.':`${s('infectionStatus')||'Infection concern'}${s('infectionType')?' — '+s('infectionType'):''}.`,s('date')?'Date: '+s('date')+'.':'',s('time')?'Time: '+s('time')+'.':'',s('place')?'Location: '+s('place')+'.':'');
- const wounds=p==='wound'?Array.from({length:woundCount(d)},(_,i)=>{
-  const outputLabels:Record<string,string>={size:'Wound dimensions',classification:'Recorded classification',other:'Other findings'};
-  const parts=woundFields.map(f=>sentence(outputLabels[f[0]]||f[1],s(`wound_${i}_${f[0]}`))).filter(Boolean);
-  return parts.length?`Wound ${i+1}. ${parts.join(' ')}`:'';
- }).filter(Boolean).join('\n\n'):'';
- const background=join(labelled('baseline','Relevant baseline / background'),labelled('exposureStatus','Exposure / outbreak link'),labelled('exposure','Exposure details'),labelled('preferences','Allergies / care preferences'));
- const findings=join(labelled('symptoms','Symptoms / signs'),labelled('baselineChange','Change from baseline'),labelled('observations','Observations'),labelled('pain','Pain / discomfort'),labelled('painDetail','Pain details'),labelled('assessment','RN assessment'));
- const details=paragraphs(join(labelled('identified','Identified / reported'),labelled('witness','Witness status'),labelled('certainty','Mechanism certainty'),s('account'),labelled('source','Source of account'),labelled('diagnosisSource','Assessment / diagnosis source')),wounds,findings,background,join(labelled('severity','User-selected severity'),labelled('severityReason','Severity rationale'),labelled('gpRequired','Medical review considered necessary'),labelled('reviewReason','Review reason / urgency')));
- const completed=join(labelled('care','Care actually provided'),labelled('dressing','Dressing applied'),labelled('medication','Medication / treatment details'),labelled('treatmentStatus','Treatment status'),labelled('response','Observed response'),labelled('planStatus','Wound chart / care plan status'),labelled('plan','Wound chart / care plan details'),labelled('photo','Photograph status'),labelled('photoDetail','Photograph details'),labelled('precautionStatus','Additional precaution status'),labelled('precautions','Recorded precautions'),labelled('specimenStatus','Test / specimen status'),labelled('specimen','Test / specimen details'),labelled('results','Results received'));
- const notifications=join(labelled('gp','GP / clinician status'),labelled('gpContact','GP contact'),labelled('gpAdvice','GP advice / review'),labelled('nok','NOK notification'),labelled('nokContact','NOK communication'),labelled('management','Management / infection-control notification'),labelled('managementContact','Other communication'),labelled('hospital','Hospital transfer status'),labelled('escalation','Escalation details'));
- const subsequent=labelled('later','Subsequent reassessment');
- const followup=join(labelled('resultReview','Result review'),labelled('contributors','Established contributing factors'),labelled('suspected','Suspected contributors / possible source'),labelled('prevention','Prevention implemented'),labelled('planned','Planned — not yet completed'),labelled('followup','Follow-up / outstanding work'));
- const actions=paragraphs(completed,notifications);
- const investigation=paragraphs(summary,details,actions,subsequent,followup);
- // Investigation already consolidates the four sections: avoid repeating them in the progress note.
- const ecase=investigation;
- const gp=paragraphs('Dear Doctor,',name+' — '+summary,join(s('account'),labelled('diagnosisSource','Assessment / diagnosis source')),paragraphs(wounds,findings,background),join(completed,labelled('gp','GP / clinician status'),labelled('gpAdvice','Advice / review'),labelled('hospital','Hospital transfer'),s('escalation')),subsequent,join(s('planned'),s('followup')),'Please review the documented concerns and advise as appropriate.','Kind regards,\nRN');
- const familyFindings=p==='wound'?Array.from({length:woundCount(d)},(_,i)=>{
-  const finding=join(s(`wound_${i}_type`),s(`wound_${i}_site`)?'at '+s(`wound_${i}_site`):'',s(`wound_${i}_pain`)?'Pain assessment: '+s(`wound_${i}_pain`)+'.':'',s(`wound_${i}_painDetail`));
-  return finding?sentence('Injury '+(i+1),finding):'';
- }).filter(Boolean).join(' '):join(s('symptoms'),s('baselineChange'),labelled('pain','Pain / discomfort'),s('painDetail'));
- const familyCare=join(s('care'),labelled('dressing','Dressing applied'),labelled('treatmentStatus','Treatment status'),s('response'),labelled('gp','Medical contact / review status'),s('gpAdvice'),labelled('hospital','Hospital transfer status'),s('escalation'));
- const nok=paragraphs('Dear Family,','I am writing to update you about '+name+'. '+summary,familyFindings,familyCare,subsequent,join(s('planned'),s('followup')),'Kind regards,\nRegistered Nurse');
- return {summary,details,actions,investigation,ecase,gp,nok};
+ const advice=['Advice received','Reviewed'].includes(s('gp'))?raw('gpAdvice'):'';
+ const escalation=join(['Arranged','Transferred'].includes(s('hospital'))?transfer:'',raw('escalation'));
+ const request=s('gpRequired')==='Yes'?(raw('reviewReason')||'Please review and advise.'):'';
+ const gp=paragraphs('Dear Doctor,',name+' — '+summary,join(diagnosis,findings,raw('baseline'),raw('preferences')),
+  clinicalCare(true),join(advice,escalation,later),join(planned,raw('followup')),request,'Kind regards,\nRN');
+ const nok=paragraphs('Dear Family,','I am writing to update you about '+name+'. '+summary,
+  join(raw('symptoms'),raw('baselineChange'),pain),join(raw('care'),raw('response'),advice,escalation),later,raw('followup'),
+  'Kind regards,\nRegistered Nurse');
+ return {summary,details,actions,investigation,ecase:investigation,gp,nok};
 }
 export function incidentWarnings(p:Pathway,d:Data):string[]{
  if(p==='fall')return getWarnings(d);

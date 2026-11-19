@@ -64,10 +64,12 @@ export function numericTokens(text:string):string[]{
  text=text.replace(/\b(\d{1,2}):?(\d{2})\s*(?:hours|hrs)\b/gi,clock);
  return text.match(/\d+(?:[.:/%-]\d+)*[%°]?/g)||[];
 }
-export function incidentLanguageWarnings(incident:Record<string,string>):string[]{
+export function incidentNoteSource(incident:Record<string,string>):string{
  // Preserve the form's date/time context instead of flattening unlabelled values or JSON.
- const source=Object.entries(incident).map(([key,value])=>key==='date'?'Event / onset date: '+value:key==='time'?'Time: '+value:value).join('\n');
- return noteLanguageWarnings({source,context:''});
+ return Object.entries(incident).map(([key,value])=>key==='date'?'Event / onset date: '+value:key==='time'?'Time: '+value:value).join('\n');
+}
+export function incidentLanguageWarnings(incident:Record<string,string>):string[]{
+ return noteLanguageWarnings({source:incidentNoteSource(incident),context:''});
 }
 export function noteLanguageWarnings(input:NoteSource):string[]{
  const text=input.source+'\n'+input.context,clear=clearNotation(text),warnings:string[]=[];

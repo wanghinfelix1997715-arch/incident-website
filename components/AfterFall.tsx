@@ -92,7 +92,7 @@ export const FallIncidentWriter2026 = () => {
           setConnection(connectionState(response.status,{}));setUseAI(false);
           failed=true;status=(result.error||'Server AI request failed.')+' Existing drafts are unchanged. Untick AI to generate local drafts.';
         } else {
-          const reviewed=reviewedIncidentDocuments(pathway,result,canonical);
+          const reviewed=reviewedIncidentDocuments(pathway,result,canonical,data);
           if(reviewed)next=reviewed;else failed=true;
           nextWarnings=Array.isArray(result.warnings)?result.warnings.filter((w):w is string=>typeof w==='string'&&w.length<=600):[];
           status = result.reason || 'AI rewriting did not pass review. Existing drafts are unchanged. Untick AI to generate local drafts.';

@@ -41,3 +41,10 @@ General/project phase-gate evidence is recorded in docs/shared-language-workflow
 ## Natural rewriting repair baseline - 20 November 2026 (Brisbane)
 
 Current General/project evidence, focused acceptance and remaining live/browser limits are recorded in [the repair contract](natural-rewrite-repair.md). Reopened source c5e5c14b4a5fc5b6efb5c36dbb9e4f6e76bd30ed is live v12; existing audience remains owner-private and runtime configuration is retained. Final GitHub/Sites tree and deployment correspondence is recorded in INC-06/08/09/13/14 after publication.
+
+## Infection rules and regression — 20 November 2026
+Implementation and synthetic regression against v13 Sites source 65d0fe290500500f9de4a77fd16f426702fb25a3. General AGENTS blob 5c690d6992a2cc1aa4ff9944b93d1473071ab572 and project AGENTS blob 12525ebf4d30adc06a7d63b70217b67cdd445397 were checked against General #5/#8/#9 and project #6/#9/#13/#14 issue history. Applicable upstream context engineering, debugging, API, testing and review guidance previously loaded in this conversation was reused.
+
+Infection keeps the Falls incident section structure and uses the Note Generator GP/NOK instructions during writing and independent review. Local reports retain source facts and action status in paragraphs. Recipient templates omit routine notification/negative-transfer flags and issue a GP request only when review is explicitly selected. The Infection server and UI gates use numbers from the original case, allowing faithful reorganisation while retaining independent checks of attribution, units and status. Falls, Wound and Note Generator expected outputs are unchanged.
+
+Two targeted synthetic checks failed on the old source and pass with the repair. Full regression, types, repository checks and build are tracked in #9. The live failure in #13 requires separate live-provider evidence. This source change has not been deployed.
