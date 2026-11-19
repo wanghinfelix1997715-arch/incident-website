@@ -60,6 +60,9 @@ export function numericTokens(text:string):string[]{
  text=text.replace(/\btwice\b/gi,'2 times');
  const clock=(all:string,h:string,m:string)=>Number(h)<=23&&Number(m)<=59?h.padStart(2,'0')+m:all;
  text=text.replace(/\b(?:at|time\s*:)\s+(\d{1,2}):(\d{2})\b/gi,clock);
+ // Observation logs often start with a bare timestamp followed by a dash.
+ text=text.replace(/(^|[.!?]\s+|\n)[ \t]*(\d{1,2}):(\d{2})(?=[ \t]*[–—-])/g,
+  (all,prefix,h,m)=>prefix+clock(all.slice(prefix.length),h,m));
  text=text.replace(/\b(?:at|time\s*:)\s+(\d{2})(\d{2})\b/gi,clock);
  text=text.replace(/\b(\d{1,2}):?(\d{2})\s*(?:hours|hrs)\b/gi,clock);
  return text.match(/\d+(?:[.:/%-]\d+)*[%°]?/g)||[];

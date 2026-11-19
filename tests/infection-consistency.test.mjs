@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {draftIncident} from '../lib/incident.ts';
+import {draftIncident,incidentExample} from '../lib/incident.ts';
 import {handleGenerate} from '../lib/generate.ts';
 import {reviewedIncidentDocuments} from '../lib/incident-rewrite.ts';
 
@@ -44,5 +44,19 @@ test('infection accepts faithful reorganisation in server and UI gates, and reje
     assert.equal(calls,changedDose?1:2);
     assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,incident),changedDose?null:documents);
     assert.equal(result.rewriteFailed===true,changedDose);
+  }
+});
+
+test('built-in Infection example accepts reworded observation timestamp but rejects a changed time', async () => {
+  const source = incidentExample('infection');
+  const canonical = draftIncident('infection',source);
+  for (const time of ['10:10','10:11']) {
+    const documents = {...canonical,details:canonical.details.replace('10:10 — temperature 37.8°C, BP 120/72.',`At ${time}, the temperature was 37.8°C and blood pressure was 120/72.`)};
+    const references = Object.entries(documents).filter(([,text])=>text.trim()).map(([field,text])=>({field,source:canonical[field],draft:text}));
+    const req = new Request('https://example.test/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pathway:'infection',incident:source})});
+    let calls = 0;
+    const result = await (await handleGenerate(req,{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:true,issues:[],warnings:[]}))).json();
+    assert.equal(calls,time==='10:10'?2:1);
+    assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,source),time==='10:10'?documents:null);
   }
 });
