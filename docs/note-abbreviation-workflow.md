@@ -1,3 +1,7 @@
+# Direct clinical account and output language — 24 November 2026
+
+Felix approved direct third-person clinical accounts. Describe supported findings and actions directly. Avoid commentary such as “the note says”, “the details state” or “the plan records”. Preserve actual clinical actors and reported accounts, prescription versus administration, pending contact and future review. Put genuine input contradictions in external alerts rather than describing questionnaire fields in copied text. RiskMan summary, details, actions and investigation expand clear clinical abbreviations and duration/frequency shorthand. Only GP and progress notes may retain familiar clinical abbreviations; family, manager and pharmacy messages use full words. Standard measurement units remain as previously approved. An unresolved abbreviation must be preserved with an alert rather than guessed. The incident summary is a brief event sentence without resident identifiers. Shared instructions reach both writing and independent review; no new lexical veto or provider call is added. Local templates retain supplied free text; natural language rewriting and contextual expansion use the AI path.
+
 # Note Generator abbreviation workflow
 
 Status: approved for implementation and deployment by Felix, 12 November 2026. This is the current rule; it supersedes the v7/v8 tx-transfer instruction and the briefly proposed blanket ban on alphabetic abbreviations. Applies to the selected-target Note Generator, not the incident generator's protected narrow validator.
