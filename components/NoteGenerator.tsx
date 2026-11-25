@@ -1,4 +1,5 @@
 'use client';
+import {AI_CLIENT_TIMEOUT_MS} from '../lib/ai-timing';
 import React,{useEffect,useRef,useState} from 'react';
 import {targets,sourceTypes,communicationStatuses,noteInputKey,type NoteInput,type NoteTarget} from '../lib/note-generator';
 import {connectionState,connectionMessage,type Connection} from '../lib/connection';
@@ -31,7 +32,7 @@ export function NoteGenerator(){
   const snapshot=revision.current,selected=target,key=sourceKey;
   const controller=new AbortController();inflight.current=controller;
   requesting.current=true;setBusy(true);setVerified(false);setMessage('Writing for '+targets[selected].label+' and checking against your source…');
-  const timer=setTimeout(()=>controller.abort(),65000);
+  const timer=setTimeout(()=>controller.abort(),AI_CLIENT_TIMEOUT_MS);
   try{
    const r=await fetch('/api/notes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({source,context,sourceType,communicationStatus,target:selected}),signal:controller.signal});
    const b=await r.json() as {target?:string;document?:unknown;warnings?:unknown;error?:string;issues?:unknown};
@@ -73,7 +74,7 @@ export function NoteGenerator(){
       <p className="mt-3 text-sm text-[#668076]">{target?({ecase:'Factual progress note in paragraphs.',gp:'Concise clinical update or request.',nok:'Plain-language family update.',manager:'Factual operational update and support request.',pharmacy:'Medication or supply enquiry with exact supplied details.'})[target]:'Select eCase, GP, NOK, Manager or Pharmacy to continue.'}</p>
       <button disabled={busy||!target||!source.trim()} onClick={()=>void generate()} className="mt-4 w-full rounded-xl bg-[#216b56] px-4 py-3 font-medium text-white disabled:opacity-40">{busy?'Writing and checking…':target?targets[target].button:'Select a target'}</button>
       {current?.edited&&<button disabled={busy} onClick={()=>void generate(true)} className="mt-3 text-sm underline">Replace edited draft</button>}
-      <p className="mt-3 text-xs text-[#668076]">Generate sends the original text and context through this private Site to OpenAI for rewriting and a second source review. Nothing is sent as an email or submitted to eCase.</p>
+      <p className="mt-3 text-xs text-[#668076]">Writing and independent review may take up to three minutes. Generate sends the original text and context through this private Site to OpenAI for rewriting and a second source review. Nothing is sent as an email or submitted to eCase.</p>
       <p className="mt-2 text-xs text-[#668076]" role="status">{connectionMessage[connection]}</p><button disabled={connection==='checking'} onClick={()=>void checkConnection()} className="mt-2 text-xs underline">Check AI connection</button>{connection==='sign_in_required'&&<a href="/signin-with-chatgpt?return_to=%2F" target="_top" className="ml-3 text-xs underline">Sign in to this Site</a>}
      </section>
      <section className="rounded-2xl border border-[#dee7df] bg-white p-5 shadow-sm"><div className="flex items-center justify-between gap-3"><h2 className="text-xl font-semibold">{target?targets[target].label+' draft':'Your draft'}</h2><button disabled={!current||busy} onClick={()=>void copy()} className="rounded-lg border px-3 py-2 text-sm text-[#256e56] disabled:opacity-40">Copy note</button></div>

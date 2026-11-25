@@ -1,3 +1,15 @@
+# AI stage timing — 25 November 2026
+
+Production evidence for INC-13: five `/api/generate` requests on 25 November stopped at 55,001–55,002 ms. The application shared one 55-second AbortSignal between writing and independent review. Existing logs cannot identify which stage was active at expiry. No evidence establishes date rejection or credential rejection in these attempts.
+
+Both incident and Note Generator now give writing and independent review separate 90-second windows. The shared runner cancels an expired provider request, clears its timer and reports the failed stage. Both browser clients wait 195 seconds, beyond the two-stage 180-second budget. No automatic retries or additional provider calls. Approved factual review, complete original source, full abbreviation reference and model remain unchanged. Increasing the ceiling removes the demonstrated premature abort; it does not make the provider faster or guarantee that every request finishes.
+
+Safe stage diagnostics contain only event, fixed operation/stage, completion/failure/timeout code and elapsed milliseconds. Never include clinical input, candidate text, error contents, identity or keys. Existing drafts/manual edits are retained on failure. Provider incomplete/unreadable responses remain failures, distinct from timeouts.
+
+Synthetic accelerated-clock tests reproduce a 60-second writer plus 60-second review through all three incident pathways and Note Generator. They fail against the prior shared deadline and pass with separate stage budgets. Stalled writer/reviewer cases still time out without accepting an unreviewed draft, starting paid retries or logging private payloads. Client budget checks prevent the old 65-second browser deadline from cancelling the longer server workflow. Real provider latency and signed-in production generation remain separately unverified; browser reached the owner sign-in gate.
+
+---
+
 # Current natural-rewriting contract
 
 See [the 20 November repair contract](natural-rewrite-repair.md): equivalent numeric notation is accepted; production quotation matching is a review aid, not a hard veto. Independent original-source review, fact/status protections and manual-edit retention remain required. This supersedes older production exact-quotation statements below.
