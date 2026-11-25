@@ -30,16 +30,16 @@ test('new numbers, fabricated source anchors and altered anchor text fail closed
  assert.equal(validateNoteDraft({...draft,references:[{source:'2 tablets',draft:'made up phrase'}]},input),false);
  assert.equal(validateNoteDraft({...draft,extra:'x'},input),false);
 });
-test('draft or unknown outgoing email cannot become completed contact in eCase',async()=>{
+test('draft or unknown outgoing contact receives an external alert while remaining editable',async()=>{
  for(const communicationStatus of ['Draft — not sent','Unknown']){
   const r=await handleNote(request({...input,communicationStatus}),{key:'synthetic'},true,mock([draft,{approved:false,issues:['The draft email was incorrectly documented as sent.']}]));
-  assert.equal(r.status,422);assert.ok(!(await r.json()).document);
+  assert.equal(r.status,200);const result=await r.json();assert.equal(result.document,text);assert.equal(result.reviewStatus,'needs_attention');assert.ok(result.warnings.length);
  }
 });
-test('review rejects invented treatment, changed meaning, omission or chronology before display',async()=>{
+test('review flags treatment, meaning, omission and chronology concerns beside an editable draft',async()=>{
  for(const issue of ['Unsupported treatment','Medication dose omitted','Chronology reversed','Wrong source actor','Suspected converted to confirmed']){
   const r=await handleNote(request(),{key:'synthetic'},true,mock([draft,{approved:false,issues:[issue]}]));
-  assert.equal(r.status,422);assert.ok(!(await r.json()).document);
+  assert.equal(r.status,200);const result=await r.json();assert.equal(result.document,text);assert.equal(result.reviewStatus,'needs_attention');assert.ok(result.warnings.length);
  }
 });
 test('auth, origin, media type and streamed size are bounded before provider',async()=>{
@@ -50,11 +50,11 @@ test('auth, origin, media type and streamed size are bounded before provider',as
  assert.equal((await handleNote(request({...input,source:'x'.repeat(50000)}),{},true,send)).status,413);
  assert.equal(called,false);
 });
-test('missing key, upstream auth/quota, malformed, incomplete, timeout and failed review return no fake success',async()=>{
- assert.equal((await handleNote(request(),{},true)).status,503);
+test('missing key and provider/review failures return labelled editable drafts without claiming checked success',async()=>{
+ const missing=await(await handleNote(request(),{},true)).json();assert.equal(missing.document,input.source);assert.equal(missing.reviewStatus,'unavailable');
  for(const send of [mock([new Response('',{status:401})]),mock([new Response('',{status:429})]),mock([{}]),mock([draft,{approved:true,issues:['conflict']}]),async()=>{throw Error('secret synthetic');}]){
   const r=await handleNote(request(),{key:'synthetic'},true,send), b=await r.json();
-  assert.ok(r.status>=400);assert.ok(!b.document);assert.doesNotMatch(JSON.stringify(b),/secret synthetic/);
+  assert.equal(r.status,200);assert.ok(b.document);assert.notEqual(b.reviewStatus,'checked');assert.ok(b.warnings.length);assert.doesNotMatch(JSON.stringify(b),/secret synthetic/);
  }
 });
 test('source and status changes invalidate prior target results; target itself is separately banked',()=>{

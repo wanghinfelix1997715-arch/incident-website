@@ -78,7 +78,7 @@ test('source field conflicts alert outside the report, while unambiguous assessm
   assert.match(result.documents.actions,/prescribed.*review planned/);
 });
 
-test('a source review rejecting a prescription upgraded to administration still prevents application',async()=>{
+test('a prescription incorrectly upgraded to administration remains flagged on an editable draft',async()=>{
   const input={source:'GP charted Medicine X bd for 5/7. First dose planned tonight.',context:'',sourceType:'Rough notes',communicationStatus:'Unknown',target:'ecase'};
   const text='The nurse administered Medicine X twice daily for five days.';
   let calls=0;
@@ -86,6 +86,7 @@ test('a source review rejecting a prescription upgraded to administration still 
     {text,warnings:[],references:[{source:input.source,draft:text}]}:
     {approved:false,issues:['Prescription and planned first dose were incorrectly described as administered treatment.']}))).json();
   assert.equal(calls,2);
-  assert.equal(result.document,undefined);
-  assert.match(result.issues[0],/incorrectly described/);
+  assert.equal(result.document,text);
+  assert.equal(result.reviewStatus,'needs_attention');
+  assert.match(result.warnings[0],/incorrectly described/);
 });

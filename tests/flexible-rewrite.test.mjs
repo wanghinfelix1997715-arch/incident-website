@@ -25,9 +25,9 @@ test('note writer quotation mismatch can reach independent original-source revie
   let calls=0;const seen=[];
   const send=async(u,o)=>{seen.push(JSON.parse(o.body));return output(++calls===1?draft:{approved,issues:approved?[]:['Unsupported assessment']});};
   const r=await handleNote(request('notes',input(source)),{key:'synthetic'},true,send);
-  assert.equal(calls,2);assert.equal(r.status,approved?200:422);
+  assert.equal(calls,2);assert.equal(r.status,200);
   assert.equal(JSON.parse(seen[1].input).source,source);
-  assert.equal(!!(await r.json()).document,approved);
+  const result=await r.json();assert.ok(result.document);assert.equal(result.reviewStatus,approved?'checked':'needs_attention');
  }
 });
 test('sparse infection with date field and planned word-number medication generates reviewed prose',async()=>{
@@ -41,34 +41,34 @@ test('sparse infection with date field and planned word-number medication genera
  assert.match(b.documents.investigation,/1 tablet twice daily/);
  assert.doesNotMatch(b.documents.investigation,/treatment (?:was )?commenced|observations.*normal/i);
 });
-test('incident references are hints, while independent review still rejects changed meaning',async()=>{
+test('incident references are hints, while independent review flags changed meaning without hiding results',async()=>{
  const incident={resident:'Resident A',symptoms:'Mild pain in lt arm.'};
  const canonical=draftIncident('infection',incident);
  const documents=Object.fromEntries(Object.entries(canonical).map(([k,v])=>[k,v.replaceAll('lt arm','left arm')]));
  const references=Object.entries(documents).filter(([,v])=>v.trim()).map(([field,text])=>({field,source:'Mild pain in left arm.',draft:text.slice(0,2000)}));
  for(const approved of [true,false]){
   let calls=0;const b=await(await handleGenerate(request('generate',{pathway:'infection',incident}),{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved,issues:approved?[]:['Wrong side'],warnings:[]}))).json();
-  assert.equal(calls,2);assert.equal(b.reviewed===true,approved);assert.equal(b.rewriteFailed===true,!approved);
+  assert.equal(calls,2);assert.equal(b.reviewed===true,approved);assert.equal(b.reviewStatus,approved?'checked':'needs_attention');assert.deepEqual(b.documents,documents);
  }
 });
 test('explicit date labels suppress false alerts; genuinely isolated slash notation still alerts',()=>{
  assert.deepEqual(noteLanguageWarnings({source:'Event / onset date: 19/11',context:''}),[]);
  assert.ok(noteLanguageWarnings({source:'Review 3/12',context:''}).some(w=>/Ambiguous/.test(w)));
 });
-test('review failures expose bounded reasons outside documents, never a false successful draft',async()=>{
+test('review concerns stay outside editable documents with an attention status',async()=>{
  const source='Resident A denied pain.',draft=writer(source,source);
  let calls=0;const note=await(await handleNote(request('notes',input(source)),{key:'synthetic'},true,async()=>output(++calls===1?draft:{approved:false,issues:['The source does not confirm this finding.']}))).json();
- assert.deepEqual(note.issues,['The source does not confirm this finding.']);assert.equal(note.document,undefined);
+ assert.ok(note.warnings.includes('The source does not confirm this finding.'));assert.equal(note.document,source);assert.equal(note.reviewStatus,'needs_attention');
  const incident={symptoms:source},documents=draftIncident('infection',incident);
  const references=Object.entries(documents).filter(([,v])=>v.trim()).map(([field,text])=>({field,source:text,draft:text}));
  calls=0;const result=await(await handleGenerate(request('generate',{pathway:'infection',incident}),{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:false,issues:['A planned action was described as completed.'],warnings:[]}))).json();
- assert.equal(result.rewriteFailed,true);assert.ok(result.warnings.includes('A planned action was described as completed.'));
+ assert.equal(result.reviewStatus,'needs_attention');assert.ok(result.warnings.includes('A planned action was described as completed.'));
  assert.ok(!Object.values(result.documents).some(text=>text.includes('A planned action was described as completed.')));
 });
-test('malformed reference structures still fail before independent review',async()=>{
+test('malformed reference structures return an editable source fallback without independent review',async()=>{
  const source='Resident A takes Medication X 400 mg.',draft=writer(source,source);
  for(const bad of [{...draft,references:[]},{...draft,references:[{source:42,draft:source}]}]){
   let calls=0;const r=await handleNote(request('notes',input(source)),{key:'synthetic'},true,async()=>{calls++;return output(bad);});
-  assert.equal(r.status,422);assert.equal(calls,1);assert.equal((await r.json()).document,undefined);
+  assert.equal(r.status,200);assert.equal(calls,1);const result=await r.json();assert.equal(result.document,source);assert.equal(result.reviewStatus,'unavailable');
  }
 });

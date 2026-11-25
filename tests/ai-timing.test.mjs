@@ -54,7 +54,7 @@ test('Note Generator uses the same independent stage budgets',async t=>{
  assert.equal(result.document,note.source);
  assert.equal(provider.count(),2);
 });
-test('a stalled writer or reviewer is bounded, identified, and never accepted',async t=>{
+test('a stalled writer or reviewer returns an editable draft with a specific unavailable-review alert',async t=>{
  clock(t);
  const logs=[];t.mock.method(console,'info',value=>logs.push(value));
  for(const handler of ['incident','note'])for(const stage of ['writing','review']){
@@ -65,11 +65,12 @@ test('a stalled writer or reviewer is bounded, identified, and never accepted',a
    if(stage==='review'){t.mock.timers.tick(1000);await flush();}
    t.mock.timers.tick(AI_STAGE_TIMEOUT_MS);await flush();
    const response=await pending;const result=await response.json();
-   assert.match(result.reason||result.error,stage==='review'?/source review timed out/i:/drafting timed out/i);
-   assert.notEqual(result.reviewed,true);assert.equal(result.document,undefined);
+   assert.match(result.warnings.join(' '),stage==='review'?/source review timed out/i:/drafting timed out/i);
+   assert.notEqual(result.reviewed,true);assert.equal(result.reviewStatus,'unavailable');
    assert.equal(provider.count(),stage==='writing'?1:2,'no automatic paid retries');
-   if(handler==='incident')assert.equal(result.rewriteFailed,true);
-   else {assert.equal(response.status,504);assert.equal(result.code,'provider_timeout');}
+   assert.equal(response.status,200);
+   if(handler==='incident')assert.ok(result.documents.details);
+   else assert.equal(result.document,note.source);
  }
  assert.ok(logs.some(s=>JSON.parse(s).stage==='review'&&JSON.parse(s).code==='timeout'));
  assert.ok(logs.every(s=>Object.keys(JSON.parse(s)).sort().join(',')==='code,durationMs,event,operation,stage'));

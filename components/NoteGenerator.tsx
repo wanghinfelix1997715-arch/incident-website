@@ -33,15 +33,16 @@ export function NoteGenerator(){
   const controller=new AbortController();inflight.current=controller;
   requesting.current=true;setBusy(true);setVerified(false);setMessage('Writing for '+targets[selected].label+' and checking against your source…');
   const timer=setTimeout(()=>controller.abort(),AI_CLIENT_TIMEOUT_MS);
+  const sourceDraft=(warning:string)=>{if(revision.current!==snapshot)return;setBank(p=>({...p,[selected]:{text:source,warnings:[warning],sourceKey:key,edited:false}}));setMessage('Original source text returned as an editable draft. AI optimisation and review were unavailable.');};
   try{
    const r=await fetch('/api/notes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({source,context,sourceType,communicationStatus,target:selected}),signal:controller.signal});
-   const b=await r.json() as {target?:string;document?:unknown;warnings?:unknown;error?:string;issues?:unknown};
+   const b=await r.json() as {target?:string;document?:unknown;warnings?:unknown;error?:string;issues?:unknown;reviewStatus?:string};
    if(revision.current!==snapshot){setMessage('Source or target changed while generating. Late result discarded; existing drafts retained.');return;}
-   if(!r.ok){if(r.status===401||r.status===403)setConnection(connectionState(r.status,{}));const details=Array.isArray(b.issues)?b.issues.filter((i):i is string=>typeof i==='string'&&i.length<=600).slice(0,6).join(' '):'';setMessage((b.error||'Could not generate. Your source and existing drafts are unchanged.')+(details?' '+details:''));return;}
+   if(!r.ok){if(r.status===401||r.status===403)setConnection(connectionState(r.status,{}));sourceDraft(b.error||'Server AI was unavailable. This is the original source, not an AI rewrite.');return;}
    if(b.target!==selected||typeof b.document!=='string'||!b.document.trim()||!Array.isArray(b.warnings)||!b.warnings.every(w=>typeof w==='string'))throw Error('Invalid result');
    setBank(p=>({...p,[selected]:{text:b.document as string,warnings:b.warnings as string[],sourceKey:key,edited:false}}));
-   setMessage(targets[selected].label+' draft ready. Automated checks assist review; compare with the source before copying.');
-  }catch{if(revision.current===snapshot)setMessage('Generation failed or timed out. Your source and existing drafts are unchanged.');}
+   setMessage(targets[selected].label+(b.reviewStatus==='checked'?' draft corrected and checked. Compare with the source before copying.':' editable draft ready with review alerts. Check and edit before copying.'));
+  }catch{sourceDraft('AI writing or review was unavailable. This is the original source text, not an AI rewrite.');}
   finally{clearTimeout(timer);requesting.current=false;setBusy(false);inflight.current=null;}
  };
  const copy=async()=>{

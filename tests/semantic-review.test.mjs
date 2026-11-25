@@ -43,7 +43,7 @@ test('Note Generator handles prior completed contact inside a new draft, and ret
  assert.deepEqual(result.warnings,warnings);
 });
 
-test('an altered dose reaches AI review and a specific meaning error prevents successful output',async()=>{
+test('an altered dose reaches review and remains clearly flagged on the editable output',async()=>{
  const input={source:'Medication X 400 mg prescribed. Not administered.',context:'',sourceType:'Rough notes',communicationStatus:'Unknown',target:'gp'};
  const text='Medication X 800 mg was administered.';
  let calls=0;
@@ -51,6 +51,7 @@ test('an altered dose reaches AI review and a specific meaning error prevents su
   {text,warnings:[],references:[{source:input.source,draft:text}]}:
   {approved:false,issues:['Dose changed from 400 mg to 800 mg and prescribed treatment was described as administered.']}))).json();
  assert.equal(calls,2);
- assert.equal(result.document,undefined);
- assert.match(result.issues[0],/Dose changed/);
+ assert.equal(result.document,text);
+ assert.equal(result.reviewStatus,'needs_attention');
+ assert.match(result.warnings[0],/Dose changed/);
 });

@@ -82,7 +82,6 @@ export const FallIncidentWriter2026 = () => {
     setVerified(false);
     setBusy(true);
     let next = canonical;
-    let failed=false;
     let nextWarnings:string[]=[];
     let status = 'Four local drafts generated. Review before submission.';
     try {
@@ -90,23 +89,24 @@ export const FallIncidentWriter2026 = () => {
         const response = await fetch('/api/generate', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({pathway,incident:data}), signal:AbortSignal.timeout(AI_CLIENT_TIMEOUT_MS)});
         const result = await response.json() as {documents?:unknown;reason?:string;error?:string;reviewed?:boolean;rewriteFailed?:boolean;mode?:string;warnings?:unknown};
         if (!response.ok) {
-          setConnection(connectionState(response.status,{}));setUseAI(false);
-          failed=true;status=(result.error||'Server AI request failed.')+' Existing drafts are unchanged. Untick AI to generate local drafts.';
+          if(response.status===401||response.status===403){setConnection(connectionState(response.status,{}));setUseAI(false);}
+          nextWarnings.push(result.error||'Server AI was unavailable.');
+          status='Local editable drafts returned because server AI was unavailable.';
         } else {
           const reviewed=reviewedIncidentDocuments(pathway,result,canonical,data);
-          if(reviewed)next=reviewed;else failed=true;
+          if(reviewed)next=reviewed;
           nextWarnings=Array.isArray(result.warnings)?result.warnings.filter((w):w is string=>typeof w==='string'&&w.length<=600):[];
-          status = result.reason || 'AI rewriting did not pass review. Existing drafts are unchanged. Untick AI to generate local drafts.';
+          if(!reviewed)nextWarnings.push('The server result was unreadable. Local template drafts are available to edit.');
+          status = reviewed?(result.reason||'Editable drafts returned with review alerts.'):'Local editable drafts returned because the server result was unreadable.';
         }
       }
-    } catch { failed=true;status = 'AI rewriting is unavailable or timed out. Existing drafts are unchanged. Untick AI to generate local drafts.'; }
+    } catch { nextWarnings.push('AI writing or review was unavailable. These are local template drafts.');status = 'Local editable drafts returned because server AI was unavailable or timed out.'; }
     if (revision.current !== snapshot) {
       setBusy(false);
       setMessage('Assessment changed while generating. Results discarded; generate again.');
       return;
     }
     setApiWarnings(nextWarnings);
-    if(failed){setBusy(false);setMessage(status);return;}
     setDocs(current => mergeDrafts(current, next, protectedFields));
     if (replaceEdited) setEdited(new Set());
     setGenerated(true);

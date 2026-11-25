@@ -33,7 +33,7 @@ const request = () => new Request('https://example.test/api/generate', {
 });
 const output = value => Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify(value)}]}]});
 
-test('infection accepts faithful reorganisation in server and UI gates, and rejects a new dose', async () => {
+test('infection accepts faithful reorganisation in server and UI gates, and flags a new dose without hiding the draft', async () => {
   const canonical = draftIncident('infection',incident);
   for (const changedDose of [false,true]) {
     const documents = {...canonical, summary:'Suspected urinary infection on 19 November. Temperature 37.8°C.'};
@@ -42,12 +42,12 @@ test('infection accepts faithful reorganisation in server and UI gates, and reje
     let calls = 0;
     const result = await (await handleGenerate(request(),{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:!changedDose,issues:changedDose?['Dose changed from 400 mg to 800 mg.']:[],warnings:[]}))).json();
     assert.equal(calls,2);
-    assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,incident),changedDose?null:documents);
-    assert.equal(result.rewriteFailed===true,changedDose);
+    assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,incident),documents);
+    assert.equal(result.reviewStatus,changedDose?'needs_attention':'checked');if(changedDose)assert.ok(result.warnings.some(w=>/Dose changed/.test(w)));
   }
 });
 
-test('built-in Infection example accepts reworded observation timestamp but rejects a changed time', async () => {
+test('built-in Infection example accepts reworded observation timestamp and flags a changed time without hiding the draft', async () => {
   const source = incidentExample('infection');
   const canonical = draftIncident('infection',source);
   for (const time of ['10:10','10:11']) {
@@ -57,7 +57,8 @@ test('built-in Infection example accepts reworded observation timestamp but reje
     let calls = 0;
     const result = await (await handleGenerate(req,{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:time==='10:10',issues:time==='10:10'?[]:['Observation time changed.'],warnings:[]}))).json();
     assert.equal(calls,2);
-    assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,source),time==='10:10'?documents:null);
+    assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,source),documents);
+    assert.equal(result.reviewStatus,result.warnings.length?'needs_attention':'checked');
   }
 });
 
@@ -71,6 +72,7 @@ test('Infection server and browser accept 19/11/26 rewritten across all seven ou
     let calls = 0;
     const result = await (await handleGenerate(req,{key:'synthetic'},true,async()=>output(++calls===1?{documents,warnings:[],references}:{approved:year===2026,issues:year===2026?[]:['Year changed.'],warnings:[]}))).json();
     assert.equal(calls,2);
-    assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,source),year===2026?documents:null);
+    assert.deepEqual(reviewedIncidentDocuments('infection',result,canonical,source),documents);
+    assert.equal(result.reviewStatus,result.warnings.length?'needs_attention':'checked');
   }
 });

@@ -23,7 +23,7 @@ test('all incident pathways permit real spelling/site-shorthand correction and r
   assert.ok(JSON.parse(prompts[1].input).incident);assert.match(prompts[1].instructions,/independent|independently/i);
  }
 });
-test('new or reassigned values, changed status/site, omissions and chronology fail before display',async()=>{
+test('value, status, site, omission and chronology concerns are surfaced beside editable drafts',async()=>{
  const data={...example,found:'Pain in left shin.',reassessment:'18:00 — pain increased.',gp:'Pending'},canonical=draftIncident('fall',data);
  for(const [name,change,approved] of [
   ['value',d=>({...d,gp:d.gp+' BP 999/999.'}),false],
@@ -35,7 +35,7 @@ test('new or reassigned values, changed status/site, omissions and chronology fa
   let calls=0;const documents=change(canonical);
   const send=async()=>output(++calls===1?writer(documents,canonical):{approved,issues:approved?[]:['Synthetic source mismatch'],warnings:[]});
   const body=await(await handleGenerate(req('fall',data),{key:'synthetic'},true,send)).json();
-  assert.equal(body.rewriteFailed,true,name);assert.notEqual(body.mode,'ai',name);
+  assert.equal(body.reviewStatus,'needs_attention',name);assert.deepEqual(body.documents,documents);assert.ok(body.warnings.includes('Synthetic source mismatch'));
  }
 });
 test('time, account and wound-description conflicts produce external alerts without changing facts',async()=>{
@@ -50,10 +50,10 @@ test('failed/malformed second review and missing source references cannot return
  const canonical=draftIncident('wound',incidentExample('wound'));
  for(const review of [{approved:false,issues:['Changed status'],warnings:[]},{approved:true,issues:[]},null]){
   let calls=0;const send=async()=>output(++calls===1?writer(canonical,canonical):review);
-  const b=await(await handleGenerate(req('wound',incidentExample('wound')),{key:'synthetic'},true,send)).json();assert.equal(b.rewriteFailed,true);assert.notEqual(b.mode,'ai');
+  const b=await(await handleGenerate(req('wound',incidentExample('wound')),{key:'synthetic'},true,send)).json();assert.notEqual(b.reviewed,true);assert.ok(b.documents);assert.ok(b.warnings.length);
  }
  let calls=0;const b=await(await handleGenerate(req('wound',incidentExample('wound')),{key:'synthetic'},true,async()=>{calls++;return output({documents:canonical,warnings:[],references:[]});})).json();
- assert.equal(b.rewriteFailed,true);assert.equal(calls,1);
+ assert.equal(b.reviewStatus,'unavailable');assert.deepEqual(b.documents,canonical);assert.equal(calls,1);
 });
 
 test('falls A1–A8 directions and incomplete drafts pass through the full new writer/review boundary',async()=>{
@@ -74,14 +74,16 @@ test('falls A1–A8 directions and incomplete drafts pass through the full new w
   assert.equal(b.reviewed,true);assert.deepEqual(b.documents,canonical);assert.equal(calls,2);
  }
 });
-test('client accepts reviewed prose, rejects unreviewed/failed results and retains manual edits',async()=>{
+test('client accepts labelled editable drafts at every review status and retains manual edits',async()=>{
  const canonical=draftIncident('fall',{...example,found:'Found supne.'});
  const prose={...canonical,details:canonical.details.replace('supne','supine')};
  assert.equal(reviewedIncidentDocuments('fall',{mode:'ai',reviewed:true,documents:prose},canonical),prose);
- for(const result of [{mode:'ai',documents:prose},{mode:'ai',reviewed:true,rewriteFailed:true,documents:prose},{mode:'template',documents:canonical}])assert.equal(reviewedIncidentDocuments('fall',result,canonical),null);
+ for(const reviewStatus of ['checked','needs_attention','unavailable'])assert.equal(reviewedIncidentDocuments('fall',{mode:'ai',reviewed:false,reviewStatus,documents:prose},canonical),prose);
+ assert.equal(reviewedIncidentDocuments('fall',{mode:'template',reviewStatus:'unavailable',documents:canonical},canonical),canonical);
+ assert.equal(reviewedIncidentDocuments('fall',{mode:'ai',reviewStatus:'unavailable',documents:{details:'incomplete response'}},canonical),null);
  assert.equal(mergeDrafts({...canonical,gp:'Manually edited'},prose,new Set(['gp'])).gp,'Manually edited');
  const ui=await readFile(new URL('../components/AfterFall.tsx',import.meta.url),'utf8');
- assert.ok(ui.indexOf('if(failed)')<ui.indexOf('setDocs(current => mergeDrafts'));
+ assert.doesNotMatch(ui,/if\(failed\)/);assert.match(ui,/setDocs\(current => mergeDrafts/);
  assert.match(ui,/revision.current !== snapshot/);assert.match(ui,/setApiWarnings\(nextWarnings\)/);
 });
 

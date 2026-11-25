@@ -25,7 +25,7 @@ export function validIncidentCandidate(p:Pathway,value:unknown,canonical:Docs,in
  const original=Object.values(incident);
  return keys.filter(k=>v.documents[k].trim()).every(k=>v.references.some(r=>r.field===k))&&v.references.every(r=>r&&Object.keys(r).sort().join(',')==='draft,field,source'&&keys.includes(r.field)&&typeof r.source==='string'&&r.source.trim().length>0&&r.source.length<=2000&&(!requireExactQuotes||canonical[r.field].includes(r.source)||original.some(text=>text.includes(r.source)))&&typeof r.draft==='string'&&r.draft.trim().length>0&&r.draft.length<=2000&&(!requireExactQuotes||v.documents[r.field].includes(r.draft)));
 }
-// Client response gate: only a server-reviewed rewrite can use the broader prose contract.
-export function reviewedIncidentDocuments(p:Pathway,result:{reviewed?:unknown;rewriteFailed?:unknown;mode?:unknown;documents?:unknown},canonical:Docs,incident?:Record<string,string>):Docs|null{
- return result.reviewed===true&&result.mode==='ai'&&result.rewriteFailed!==true&&validIncidentRewrite(p,result.documents,canonical,incident,false)?result.documents:null;
+// Review concerns are advisory. Readable drafts remain editable at every review status.
+export function reviewedIncidentDocuments(p:Pathway,result:{reviewed?:unknown;rewriteFailed?:unknown;mode?:unknown;documents?:unknown;reviewStatus?:unknown},canonical:Docs,incident?:Record<string,string>):Docs|null{
+ return (result.mode==='ai'||result.mode==='template')&&(result.reviewed===true||['checked','needs_attention','unavailable'].includes(result.reviewStatus as string))&&validIncidentRewrite(p,result.documents,canonical,incident,false)?result.documents:null;
 }
